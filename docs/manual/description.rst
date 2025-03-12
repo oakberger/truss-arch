@@ -2,7 +2,7 @@ make html
 
 .. image:: /docs/images/Truss-Arch-Bridge-Porto.jpeg
    :alt: Truss Arch Bridge
-   :width: 50%
+   :width: 500px
    :align: center
 
 ######################
