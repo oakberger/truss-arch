@@ -1,6 +1,6 @@
 .. image:: /docs/images/Truss-Arch-Bridge-Porto.jpeg
    :alt: Truss Arch Bridge
-   :width: 800px
+   :width: 500px
    :align: center
 
 ######################
@@ -11,7 +11,8 @@ The aim of this project is to develop a **C++ program** for optimizing the layou
 
 Initially, I will focus on implementing a **working truss optimization code**, ensuring it efficiently determines an **optimal layout**. Once that is in place, if time permits, I thought it would be interesting to introduce **modular constraints** to improve **constructability**. (Probably won't have enough time but still thought it was interesting).
 
-Note: I find it difficult to asses the how much time / how difficult it will be to implement this. This is why I am unsure what the exact scope of the project should be.
+Note: I find it difficult to asses how much time / how difficult it will be to implement this. This is why I am unsure what the exact scope of the project should be.
+
 ######################
 Development Plan
 ######################
