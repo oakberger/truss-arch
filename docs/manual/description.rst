@@ -1,6 +1,6 @@
 .. image:: /docs/images/Truss-Arch-Bridge-Porto.jpeg
    :alt: Truss Arch Bridge
-   :width: 50px
+   :width: 5px
    :align: center
 
 ######################
