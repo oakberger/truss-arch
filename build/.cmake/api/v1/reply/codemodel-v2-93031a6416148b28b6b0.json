@@ -1,0 +1,101 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.30"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "tests",
+					"jsonFile" : "directory-tests-Debug-b01f6abb0ab61427ef3b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.30"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "tests"
+				},
+				{
+					"build" : "docs",
+					"jsonFile" : "directory-docs-Debug-c463161ff6ebad611835.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.30"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "docs",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "truss_arch",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "doc_doxygen::@25ace4044b5cefe8d37f",
+					"jsonFile" : "target-doc_doxygen-Debug-d1e89d90d762a18665d2.json",
+					"name" : "doc_doxygen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "trussopt::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-trussopt-Debug-fe257f83fba8afdca28d.json",
+					"name" : "trussopt",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build",
+		"source" : "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

@@ -1,0 +1,22 @@
+# Doxyfile.in
+
+PROJECT_NAME           = "Truss Arch Optimizer"
+OUTPUT_DIRECTORY       = @CMAKE_CURRENT_BINARY_DIR@/doxygen
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+RECURSIVE              = YES
+INPUT                  = "@PROJECT_SOURCE_DIR@/src"
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+QUIET                  = YES
+
+# Enable class diagrams
+HAVE_DOT = YES
+DOT_IMAGE_FORMAT = svg
+COLLABORATION_GRAPH = YES
+CALL_GRAPH = YES
+CALLER_GRAPH = YES
+UML_LOOK = YES
+TEMPLATE_RELATIONS = YES
+INCLUDE_GRAPH = YES
+INCLUDED_BY_GRAPH = YES

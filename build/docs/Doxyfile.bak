@@ -1,0 +1,22 @@
+# Doxyfile.in
+
+PROJECT_NAME           = "Truss Arch Optimizer"
+OUTPUT_DIRECTORY       = /Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/docs/doxygen
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+RECURSIVE              = YES
+INPUT                  = "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src"
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+QUIET                  = YES
+
+# Enable class diagrams
+HAVE_DOT = YES
+DOT_IMAGE_FORMAT = svg
+COLLABORATION_GRAPH = YES
+CALL_GRAPH = YES
+CALLER_GRAPH = YES
+UML_LOOK = YES
+TEMPLATE_RELATIONS = YES
+INCLUDE_GRAPH = YES
+INCLUDED_BY_GRAPH = YES

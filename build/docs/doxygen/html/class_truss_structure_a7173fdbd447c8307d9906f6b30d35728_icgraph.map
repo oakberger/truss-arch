@@ -1,0 +1,7 @@
+<map id="TrussStructure::addBar" name="TrussStructure::addBar">
+<area shape="rect" id="Node000001" title=" " alt="" coords="316,13,472,38"/>
+<area shape="rect" id="Node000002" href="$class_truss_structure.html#a1fd6979281474df5ee6050d213532d6c" title=" " alt="" coords="103,5,268,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="300,28,269,28,269,23,300,23"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Entry point for the truss arch optimizer." alt="" coords="5,13,55,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="87,28,55,28,55,23,87,23"/>
+</map>

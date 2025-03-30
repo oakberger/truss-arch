@@ -139,6 +139,19 @@ trussopt/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/build
 .PHONY : trussopt/fast
 
+#=============================================================================
+# Target rules for targets named doc_doxygen
+
+# Build rule for target.
+doc_doxygen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 doc_doxygen
+.PHONY : doc_doxygen
+
+# fast build rule for target.
+doc_doxygen/fast:
+	$(MAKE) $(MAKESILENT) -f docs/CMakeFiles/doc_doxygen.dir/build.make docs/CMakeFiles/doc_doxygen.dir/build
+.PHONY : doc_doxygen/fast
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -340,6 +353,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... doc_doxygen"
 	@echo "... trussopt"
 	@echo "... src/main.o"
 	@echo "... src/main.i"

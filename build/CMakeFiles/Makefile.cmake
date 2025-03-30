@@ -11,6 +11,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.31.6/CMakeCCompiler.cmake"
   "CMakeFiles/3.31.6/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.31.6/CMakeSystem.cmake"
+  "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/docs/CMakeLists.txt"
+  "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/docs/Doxyfile.in"
   "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/tests/CMakeLists.txt"
   "/opt/homebrew/share/cmake/Modules/CMakeCInformation.cmake"
   "/opt/homebrew/share/cmake/Modules/CMakeCXXInformation.cmake"
@@ -25,6 +27,9 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/opt/homebrew/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
   "/opt/homebrew/share/cmake/Modules/Compiler/Clang.cmake"
   "/opt/homebrew/share/cmake/Modules/Compiler/GNU.cmake"
+  "/opt/homebrew/share/cmake/Modules/FindDoxygen.cmake"
+  "/opt/homebrew/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
+  "/opt/homebrew/share/cmake/Modules/FindPackageMessage.cmake"
   "/opt/homebrew/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake"
   "/opt/homebrew/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake"
   "/opt/homebrew/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake"
@@ -42,6 +47,9 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-CXX.cmake"
   "/opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang.cmake"
   "/opt/homebrew/share/cmake/Modules/Platform/UnixPaths.cmake"
+  "/opt/homebrew/share/eigen3/cmake/Eigen3Config.cmake"
+  "/opt/homebrew/share/eigen3/cmake/Eigen3ConfigVersion.cmake"
+  "/opt/homebrew/share/eigen3/cmake/Eigen3Targets.cmake"
   )
 
 # The corresponding makefile is:
@@ -54,9 +62,12 @@ set(CMAKE_MAKEFILE_OUTPUTS
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "tests/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "docs/Doxyfile"
+  "docs/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/trussopt.dir/DependInfo.cmake"
+  "docs/CMakeFiles/doc_doxygen.dir/DependInfo.cmake"
   )

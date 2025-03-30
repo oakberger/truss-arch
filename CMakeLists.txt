@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.30)
 project(truss_arch)
 enable_language(CXX)
 
@@ -39,6 +39,14 @@ if(TRUSS_TESTS)
   add_subdirectory(tests)
 endif()
 
-# Optional: link libraries here (e.g., Eigen)
-# find_package(Eigen3 REQUIRED)
-# target_link_libraries(trussopt Eigen3::Eigen)
+# Find and link Eigen3
+find_package(Eigen3 REQUIRED)
+target_link_libraries(trussopt Eigen3::Eigen)
+
+# Find and link Doxygen
+option(TRUSS_DOC "Build Doxygen documentation" OFF)
+
+if(TRUSS_DOC)
+  find_package(Doxygen REQUIRED)
+  add_subdirectory(docs)
+endif()
