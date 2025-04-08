@@ -5,6 +5,7 @@ Architecture Overview
 This document gives an overview of how I’ve structured the **Truss Arch Optimizer**, a C++ project where I try to implement the **Ground Structure Method** for optimizing truss layouts of archs. The goal is to find the best way to arrange bars in an arch-like structure to use as little material as possible, while still holding up the loads.
 
 I tried to structure the code so that it’s easy to understand and extend.
+
 -----------
 Core Idea
 -----------
