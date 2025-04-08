@@ -17,6 +17,9 @@ struct Bar {
     int node_start;      ///< Start node index
     int node_end;        ///< End node index
     double length;       ///< Length of the bar
+    double area;         ///< Cross-sectional area
+    double force;        ///< Internal force in the bar
+    bool is_active;     ///< Whether the bar is active (part of the structure)
 
     Bar(int id_, int start, int end, double length_);
 };

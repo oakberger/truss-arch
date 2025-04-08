@@ -65,16 +65,6 @@ CMAKE_BINARY_DIR = "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards effi
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
-	/opt/homebrew/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-.PHONY : test/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
@@ -138,19 +128,6 @@ trussopt: cmake_check_build_system
 trussopt/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/build
 .PHONY : trussopt/fast
-
-#=============================================================================
-# Target rules for targets named doc_doxygen
-
-# Build rule for target.
-doc_doxygen: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 doc_doxygen
-.PHONY : doc_doxygen
-
-# fast build rule for target.
-doc_doxygen/fast:
-	$(MAKE) $(MAKESILENT) -f docs/CMakeFiles/doc_doxygen.dir/build.make docs/CMakeFiles/doc_doxygen.dir/build
-.PHONY : doc_doxygen/fast
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -352,8 +329,6 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... test"
-	@echo "... doc_doxygen"
 	@echo "... trussopt"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
