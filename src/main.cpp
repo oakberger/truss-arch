@@ -1,38 +1,27 @@
-#include "model/TrussStructure.hpp"
-#include "optimization/LPOptimizer.hpp"
-#include "utils/IOUtils.hpp"
 #include <iostream>
+#include "IO/InputParser.hpp"
+#include "IO/OutputExporter.hpp"
+#include "optimization/LPOptimizer.hpp"
+#include "model/TrussStructure.hpp"
+#include "model/OptimizationResults.hpp"
 
-/**
- * @brief Entry point for the truss arch optimizer.
- * 
- * This example shows how to:
- * - Create a grid of nodes
- * - Generate the ground structure (possible bars)
- * - Run the linear programming optimizer
- * - Export the results (e.g., to SVG)
- */
 int main() {
-    std::cout << "🔧 Truss Arch Optimizer Starting...\n";
+    std::cout << "=== Truss Arch Optimizer ===" << std::endl;
 
-    // 1. Create and initialize the truss structure
-    TrussStructure structure;
-    structure.generateGrid(3, 5, 1.0); // 3 rows × 5 columns, spacing = 1.0
-    structure.generateGroundStructure(2.0); // connect nodes within 2.0 units
+    // 1. Parse input structure from JSON
+    InputParser parser;
+    TrussStructure structure = parser.parseFromJSON("input.json");
 
-    // 2. Apply some loads and supports manually for demonstration
-    structure.nodes[0].is_support_x = true;
-    structure.nodes[0].is_support_y = true;
-    structure.nodes[4].is_support_y = true;
-    structure.nodes[7].fy = -100.0; // downward force on node 7
-
-    // 3. Run the optimizer
+    // 2. Solve optimization problem
     LPOptimizer optimizer;
-    optimizer.solve(structure);
+    OptimizationResults results = optimizer.solve(structure);
 
-    // 4. Export the results (dummy export for now)
-    optimizer.exportResults("output.svg");
+    // 3. Export results
+    OutputExporter exporter;
+    exporter.exportToSVG(structure, "structure.svg");
+    exporter.exportToCSV(results, "results.csv");
+    exporter.exportToJSON(results, "results.json");
 
-    std::cout << "✅ Optimization complete. Results exported.\n";
+    std::cout << "Optimization complete. Results exported." << std::endl;
     return 0;
 }

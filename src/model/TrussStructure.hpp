@@ -22,4 +22,8 @@ public:
     void addBar(int start_id, int end_id);
     void generateGrid(int rows, int cols, double spacing);
     void generateGroundStructure(double max_length);
+
+    // Example accessor
+    const Node& getNode(int id) const { return nodes.at(id); }
+
 };

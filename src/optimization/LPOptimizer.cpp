@@ -1,12 +1,19 @@
 #include "LPOptimizer.hpp"
 #include <iostream>
 
-void LPOptimizer::solve(const TrussStructure& structure) {
+OptimizationResults LPOptimizer::solve(const TrussStructure& structure) {
     std::cout << "[LPOptimizer] Solving optimization problem...\n";
-    // TODO: Implement LP formulation and solving
+
+    OptimizationResults results;
+
+    // TODO: Replace this with LP logic
+    for (const auto& bar : structure.bars) {
+        results.addEntry(bar.id, 1.0, bar.length);  // Dummy force = 1.0
+    }
+
+    results.computeTotalVolume();
+    results.markActiveBars();
+
+    return results;
 }
 
-void LPOptimizer::exportResults(const std::string& filename) {
-    std::cout << "[LPOptimizer] Exporting results to " << filename << "\n";
-    // TODO: Implement result export (e.g., to SVG)
-}

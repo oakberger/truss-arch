@@ -15,10 +15,19 @@
  * Can (maybe?) be extended to MILP later.
  */
 class LPOptimizer : public BaseOptimizer {
-public:
-    void solve(const TrussStructure& structure) override;
-    void exportResults(const std::string& filename) override;
-};
+    public:
+        /**
+         * @brief Solves the optimization problem using LP.
+         * @param structure The truss structure to optimize.
+         * @return Results with forces and volume.
+         */
+        OptimizationResults solve(const TrussStructure& structure) override;
+    
+        /**
+         * @brief Exports results (e.g. to a file).
+         * @param filename Where to save the output.
+         */
+    };
 
 /**
  * 

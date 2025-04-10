@@ -1,0 +1,16 @@
+{
+    "nodes": [
+      { "id": 0, "x": 0.0, "y": 0.0, "is_support_x": true,  "is_support_y": true,  "fx": 0.0, "fy": 0.0 },
+      { "id": 1, "x": 1.0, "y": 0.0, "is_support_x": false, "is_support_y": false, "fx": 0.0, "fy": 0.0 },
+      { "id": 2, "x": 2.0, "y": 0.0, "is_support_x": false, "is_support_y": true,  "fx": 0.0, "fy": 0.0 },
+      { "id": 3, "x": 1.0, "y": 1.0, "is_support_x": false, "is_support_y": false, "fx": 0.0, "fy": -100.0 }
+    ],
+    "bars": [
+      { "id": 0, "node_start": 0, "node_end": 1 },
+      { "id": 1, "node_start": 1, "node_end": 2 },
+      { "id": 2, "node_start": 0, "node_end": 3 },
+      { "id": 3, "node_start": 1, "node_end": 3 },
+      { "id": 4, "node_start": 2, "node_end": 3 }
+    ]
+  }
+  
