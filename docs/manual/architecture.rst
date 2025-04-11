@@ -1,7 +1,3 @@
-.. image:: /docs/images/Truss-Arch-Bridge-Porto.jpeg
-   :alt: Truss Arch Bridge
-   :width: 500px
-   :align: center
 
 ######################
 Architecture Overview
@@ -99,9 +95,7 @@ LPOptimizer
 
 The first working solver. It formulates and solves a **linear program** to minimize total volume:
 
-.. math::
-
-   \min \sum |F_i| \cdot L_i
+$ \min \sum |F_i| \cdot L_i $
 
 subject to:
 
@@ -130,9 +124,7 @@ Matrix Builder
 
 ``MatrixBuilder`` builds the global equilibrium matrix ``A`` and load vector ``b`` such that:
 
-.. math::
-
-   A \cdot f = b
+$ A \cdot f = b $
 
 Each row enforces equilibrium at a node (in x or y), and each column corresponds to a bar. This forms the backbone of the linear optimization problem.
 
