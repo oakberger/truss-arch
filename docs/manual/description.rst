@@ -59,8 +59,10 @@ This project is based on **structural layout optimization**, with a focus on the
 
 The optimization objective is to minimize the **total material volume**, modeled as:
 
-$ \min \sum |F_i| \cdot L_i $
+::
 
+   minimize ∑ |Fᵢ| · Lᵢ
+   
 subject to:
 - Static equilibrium at each node
 - Bar forces within valid limits

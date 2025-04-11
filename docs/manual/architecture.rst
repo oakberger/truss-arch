@@ -95,7 +95,9 @@ LPOptimizer
 
 The first working solver. It formulates and solves a **linear program** to minimize total volume:
 
-$ \min \sum |F_i| \cdot L_i $
+::
+
+   minimize ∑ |Fᵢ| · Lᵢ
 
 subject to:
 
@@ -124,7 +126,9 @@ Matrix Builder
 
 ``MatrixBuilder`` builds the global equilibrium matrix ``A`` and load vector ``b`` such that:
 
-$ A \cdot f = b $
+::
+
+   A · f = b
 
 Each row enforces equilibrium at a node (in x or y), and each column corresponds to a bar. This forms the backbone of the linear optimization problem.
 
