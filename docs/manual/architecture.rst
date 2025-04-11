@@ -1,14 +1,19 @@
-=====================
-Architecture Overview
-=====================
+.. image:: /docs/images/Truss-Arch-Bridge-Porto.jpeg
+   :alt: Truss Arch Bridge
+   :width: 500px
+   :align: center
 
-This document gives an overview of how the **Truss Arch Optimizer** is structured, a C++ project implementing the **Ground Structure Method** (GSM) for optimizing truss layouts constrained within arch-like regions. The goal is to find efficient, material-saving truss layouts that still satisfy mechanical equilibrium and support conditions.
+######################
+Architecture Overview
+######################
+
+This document gives an overview of how the **Truss Arch Optimizer** is structured, a C++ project implementing the **Ground Structure Method (GSM)** for optimizing truss layouts constrained within arch-like regions. The goal is to find efficient, material-saving truss layouts that still satisfy mechanical equilibrium and support conditions.
 
 The code is structured to prioritize clarity, modularity, and extensibility.
 
------------
+######################
 Core Idea
------------
+######################
 
 The core class is ``TrussStructure``, which stores the entire structural model — nodes and bars — and handles geometry generation. Around it are components for:
 
@@ -19,12 +24,13 @@ The core class is ``TrussStructure``, which stores the entire structural model �
 
 The architecture is designed to allow future features.
 
-----------------
+######################
 Class Overview
-----------------
+######################
 
+-----------------
 Node
-====
+-----------------
 
 A ``Node`` represents a point in 2D space. Each node has:
 
@@ -35,8 +41,9 @@ A ``Node`` represents a point in 2D space. Each node has:
 
 Nodes are created with geometry only (id, x, y), and supports or loads are applied separately. This clean separation improves flexibility and allows different loading scenarios on the same geometry.
 
+-----------------
 Bar
-====
+-----------------
 
 A ``Bar`` is a possible connection between two nodes. It includes:
 
@@ -45,8 +52,9 @@ A ``Bar`` is a possible connection between two nodes. It includes:
 - Design variables: force and cross-sectional area
 - A flag ``is_active`` indicating whether the bar is used in the final layout
 
+-----------------
 TrussStructure
-==============
+-----------------
 
 The ``TrussStructure`` class acts as the full container for the model. It manages:
 
@@ -57,12 +65,13 @@ The ``TrussStructure`` class acts as the full container for the model. It manage
 
 A specialized method ``generateGroundStructureArch`` constrains bar generation to lie **within a defined arch-shaped band**, leveraging the ``ArchShape`` class.
 
----------------------
+######################
 Arch Geometry
----------------------
+######################
 
+-----------------
 ArchShape
-=========
+-----------------
 
 ``ArchShape`` defines a 2D parabolic arch region with a given span, rise, and thickness. It’s used to:
 
@@ -71,20 +80,22 @@ ArchShape
 
 This is crucial for keeping the truss layout realistic and arch-conforming.
 
----------------------
+######################
 Optimization Setup
----------------------
+######################
 
+-----------------
 BaseOptimizer
-=============
+-----------------
 
 An abstract base class that defines the interface for all solvers. It provides:
 
 - ``solve(structure)`` to compute optimized cross-sectional areas
 - ``exportResults(filename)`` (optional placeholder)
 
+-----------------
 LPOptimizer
-===========
+-----------------
 
 The first working solver. It formulates and solves a **linear program** to minimize total volume:
 
@@ -100,8 +111,9 @@ subject to:
 
 It returns an ``OptimizationResults`` object containing forces, lengths, volume, and active bars.
 
+-----------------
 OptimizationResults
-===================
+-----------------
 
 A container class that stores the full result of an optimization run:
 
@@ -112,11 +124,11 @@ A container class that stores the full result of an optimization run:
   - Compute total volume
   - Flag inactive bars
 
----------------
-MatrixBuilder
----------------
+######################
+Matrix Builder
+######################
 
-This utility class builds the global equilibrium matrix ``A`` and load vector ``b`` such that:
+``MatrixBuilder`` builds the global equilibrium matrix ``A`` and load vector ``b`` such that:
 
 .. math::
 
@@ -124,12 +136,13 @@ This utility class builds the global equilibrium matrix ``A`` and load vector ``
 
 Each row enforces equilibrium at a node (in x or y), and each column corresponds to a bar. This forms the backbone of the linear optimization problem.
 
----------
+######################
 Input & Output
----------
+######################
 
+-----------------
 InputParser
-===========
+-----------------
 
 Reads a ``.json`` input file containing:
 
@@ -138,8 +151,9 @@ Reads a ``.json`` input file containing:
 
 This is useful for structured testing or comparing with analytical layouts. It’s also extendable to support automatic grid/arch generation in the future.
 
+-----------------
 OutputExporter
-==============
+-----------------
 
 Handles export of:
 
@@ -148,9 +162,13 @@ Handles export of:
 
 This helps with debugging, visualization, and integration with post-processing tools like Python.
 
-----------
+######################
+Main Files
+######################
+
+-----------------
 main.cpp
-----------
+-----------------
 
 The entry point for production runs. It:
 
@@ -158,18 +176,17 @@ The entry point for production runs. It:
 - Solves it using ``LPOptimizer``
 - Exports results using ``OutputExporter``
 
-----------
+-----------------
 main_test.cpp
--------------
+-----------------
 
 Used for experiments and development. It:
 
 - More explicitly defines the geometry of the structure to help with testing.
 
-
--------------
+######################
 Future Work
--------------
+######################
 
 - Actually implement the code
 - Add support for full JSON-driven arch and GSM configuration (e.g. arch span/rise, grid resolution)
@@ -177,5 +194,3 @@ Future Work
 - Integrate plotting libraries or output for Python-based visualization
 - Support multiple load cases or parametric studies
 - Add constraint filtering (e.g. bar angle restrictions, symmetry)
-
----
