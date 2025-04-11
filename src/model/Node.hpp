@@ -22,5 +22,9 @@ struct Node {
     double fx = 0.0;      ///< External force in x-direction
     double fy = 0.0;      ///< External force in y-direction
 
-    Node(int id_, double x_, double y_, bool support_x = false, bool support_y = false);
+    /**
+     * @brief Constructs a node with given ID and coordinates.
+     * Support conditions and loads are set later.
+     */
+    Node(int id_, double x_, double y_);
 };

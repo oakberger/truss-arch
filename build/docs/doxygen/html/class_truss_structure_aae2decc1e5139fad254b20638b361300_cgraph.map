@@ -1,0 +1,12 @@
+<map id="TrussStructure::generateGroundStructureArch" name="TrussStructure::generateGroundStructureArch">
+<area shape="rect" id="Node000001" title="Generates the ground structure, constrained within an arch region." alt="" coords="5,23,171,64"/>
+<area shape="rect" id="Node000002" href="$class_truss_structure.html#a7173fdbd447c8307d9906f6b30d35728" title=" " alt="" coords="219,5,375,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,31,203,27,204,32,171,36"/>
+<area shape="rect" id="Node000003" href="$class_arch_shape.html#a66f89c6d982e2573febc7400bc3dce67" title="Whether a point is inside the arch band." alt="" coords="228,55,366,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="171,50,212,55,212,60,171,56"/>
+<area shape="rect" id="Node000004" href="$class_arch_shape.html#a0b51b9dba7869e777903799aba0a2eac" title="Inner arch y&#45;value at x." alt="" coords="423,29,553,55"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="366,56,407,50,408,55,367,61"/>
+<area shape="rect" id="Node000005" href="$class_arch_shape.html#aebeb18937926b677f68c1625d98b599d" title="Outer arch y&#45;value at x." alt="" coords="601,55,733,80"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="366,65,586,65,586,70,366,70"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="554,49,586,53,585,59,553,54"/>
+</map>

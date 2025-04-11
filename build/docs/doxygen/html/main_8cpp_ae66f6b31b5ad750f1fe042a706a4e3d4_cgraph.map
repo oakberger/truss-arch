@@ -1,15 +1,25 @@
 <map id="main" name="main">
-<area shape="rect" id="Node000001" title="Entry point for the truss arch optimizer." alt="" coords="5,84,55,110"/>
-<area shape="rect" id="Node000002" href="$class_l_p_optimizer.html#a641388191ed2e1a7d2dd4b6e457fceb5" title=" " alt="" coords="106,5,288,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="43,82,69,60,101,40,115,34,117,39,104,45,72,64,47,86"/>
-<area shape="rect" id="Node000003" href="$class_truss_structure.html#ad42897e3ced491baf878a30bacb2d753" title=" " alt="" coords="103,55,292,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="55,90,105,81,106,86,56,95"/>
-<area shape="rect" id="Node000005" href="$class_truss_structure.html#a1fd6979281474df5ee6050d213532d6c" title=" " alt="" coords="115,104,280,145"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="56,98,99,106,99,111,55,104"/>
-<area shape="rect" id="Node000007" href="$class_l_p_optimizer.html#a1d1bccd46340cddf54454907b60235e3" title=" " alt="" coords="131,169,264,195"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="46,108,71,132,104,155,119,161,117,166,101,159,68,136,42,112"/>
-<area shape="rect" id="Node000004" href="$class_truss_structure.html#a1194ac8ed135484817d7ef12fd28f2fe" title=" " alt="" coords="340,55,507,80"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="292,65,324,65,324,70,292,70"/>
-<area shape="rect" id="Node000006" href="$class_truss_structure.html#a7173fdbd447c8307d9906f6b30d35728" title=" " alt="" coords="346,112,502,138"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="280,122,330,122,330,128,280,128"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,104,55,130"/>
+<area shape="rect" id="Node000002" href="$class_output_exporter.html#ab89778d642ab54a192fecbfc9d783262" title=" " alt="" coords="107,5,302,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="38,102,64,70,101,40,111,35,113,40,104,44,68,74,42,105"/>
+<area shape="rect" id="Node000003" href="$class_output_exporter.html#a24477bbdd3ac10cbbafc639cd171134d" title=" " alt="" coords="103,55,306,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="54,105,102,89,127,82,129,87,103,94,56,110"/>
+<area shape="rect" id="Node000004" href="$class_output_exporter.html#a0c0ee49738e2e8281f377e536454b9e0" title=" " alt="" coords="107,104,302,130"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="55,114,91,114,91,120,55,120"/>
+<area shape="rect" id="Node000006" href="$class_input_parser.html#a5f6df1915e8db10980bf31c71d780d74" title=" " alt="" coords="107,153,302,179"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="56,123,103,140,129,147,127,152,102,145,54,128"/>
+<area shape="rect" id="Node000009" href="$class_l_p_optimizer.html#a203db50eec8dcbbd18a3f0d195e61974" title="Solves the optimization problem using LP." alt="" coords="138,267,270,292"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="45,128,105,190,177,254,174,258,101,193,41,132"/>
+<area shape="rect" id="Node000005" href="$class_truss_structure.html#ad9f6737b0f807942a1ec9a08ea78c1de" title=" " alt="" coords="356,79,520,104"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="302,104,340,99,340,105,303,109"/>
+<area shape="rect" id="Node000007" href="$class_truss_structure.html#a7173fdbd447c8307d9906f6b30d35728" title=" " alt="" coords="360,128,516,154"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="302,153,344,148,345,154,302,158"/>
+<area shape="rect" id="Node000008" href="$class_truss_structure.html#a839d77610378209e81b52cf871a8de03" title=" " alt="" coords="354,177,521,203"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="302,174,339,177,338,183,302,179"/>
+<area shape="rect" id="Node000010" href="$class_optimization_results.html#ae4864b6cc754d3867e5f5dfcf7a56449" title="Adds a new entry to the results list." alt="" coords="368,227,507,268"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="271,268,352,256,353,262,272,273"/>
+<area shape="rect" id="Node000011" href="$class_optimization_results.html#ab64355324982c9ab5ac6377f0839a5c3" title="Computes total volume based on all bar entries." alt="" coords="362,292,513,333"/>
+<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="272,286,347,297,346,303,271,292"/>
+<area shape="rect" id="Node000012" href="$class_optimization_results.html#ac3d3477711d3cabd0af022425f614a81" title="Marks bars as active if their force exceeds a given threshold." alt="" coords="368,358,507,398"/>
+<area shape="poly" id="edge11_Node000009_Node000012" title=" " alt="" coords="236,290,355,342,371,349,369,354,353,347,234,295"/>
 </map>

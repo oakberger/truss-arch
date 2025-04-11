@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7ebaseoptimizer_0',['~BaseOptimizer',['../class_base_optimizer.html#a2fd13195e88c98cb10bec4d77fa3bdf9',1,'BaseOptimizer']]]
+  ['node_0',['Node',['../struct_node.html#a2d3dce5f738ae0d33ab57dde061b641c',1,'Node']]]
 ];

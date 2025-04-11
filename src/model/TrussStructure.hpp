@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include "../geometry/ArchShape.hpp"
 #include "Node.hpp"
 #include "Bar.hpp"
 
@@ -18,12 +19,23 @@ public:
     std::vector<Node> nodes;  ///< All nodes in the structure
     std::vector<Bar> bars;    ///< All bars (candidate members)
 
-    void addNode(double x, double y, bool support_x = false, bool support_y = false);
+    void addNode(double x, double y);
     void addBar(int start_id, int end_id);
     void generateGrid(int rows, int cols, double spacing);
+    /**
+     * @brief Generates the ground structure, constrained with maximum length
+     * @param max_length Maximum length allowed between nodes
+     */
     void generateGroundStructure(double max_length);
+    /**
+     * @brief Generates the ground structure, constrained within an arch region.
+     * @param max_length Maximum length allowed between nodes
+     * @param arch Shape to constrain the bars inside
+     */
+    void generateGroundStructureArch(double max_length, const ArchShape& arch);
 
-    // Example accessor
+
+    // Example accessor e.g used for exporting geometry
     const Node& getNode(int id) const { return nodes.at(id); }
 
 };

@@ -116,33 +116,33 @@ $(function(){initNavTree('class_base_optimizer.html',''); initResizable(true); }
 <div class="dynheader">
 Inheritance diagram for BaseOptimizer:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_base_optimizer__inherit__graph.svg" width="138" height="252"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_base_optimizer__inherit__graph.svg" width="138" height="212"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Collaboration diagram for BaseOptimizer:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_base_optimizer__coll__graph.svg" width="138" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_base_optimizer__coll__graph.svg" width="138" height="98"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3728968d275d1b7058fc1f6c55a75479" id="r_a3728968d275d1b7058fc1f6c55a75479"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3728968d275d1b7058fc1f6c55a75479">solve</a> (const <a class="el" href="class_truss_structure.html">TrussStructure</a> &amp;structure)=0</td></tr>
-<tr class="separator:a3728968d275d1b7058fc1f6c55a75479"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad30cbc1d09566a11ad0d7759023f34f2" id="r_ad30cbc1d09566a11ad0d7759023f34f2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad30cbc1d09566a11ad0d7759023f34f2">exportResults</a> (const std::string &amp;filename)=0</td></tr>
-<tr class="separator:ad30cbc1d09566a11ad0d7759023f34f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2fd13195e88c98cb10bec4d77fa3bdf9" id="r_a2fd13195e88c98cb10bec4d77fa3bdf9"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2fd13195e88c98cb10bec4d77fa3bdf9">~BaseOptimizer</a> ()</td></tr>
-<tr class="separator:a2fd13195e88c98cb10bec4d77fa3bdf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a100464423b48923114d8fc656720f8" id="r_a6a100464423b48923114d8fc656720f8"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a100464423b48923114d8fc656720f8">~BaseOptimizer</a> ()=default</td></tr>
+<tr class="separator:a6a100464423b48923114d8fc656720f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6290acf39e05c367377daced600848f3" id="r_a6290acf39e05c367377daced600848f3"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_optimization_results.html">OptimizationResults</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6290acf39e05c367377daced600848f3">solve</a> (const <a class="el" href="class_truss_structure.html">TrussStructure</a> &amp;structure)=0</td></tr>
+<tr class="memdesc:a6290acf39e05c367377daced600848f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the optimization problem.  <br /></td></tr>
+<tr class="separator:a6290acf39e05c367377daced600848f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract base class for all optimization strategies. </p>
 <p>Provides a polymorphic interface for truss layout optimizers. Makes the system extendable and enforces clean separation of logic.</p>
 <p>Derived classes must implement:</p><ul>
-<li><a class="el" href="#a3728968d275d1b7058fc1f6c55a75479">solve()</a>: solve the optimization problem</li>
-<li><a class="el" href="#ad30cbc1d09566a11ad0d7759023f34f2">exportResults()</a>: output the final design (e.g., to file) </li>
+<li><a class="el" href="#a6290acf39e05c367377daced600848f3" title="Solves the optimization problem.">solve()</a>: solve the optimization problem</li>
+<li>exportResults(): output the final design (e.g., to file)</li>
 </ul>
+<p>Base class for optimization solvers. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a2fd13195e88c98cb10bec4d77fa3bdf9" name="a2fd13195e88c98cb10bec4d77fa3bdf9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2fd13195e88c98cb10bec4d77fa3bdf9">&#9670;&#160;</a></span>~BaseOptimizer()</h2>
+<a id="a6a100464423b48923114d8fc656720f8" name="a6a100464423b48923114d8fc656720f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a100464423b48923114d8fc656720f8">&#9670;&#160;</a></span>~BaseOptimizer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -159,7 +159,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel default">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -167,8 +167,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad30cbc1d09566a11ad0d7759023f34f2" name="ad30cbc1d09566a11ad0d7759023f34f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad30cbc1d09566a11ad0d7759023f34f2">&#9670;&#160;</a></span>exportResults()</h2>
+<a id="a6290acf39e05c367377daced600848f3" name="a6290acf39e05c367377daced600848f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6290acf39e05c367377daced600848f3">&#9670;&#160;</a></span>solve()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -177,34 +177,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void BaseOptimizer::exportResults </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>filename</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="class_l_p_optimizer.html#a641388191ed2e1a7d2dd4b6e457fceb5">LPOptimizer</a>.</p>
-
-</div>
-</div>
-<a id="a3728968d275d1b7058fc1f6c55a75479" name="a3728968d275d1b7058fc1f6c55a75479"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3728968d275d1b7058fc1f6c55a75479">&#9670;&#160;</a></span>solve()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void BaseOptimizer::solve </td>
+          <td class="memname">virtual <a class="el" href="class_optimization_results.html">OptimizationResults</a> BaseOptimizer::solve </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_truss_structure.html">TrussStructure</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>structure</em></span></td><td>)</td>
           <td></td>
@@ -217,7 +190,16 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_l_p_optimizer.html#a1d1bccd46340cddf54454907b60235e3">LPOptimizer</a>.</p>
+<p>Solves the optimization problem. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">structure</td><td>The truss structure to optimize. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The results of the optimization. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_l_p_optimizer.html#a203db50eec8dcbbd18a3f0d195e61974">LPOptimizer</a>.</p>
 
 </div>
 </div>

@@ -8,11 +8,11 @@
 int main() {
     std::cout << "=== Truss Arch Optimizer ===" << std::endl;
 
-    // 1. Parse input structure from JSON
+    // 1. Load structure from JSON file
     InputParser parser;
     TrussStructure structure = parser.parseFromJSON("input.json");
 
-    // 2. Solve optimization problem
+    // 2. Solve with LPOptimizer
     LPOptimizer optimizer;
     OptimizationResults results = optimizer.solve(structure);
 
@@ -22,6 +22,6 @@ int main() {
     exporter.exportToCSV(results, "results.csv");
     exporter.exportToJSON(results, "results.json");
 
-    std::cout << "Optimization complete. Results exported." << std::endl;
+    std::cout << "✅ Optimization complete. Results exported.\n";
     return 0;
 }

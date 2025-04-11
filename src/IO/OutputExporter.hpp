@@ -1,5 +1,4 @@
-#ifndef OUTPUT_EXPORTER_HPP
-#define OUTPUT_EXPORTER_HPP
+#pragma once
 
 #include <string>
 #include "../model/TrussStructure.hpp"
@@ -23,5 +22,3 @@ public:
     void exportToCSV(const OptimizationResults& results, const std::string& filepath);
     void exportToJSON(const OptimizationResults& results, const std::string& filepath);
 };
-
-#endif  OUTPUT_EXPORTER_HPP

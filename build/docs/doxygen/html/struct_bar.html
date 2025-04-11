@@ -117,7 +117,7 @@ $(function(){initNavTree('struct_bar.html',''); initResizable(true); });
 <div class="dynheader">
 Collaboration diagram for Bar:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="struct_bar__coll__graph.svg" width="96" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="struct_bar__coll__graph.svg" width="96" height="199"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -139,6 +139,15 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a81dd16a14e14530a5998be8f82e7ad43" id="r_a81dd16a14e14530a5998be8f82e7ad43"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81dd16a14e14530a5998be8f82e7ad43">length</a></td></tr>
 <tr class="memdesc:a81dd16a14e14530a5998be8f82e7ad43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of the bar.  <br /></td></tr>
 <tr class="separator:a81dd16a14e14530a5998be8f82e7ad43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66ce360ef70a2f4ad4e6b0d5450ebe39" id="r_a66ce360ef70a2f4ad4e6b0d5450ebe39"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a66ce360ef70a2f4ad4e6b0d5450ebe39">area</a></td></tr>
+<tr class="memdesc:a66ce360ef70a2f4ad4e6b0d5450ebe39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cross-sectional area.  <br /></td></tr>
+<tr class="separator:a66ce360ef70a2f4ad4e6b0d5450ebe39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f19734d476d7709237747a60adaa552" id="r_a3f19734d476d7709237747a60adaa552"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f19734d476d7709237747a60adaa552">force</a></td></tr>
+<tr class="memdesc:a3f19734d476d7709237747a60adaa552"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal force in the bar.  <br /></td></tr>
+<tr class="separator:a3f19734d476d7709237747a60adaa552"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a1dbd6b1a4aa5462e3a15d51dfe975a" id="r_a0a1dbd6b1a4aa5462e3a15d51dfe975a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a1dbd6b1a4aa5462e3a15d51dfe975a">is_active</a></td></tr>
+<tr class="memdesc:a0a1dbd6b1a4aa5462e3a15d51dfe975a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the bar is active (part of the structure)  <br /></td></tr>
+<tr class="separator:a0a1dbd6b1a4aa5462e3a15d51dfe975a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a truss bar (member) connecting two nodes. </p>
@@ -184,6 +193,38 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a66ce360ef70a2f4ad4e6b0d5450ebe39" name="a66ce360ef70a2f4ad4e6b0d5450ebe39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66ce360ef70a2f4ad4e6b0d5450ebe39">&#9670;&#160;</a></span>area</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Bar::area</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cross-sectional area. </p>
+
+</div>
+</div>
+<a id="a3f19734d476d7709237747a60adaa552" name="a3f19734d476d7709237747a60adaa552"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f19734d476d7709237747a60adaa552">&#9670;&#160;</a></span>force</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Bar::force</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Internal force in the bar. </p>
+
+</div>
+</div>
 <a id="a2d7d013caca361108d93238f7c28cff4" name="a2d7d013caca361108d93238f7c28cff4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2d7d013caca361108d93238f7c28cff4">&#9670;&#160;</a></span>id</h2>
 
@@ -197,6 +238,22 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Unique identifier. </p>
+
+</div>
+</div>
+<a id="a0a1dbd6b1a4aa5462e3a15d51dfe975a" name="a0a1dbd6b1a4aa5462e3a15d51dfe975a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a1dbd6b1a4aa5462e3a15d51dfe975a">&#9670;&#160;</a></span>is_active</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Bar::is_active</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Whether the bar is active (part of the structure) </p>
 
 </div>
 </div>

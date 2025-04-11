@@ -1,5 +1,11 @@
 var searchData=
 [
-  ['solve_0',['solve',['../class_base_optimizer.html#a3728968d275d1b7058fc1f6c55a75479',1,'BaseOptimizer::solve()'],['../class_l_p_optimizer.html#a1d1bccd46340cddf54454907b60235e3',1,'LPOptimizer::solve()']]],
-  ['solverinterface_2ehpp_1',['SolverInterface.hpp',['../_solver_interface_8hpp.html',1,'']]]
+  ['main_0',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
+  ['main_2ecpp_1',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['markactivebars_2',['markActiveBars',['../class_optimization_results.html#ac3d3477711d3cabd0af022425f614a81',1,'OptimizationResults']]],
+  ['matrixbuilder_3',['MatrixBuilder',['../class_matrix_builder.html',1,'']]],
+  ['matrixbuilder_2ecpp_4',['MatrixBuilder.cpp',['../_matrix_builder_8cpp.html',1,'']]],
+  ['matrixbuilder_2ehpp_5',['MatrixBuilder.hpp',['../_matrix_builder_8hpp.html',1,'']]],
+  ['milpoptimizer_2ecpp_6',['MILPOptimizer.cpp',['../_m_i_l_p_optimizer_8cpp.html',1,'']]],
+  ['milpoptimizer_2ehpp_7',['MILPOptimizer.hpp',['../_m_i_l_p_optimizer_8hpp.html',1,'']]]
 ];

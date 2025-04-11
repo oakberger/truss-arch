@@ -1,3 +1,3 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$struct_bar.html" title="Represents a truss bar (member) connecting two nodes." alt="" coords="5,5,47,31"/>
+<area shape="rect" id="Node000000" href="$class_arch_shape.html" title="Represents a 2D parabolic arch with thickness (arch band)." alt="" coords="5,5,91,31"/>
 </map>

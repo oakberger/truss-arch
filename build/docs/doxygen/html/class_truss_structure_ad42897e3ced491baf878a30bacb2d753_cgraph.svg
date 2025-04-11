@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_truss_structure.html#a1194ac8ed135484817d7ef12fd28f2fe" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="class_truss_structure.html#a839d77610378209e81b52cf871a8de03" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="303.5,-19.25 178,-19.25 178,0 303.5,0 303.5,-19.25"/>
 <text text-anchor="middle" x="240.75" y="-5.75" font-family="Helvetica,sans-Serif" font-size="10.00">TrussStructure::addNode</text>
 </a>

@@ -905,8 +905,11 @@ CMakeFiles/trussopt.dir/src/optimization/LPOptimizer.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/cstdarg \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__memory/temp_value.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__split_buffer \
+  /Users/maxeichenberger/Desktop/ETH\ Master/Sem\ 2/Towards\ efficient\ and\ High-Performance\ Computing\ for\ Engineers/truss-arch/src/optimization/../model/../geometry/ArchShape.hpp \
+  /Users/maxeichenberger/Desktop/ETH\ Master/Sem\ 2/Towards\ efficient\ and\ High-Performance\ Computing\ for\ Engineers/truss-arch/src/optimization/../model/../geometry/../model/Node.hpp \
   /Users/maxeichenberger/Desktop/ETH\ Master/Sem\ 2/Towards\ efficient\ and\ High-Performance\ Computing\ for\ Engineers/truss-arch/src/optimization/../model/Node.hpp \
   /Users/maxeichenberger/Desktop/ETH\ Master/Sem\ 2/Towards\ efficient\ and\ High-Performance\ Computing\ for\ Engineers/truss-arch/src/optimization/../model/Bar.hpp \
+  /Users/maxeichenberger/Desktop/ETH\ Master/Sem\ 2/Towards\ efficient\ and\ High-Performance\ Computing\ for\ Engineers/truss-arch/src/optimization/../model/OptimizationResults.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/istream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/ostream \

@@ -1,5 +1,5 @@
 <map id="BaseOptimizer" name="BaseOptimizer">
-<area shape="rect" id="Node000001" title="Abstract base class for all optimization strategies." alt="" coords="5,5,131,112"/>
-<area shape="rect" id="Node000002" href="$class_l_p_optimizer.html" title="Optimizer based on Linear Programming." alt="" coords="12,160,125,247"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="71,127,71,160,66,160,66,127"/>
+<area shape="rect" id="Node000001" title="Abstract base class for all optimization strategies." alt="" coords="5,5,131,92"/>
+<area shape="rect" id="Node000002" href="$class_l_p_optimizer.html" title="Optimizer based on Linear Programming." alt="" coords="27,140,110,206"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="71,107,71,140,66,140,66,107"/>
 </map>

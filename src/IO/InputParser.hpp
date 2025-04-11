@@ -1,13 +1,15 @@
-#ifndef INPUT_PARSER_HPP
-#define INPUT_PARSER_HPP
+#pragma once
 
 #include <string>
-#include "../core/TrussStructure.hpp"
+#include "../model/TrussStructure.hpp"
 
 /**
  * @class InputParser
  * @brief Handles reading and parsing of structural input files.
  *
+ * Not Sure if InputParser will be needed in the end. But will leave it for now,
+ * as it allows the code to be easily extended for additional functionality. 
+ * 
  * This class is responsible for constructing a TrussStructure
  * from external files such as JSON. It encapsulates all input-related logic.
  */
@@ -23,4 +25,3 @@ public:
     // TrussStructure parseFromCSV(const std::string& filepath);
 };
 
-#endif // INPUT_PARSER_HPP

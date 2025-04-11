@@ -117,19 +117,25 @@ $(function(){initNavTree('class_truss_structure.html',''); initResizable(true); 
 <div class="dynheader">
 Collaboration diagram for TrussStructure:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_truss_structure__coll__graph.svg" width="188" height="159"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_truss_structure__coll__graph.svg" width="215" height="199"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1194ac8ed135484817d7ef12fd28f2fe" id="r_a1194ac8ed135484817d7ef12fd28f2fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1194ac8ed135484817d7ef12fd28f2fe">addNode</a> (double x, double y, bool support_x=false, bool support_y=false)</td></tr>
-<tr class="separator:a1194ac8ed135484817d7ef12fd28f2fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a839d77610378209e81b52cf871a8de03" id="r_a839d77610378209e81b52cf871a8de03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a839d77610378209e81b52cf871a8de03">addNode</a> (double x, double y)</td></tr>
+<tr class="separator:a839d77610378209e81b52cf871a8de03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7173fdbd447c8307d9906f6b30d35728" id="r_a7173fdbd447c8307d9906f6b30d35728"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7173fdbd447c8307d9906f6b30d35728">addBar</a> (int start_id, int end_id)</td></tr>
 <tr class="separator:a7173fdbd447c8307d9906f6b30d35728"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad42897e3ced491baf878a30bacb2d753" id="r_ad42897e3ced491baf878a30bacb2d753"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad42897e3ced491baf878a30bacb2d753">generateGrid</a> (int rows, int cols, double spacing)</td></tr>
 <tr class="separator:ad42897e3ced491baf878a30bacb2d753"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fd6979281474df5ee6050d213532d6c" id="r_a1fd6979281474df5ee6050d213532d6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1fd6979281474df5ee6050d213532d6c">generateGroundStructure</a> (double max_length)</td></tr>
+<tr class="memdesc:a1fd6979281474df5ee6050d213532d6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates the ground structure, constrained with maximum length.  <br /></td></tr>
 <tr class="separator:a1fd6979281474df5ee6050d213532d6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae2decc1e5139fad254b20638b361300" id="r_aae2decc1e5139fad254b20638b361300"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae2decc1e5139fad254b20638b361300">generateGroundStructureArch</a> (double max_length, const <a class="el" href="class_arch_shape.html">ArchShape</a> &amp;arch)</td></tr>
+<tr class="memdesc:aae2decc1e5139fad254b20638b361300"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates the ground structure, constrained within an arch region.  <br /></td></tr>
+<tr class="separator:aae2decc1e5139fad254b20638b361300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9f6737b0f807942a1ec9a08ea78c1de" id="r_ad9f6737b0f807942a1ec9a08ea78c1de"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_node.html">Node</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9f6737b0f807942a1ec9a08ea78c1de">getNode</a> (int id) const</td></tr>
+<tr class="separator:ad9f6737b0f807942a1ec9a08ea78c1de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -170,13 +176,13 @@ Public Attributes</h2></td></tr>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_truss_structure_a7173fdbd447c8307d9906f6b30d35728_icgraph.svg" width="478" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_truss_structure_a7173fdbd447c8307d9906f6b30d35728_icgraph.svg" width="507" height="167"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
 </div>
-<a id="a1194ac8ed135484817d7ef12fd28f2fe" name="a1194ac8ed135484817d7ef12fd28f2fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1194ac8ed135484817d7ef12fd28f2fe">&#9670;&#160;</a></span>addNode()</h2>
+<a id="a839d77610378209e81b52cf871a8de03" name="a839d77610378209e81b52cf871a8de03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a839d77610378209e81b52cf871a8de03">&#9670;&#160;</a></span>addNode()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -189,24 +195,14 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>support_x</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>support_y</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_truss_structure_a1194ac8ed135484817d7ef12fd28f2fe_icgraph.svg" width="514" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_truss_structure_a839d77610378209e81b52cf871a8de03_icgraph.svg" width="518" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -239,11 +235,6 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="class_truss_structure_ad42897e3ced491baf878a30bacb2d753_cgraph.svg" width="416" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_truss_structure_ad42897e3ced491baf878a30bacb2d753_icgraph.svg" width="298" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
@@ -261,15 +252,83 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Generates the ground structure, constrained with maximum length. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">max_length</td><td>Maximum length allowed between nodes </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="class_truss_structure_a1fd6979281474df5ee6050d213532d6c_cgraph.svg" width="380" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
+
+</div>
+</div>
+<a id="aae2decc1e5139fad254b20638b361300" name="aae2decc1e5139fad254b20638b361300"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae2decc1e5139fad254b20638b361300">&#9670;&#160;</a></span>generateGroundStructureArch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TrussStructure::generateGroundStructureArch </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>max_length</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_arch_shape.html">ArchShape</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>arch</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generates the ground structure, constrained within an arch region. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">max_length</td><td>Maximum length allowed between nodes </td></tr>
+    <tr><td class="paramname">arch</td><td>Shape to constrain the bars inside </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_truss_structure_aae2decc1e5139fad254b20638b361300_cgraph.svg" width="739" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ad9f6737b0f807942a1ec9a08ea78c1de" name="ad9f6737b0f807942a1ec9a08ea78c1de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9f6737b0f807942a1ec9a08ea78c1de">&#9670;&#160;</a></span>getNode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_node.html">Node</a> &amp; TrussStructure::getNode </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>id</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_truss_structure_a1fd6979281474df5ee6050d213532d6c_icgraph.svg" width="274" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_truss_structure_ad9f6737b0f807942a1ec9a08ea78c1de_icgraph.svg" width="516" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>

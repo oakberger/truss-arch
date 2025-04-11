@@ -1,6 +1,6 @@
 var struct_node =
 [
-    [ "Node", "struct_node.html#af6a8290ce38d3d65f06c813b8ccc1299", null ],
+    [ "Node", "struct_node.html#a2d3dce5f738ae0d33ab57dde061b641c", null ],
     [ "fx", "struct_node.html#aa00fbbe7e072b818d2b4a569250bbd72", null ],
     [ "fy", "struct_node.html#a78764f6f0a99d13ff34dd3494a320ddf", null ],
     [ "id", "struct_node.html#a59a543130a10c95f1e8642cf8c5645e8", null ],

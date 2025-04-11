@@ -1,0 +1,10 @@
+<map id="ArchShape::generateArchNodes" name="ArchShape::generateArchNodes">
+<area shape="rect" id="Node000001" title="Generate nodes inside the arch band." alt="" coords="5,31,214,56"/>
+<area shape="rect" id="Node000002" href="$class_arch_shape.html#a66f89c6d982e2573febc7400bc3dce67" title="Whether a point is inside the arch band." alt="" coords="262,31,400,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="214,41,246,41,246,46,214,46"/>
+<area shape="rect" id="Node000003" href="$class_arch_shape.html#a0b51b9dba7869e777903799aba0a2eac" title="Inner arch y&#45;value at x." alt="" coords="448,5,578,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="400,31,432,27,433,32,401,36"/>
+<area shape="rect" id="Node000004" href="$class_arch_shape.html#aebeb18937926b677f68c1625d98b599d" title="Outer arch y&#45;value at x." alt="" coords="626,31,758,56"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="400,41,611,41,611,46,400,46"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="579,25,611,29,610,35,578,30"/>
+</map>

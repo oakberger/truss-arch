@@ -129,12 +129,120 @@ trussopt/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/build
 .PHONY : trussopt/fast
 
+#=============================================================================
+# Target rules for targets named trussopt_test
+
+# Build rule for target.
+trussopt_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 trussopt_test
+.PHONY : trussopt_test
+
+# fast build rule for target.
+trussopt_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/build
+.PHONY : trussopt_test/fast
+
+#=============================================================================
+# Target rules for targets named doc_doxygen
+
+# Build rule for target.
+doc_doxygen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 doc_doxygen
+.PHONY : doc_doxygen
+
+# fast build rule for target.
+doc_doxygen/fast:
+	$(MAKE) $(MAKESILENT) -f docs/CMakeFiles/doc_doxygen.dir/build.make docs/CMakeFiles/doc_doxygen.dir/build
+.PHONY : doc_doxygen/fast
+
+src/IO/InputParser.o: src/IO/InputParser.cpp.o
+.PHONY : src/IO/InputParser.o
+
+# target to build an object file
+src/IO/InputParser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/IO/InputParser.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/src/IO/InputParser.cpp.o
+.PHONY : src/IO/InputParser.cpp.o
+
+src/IO/InputParser.i: src/IO/InputParser.cpp.i
+.PHONY : src/IO/InputParser.i
+
+# target to preprocess a source file
+src/IO/InputParser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/IO/InputParser.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/src/IO/InputParser.cpp.i
+.PHONY : src/IO/InputParser.cpp.i
+
+src/IO/InputParser.s: src/IO/InputParser.cpp.s
+.PHONY : src/IO/InputParser.s
+
+# target to generate assembly for a file
+src/IO/InputParser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/IO/InputParser.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/src/IO/InputParser.cpp.s
+.PHONY : src/IO/InputParser.cpp.s
+
+src/IO/OutputExporter.o: src/IO/OutputExporter.cpp.o
+.PHONY : src/IO/OutputExporter.o
+
+# target to build an object file
+src/IO/OutputExporter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/IO/OutputExporter.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/src/IO/OutputExporter.cpp.o
+.PHONY : src/IO/OutputExporter.cpp.o
+
+src/IO/OutputExporter.i: src/IO/OutputExporter.cpp.i
+.PHONY : src/IO/OutputExporter.i
+
+# target to preprocess a source file
+src/IO/OutputExporter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/IO/OutputExporter.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/src/IO/OutputExporter.cpp.i
+.PHONY : src/IO/OutputExporter.cpp.i
+
+src/IO/OutputExporter.s: src/IO/OutputExporter.cpp.s
+.PHONY : src/IO/OutputExporter.s
+
+# target to generate assembly for a file
+src/IO/OutputExporter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/IO/OutputExporter.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/src/IO/OutputExporter.cpp.s
+.PHONY : src/IO/OutputExporter.cpp.s
+
+src/geometry/ArchShape.o: src/geometry/ArchShape.cpp.o
+.PHONY : src/geometry/ArchShape.o
+
+# target to build an object file
+src/geometry/ArchShape.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/geometry/ArchShape.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/src/geometry/ArchShape.cpp.o
+.PHONY : src/geometry/ArchShape.cpp.o
+
+src/geometry/ArchShape.i: src/geometry/ArchShape.cpp.i
+.PHONY : src/geometry/ArchShape.i
+
+# target to preprocess a source file
+src/geometry/ArchShape.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/geometry/ArchShape.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/src/geometry/ArchShape.cpp.i
+.PHONY : src/geometry/ArchShape.cpp.i
+
+src/geometry/ArchShape.s: src/geometry/ArchShape.cpp.s
+.PHONY : src/geometry/ArchShape.s
+
+# target to generate assembly for a file
+src/geometry/ArchShape.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/geometry/ArchShape.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/src/geometry/ArchShape.cpp.s
+.PHONY : src/geometry/ArchShape.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
 # target to build an object file
 src/main.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -143,6 +251,7 @@ src/main.i: src/main.cpp.i
 # target to preprocess a source file
 src/main.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -151,6 +260,7 @@ src/main.s: src/main.cpp.s
 # target to generate assembly for a file
 src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 src/model/Bar.o: src/model/Bar.cpp.o
@@ -159,6 +269,7 @@ src/model/Bar.o: src/model/Bar.cpp.o
 # target to build an object file
 src/model/Bar.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/model/Bar.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/src/model/Bar.cpp.o
 .PHONY : src/model/Bar.cpp.o
 
 src/model/Bar.i: src/model/Bar.cpp.i
@@ -167,6 +278,7 @@ src/model/Bar.i: src/model/Bar.cpp.i
 # target to preprocess a source file
 src/model/Bar.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/model/Bar.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/src/model/Bar.cpp.i
 .PHONY : src/model/Bar.cpp.i
 
 src/model/Bar.s: src/model/Bar.cpp.s
@@ -175,6 +287,7 @@ src/model/Bar.s: src/model/Bar.cpp.s
 # target to generate assembly for a file
 src/model/Bar.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/model/Bar.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/src/model/Bar.cpp.s
 .PHONY : src/model/Bar.cpp.s
 
 src/model/Node.o: src/model/Node.cpp.o
@@ -183,6 +296,7 @@ src/model/Node.o: src/model/Node.cpp.o
 # target to build an object file
 src/model/Node.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/model/Node.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/src/model/Node.cpp.o
 .PHONY : src/model/Node.cpp.o
 
 src/model/Node.i: src/model/Node.cpp.i
@@ -191,6 +305,7 @@ src/model/Node.i: src/model/Node.cpp.i
 # target to preprocess a source file
 src/model/Node.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/model/Node.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/src/model/Node.cpp.i
 .PHONY : src/model/Node.cpp.i
 
 src/model/Node.s: src/model/Node.cpp.s
@@ -199,7 +314,35 @@ src/model/Node.s: src/model/Node.cpp.s
 # target to generate assembly for a file
 src/model/Node.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/model/Node.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/src/model/Node.cpp.s
 .PHONY : src/model/Node.cpp.s
+
+src/model/OptimizationResults.o: src/model/OptimizationResults.cpp.o
+.PHONY : src/model/OptimizationResults.o
+
+# target to build an object file
+src/model/OptimizationResults.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/model/OptimizationResults.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/src/model/OptimizationResults.cpp.o
+.PHONY : src/model/OptimizationResults.cpp.o
+
+src/model/OptimizationResults.i: src/model/OptimizationResults.cpp.i
+.PHONY : src/model/OptimizationResults.i
+
+# target to preprocess a source file
+src/model/OptimizationResults.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/model/OptimizationResults.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/src/model/OptimizationResults.cpp.i
+.PHONY : src/model/OptimizationResults.cpp.i
+
+src/model/OptimizationResults.s: src/model/OptimizationResults.cpp.s
+.PHONY : src/model/OptimizationResults.s
+
+# target to generate assembly for a file
+src/model/OptimizationResults.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/model/OptimizationResults.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/src/model/OptimizationResults.cpp.s
+.PHONY : src/model/OptimizationResults.cpp.s
 
 src/model/TrussStructure.o: src/model/TrussStructure.cpp.o
 .PHONY : src/model/TrussStructure.o
@@ -207,6 +350,7 @@ src/model/TrussStructure.o: src/model/TrussStructure.cpp.o
 # target to build an object file
 src/model/TrussStructure.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/model/TrussStructure.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/src/model/TrussStructure.cpp.o
 .PHONY : src/model/TrussStructure.cpp.o
 
 src/model/TrussStructure.i: src/model/TrussStructure.cpp.i
@@ -215,6 +359,7 @@ src/model/TrussStructure.i: src/model/TrussStructure.cpp.i
 # target to preprocess a source file
 src/model/TrussStructure.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/model/TrussStructure.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/src/model/TrussStructure.cpp.i
 .PHONY : src/model/TrussStructure.cpp.i
 
 src/model/TrussStructure.s: src/model/TrussStructure.cpp.s
@@ -223,6 +368,7 @@ src/model/TrussStructure.s: src/model/TrussStructure.cpp.s
 # target to generate assembly for a file
 src/model/TrussStructure.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/model/TrussStructure.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/src/model/TrussStructure.cpp.s
 .PHONY : src/model/TrussStructure.cpp.s
 
 src/optimization/LPOptimizer.o: src/optimization/LPOptimizer.cpp.o
@@ -231,6 +377,7 @@ src/optimization/LPOptimizer.o: src/optimization/LPOptimizer.cpp.o
 # target to build an object file
 src/optimization/LPOptimizer.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/optimization/LPOptimizer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/src/optimization/LPOptimizer.cpp.o
 .PHONY : src/optimization/LPOptimizer.cpp.o
 
 src/optimization/LPOptimizer.i: src/optimization/LPOptimizer.cpp.i
@@ -239,6 +386,7 @@ src/optimization/LPOptimizer.i: src/optimization/LPOptimizer.cpp.i
 # target to preprocess a source file
 src/optimization/LPOptimizer.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/optimization/LPOptimizer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/src/optimization/LPOptimizer.cpp.i
 .PHONY : src/optimization/LPOptimizer.cpp.i
 
 src/optimization/LPOptimizer.s: src/optimization/LPOptimizer.cpp.s
@@ -247,6 +395,7 @@ src/optimization/LPOptimizer.s: src/optimization/LPOptimizer.cpp.s
 # target to generate assembly for a file
 src/optimization/LPOptimizer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/optimization/LPOptimizer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/src/optimization/LPOptimizer.cpp.s
 .PHONY : src/optimization/LPOptimizer.cpp.s
 
 src/optimization/MILPOptimizer.o: src/optimization/MILPOptimizer.cpp.o
@@ -255,6 +404,7 @@ src/optimization/MILPOptimizer.o: src/optimization/MILPOptimizer.cpp.o
 # target to build an object file
 src/optimization/MILPOptimizer.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/optimization/MILPOptimizer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/src/optimization/MILPOptimizer.cpp.o
 .PHONY : src/optimization/MILPOptimizer.cpp.o
 
 src/optimization/MILPOptimizer.i: src/optimization/MILPOptimizer.cpp.i
@@ -263,6 +413,7 @@ src/optimization/MILPOptimizer.i: src/optimization/MILPOptimizer.cpp.i
 # target to preprocess a source file
 src/optimization/MILPOptimizer.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/optimization/MILPOptimizer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/src/optimization/MILPOptimizer.cpp.i
 .PHONY : src/optimization/MILPOptimizer.cpp.i
 
 src/optimization/MILPOptimizer.s: src/optimization/MILPOptimizer.cpp.s
@@ -271,31 +422,8 @@ src/optimization/MILPOptimizer.s: src/optimization/MILPOptimizer.cpp.s
 # target to generate assembly for a file
 src/optimization/MILPOptimizer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/optimization/MILPOptimizer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/src/optimization/MILPOptimizer.cpp.s
 .PHONY : src/optimization/MILPOptimizer.cpp.s
-
-src/utils/IOUtils.o: src/utils/IOUtils.cpp.o
-.PHONY : src/utils/IOUtils.o
-
-# target to build an object file
-src/utils/IOUtils.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/utils/IOUtils.cpp.o
-.PHONY : src/utils/IOUtils.cpp.o
-
-src/utils/IOUtils.i: src/utils/IOUtils.cpp.i
-.PHONY : src/utils/IOUtils.i
-
-# target to preprocess a source file
-src/utils/IOUtils.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/utils/IOUtils.cpp.i
-.PHONY : src/utils/IOUtils.cpp.i
-
-src/utils/IOUtils.s: src/utils/IOUtils.cpp.s
-.PHONY : src/utils/IOUtils.s
-
-# target to generate assembly for a file
-src/utils/IOUtils.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/utils/IOUtils.cpp.s
-.PHONY : src/utils/IOUtils.cpp.s
 
 src/utils/MatrixBuilder.o: src/utils/MatrixBuilder.cpp.o
 .PHONY : src/utils/MatrixBuilder.o
@@ -303,6 +431,7 @@ src/utils/MatrixBuilder.o: src/utils/MatrixBuilder.cpp.o
 # target to build an object file
 src/utils/MatrixBuilder.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/utils/MatrixBuilder.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/src/utils/MatrixBuilder.cpp.o
 .PHONY : src/utils/MatrixBuilder.cpp.o
 
 src/utils/MatrixBuilder.i: src/utils/MatrixBuilder.cpp.i
@@ -311,6 +440,7 @@ src/utils/MatrixBuilder.i: src/utils/MatrixBuilder.cpp.i
 # target to preprocess a source file
 src/utils/MatrixBuilder.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/utils/MatrixBuilder.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/src/utils/MatrixBuilder.cpp.i
 .PHONY : src/utils/MatrixBuilder.cpp.i
 
 src/utils/MatrixBuilder.s: src/utils/MatrixBuilder.cpp.s
@@ -319,7 +449,32 @@ src/utils/MatrixBuilder.s: src/utils/MatrixBuilder.cpp.s
 # target to generate assembly for a file
 src/utils/MatrixBuilder.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/src/utils/MatrixBuilder.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/src/utils/MatrixBuilder.cpp.s
 .PHONY : src/utils/MatrixBuilder.cpp.s
+
+tests/main_test.o: tests/main_test.cpp.o
+.PHONY : tests/main_test.o
+
+# target to build an object file
+tests/main_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/tests/main_test.cpp.o
+.PHONY : tests/main_test.cpp.o
+
+tests/main_test.i: tests/main_test.cpp.i
+.PHONY : tests/main_test.i
+
+# target to preprocess a source file
+tests/main_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/tests/main_test.cpp.i
+.PHONY : tests/main_test.cpp.i
+
+tests/main_test.s: tests/main_test.cpp.s
+.PHONY : tests/main_test.s
+
+# target to generate assembly for a file
+tests/main_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/tests/main_test.cpp.s
+.PHONY : tests/main_test.cpp.s
 
 # Help Target
 help:
@@ -329,7 +484,18 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... doc_doxygen"
 	@echo "... trussopt"
+	@echo "... trussopt_test"
+	@echo "... src/IO/InputParser.o"
+	@echo "... src/IO/InputParser.i"
+	@echo "... src/IO/InputParser.s"
+	@echo "... src/IO/OutputExporter.o"
+	@echo "... src/IO/OutputExporter.i"
+	@echo "... src/IO/OutputExporter.s"
+	@echo "... src/geometry/ArchShape.o"
+	@echo "... src/geometry/ArchShape.i"
+	@echo "... src/geometry/ArchShape.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
@@ -339,6 +505,9 @@ help:
 	@echo "... src/model/Node.o"
 	@echo "... src/model/Node.i"
 	@echo "... src/model/Node.s"
+	@echo "... src/model/OptimizationResults.o"
+	@echo "... src/model/OptimizationResults.i"
+	@echo "... src/model/OptimizationResults.s"
 	@echo "... src/model/TrussStructure.o"
 	@echo "... src/model/TrussStructure.i"
 	@echo "... src/model/TrussStructure.s"
@@ -348,12 +517,12 @@ help:
 	@echo "... src/optimization/MILPOptimizer.o"
 	@echo "... src/optimization/MILPOptimizer.i"
 	@echo "... src/optimization/MILPOptimizer.s"
-	@echo "... src/utils/IOUtils.o"
-	@echo "... src/utils/IOUtils.i"
-	@echo "... src/utils/IOUtils.s"
 	@echo "... src/utils/MatrixBuilder.o"
 	@echo "... src/utils/MatrixBuilder.i"
 	@echo "... src/utils/MatrixBuilder.s"
+	@echo "... tests/main_test.o"
+	@echo "... tests/main_test.i"
+	@echo "... tests/main_test.s"
 .PHONY : help
 
 

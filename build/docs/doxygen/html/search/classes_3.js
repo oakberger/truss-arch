@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['matrixbuilder_0',['MatrixBuilder',['../class_matrix_builder.html',1,'']]]
+  ['lpoptimizer_0',['LPOptimizer',['../class_l_p_optimizer.html',1,'']]]
 ];
