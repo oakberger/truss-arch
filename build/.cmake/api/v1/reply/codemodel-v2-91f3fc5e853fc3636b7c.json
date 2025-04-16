@@ -6,10 +6,6 @@
 			[
 				{
 					"build" : ".",
-					"childIndexes" : 
-					[
-						1
-					],
 					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
@@ -19,23 +15,8 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						1,
-						2
-					]
-				},
-				{
-					"build" : "docs",
-					"jsonFile" : "directory-docs-Debug-c463161ff6ebad611835.json",
-					"minimumCMakeVersion" : 
-					{
-						"string" : "3.30"
-					},
-					"parentIndex" : 0,
-					"projectIndex" : 0,
-					"source" : "docs",
-					"targetIndexes" : 
-					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -45,38 +26,29 @@
 				{
 					"directoryIndexes" : 
 					[
-						0,
-						1
+						0
 					],
 					"name" : "truss_arch",
 					"targetIndexes" : 
 					[
 						0,
-						1,
-						2
+						1
 					]
 				}
 			],
 			"targets" : 
 			[
 				{
-					"directoryIndex" : 1,
-					"id" : "doc_doxygen::@25ace4044b5cefe8d37f",
-					"jsonFile" : "target-doc_doxygen-Debug-d1e89d90d762a18665d2.json",
-					"name" : "doc_doxygen",
-					"projectIndex" : 0
-				},
-				{
 					"directoryIndex" : 0,
 					"id" : "trussopt::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-trussopt-Debug-fbe1d0190e19f3b74e84.json",
+					"jsonFile" : "target-trussopt-Debug-67b34a2f85bb7978a4fc.json",
 					"name" : "trussopt",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "trussopt_test::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-trussopt_test-Debug-c120058056fad00a4935.json",
+					"jsonFile" : "target-trussopt_test-Debug-94304d57b727486445f4.json",
 					"name" : "trussopt_test",
 					"projectIndex" : 0
 				}

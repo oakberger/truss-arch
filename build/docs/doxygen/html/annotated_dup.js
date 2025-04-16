@@ -10,5 +10,6 @@ var annotated_dup =
     [ "Node", "struct_node.html", "struct_node" ],
     [ "OptimizationResults", "class_optimization_results.html", "class_optimization_results" ],
     [ "OutputExporter", "class_output_exporter.html", "class_output_exporter" ],
+    [ "SolverInterface", "class_solver_interface.html", "class_solver_interface" ],
     [ "TrussStructure", "class_truss_structure.html", "class_truss_structure" ]
 ];

@@ -11,5 +11,6 @@ var hierarchy =
     [ "Node", "struct_node.html", null ],
     [ "OptimizationResults", "class_optimization_results.html", null ],
     [ "OutputExporter", "class_output_exporter.html", null ],
+    [ "SolverInterface", "class_solver_interface.html", null ],
     [ "TrussStructure", "class_truss_structure.html", null ]
 ];

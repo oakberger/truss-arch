@@ -7,7 +7,9 @@
  * @brief Represents a 2D parabolic arch with thickness (arch band).
  *
  * Defines both an outer and inner boundary, so the truss remains
- * physically inside the arch cross-section.
+ * physically inside the arch cross-section. 
+ * Geometry can be changed later on if needed.
+ * The shape of the arch could also be calculated seperately and optimized.
  */
 class ArchShape {
 public:

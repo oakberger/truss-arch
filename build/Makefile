@@ -142,19 +142,6 @@ trussopt_test/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt_test.dir/build.make CMakeFiles/trussopt_test.dir/build
 .PHONY : trussopt_test/fast
 
-#=============================================================================
-# Target rules for targets named doc_doxygen
-
-# Build rule for target.
-doc_doxygen: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 doc_doxygen
-.PHONY : doc_doxygen
-
-# fast build rule for target.
-doc_doxygen/fast:
-	$(MAKE) $(MAKESILENT) -f docs/CMakeFiles/doc_doxygen.dir/build.make docs/CMakeFiles/doc_doxygen.dir/build
-.PHONY : doc_doxygen/fast
-
 src/IO/InputParser.o: src/IO/InputParser.cpp.o
 .PHONY : src/IO/InputParser.o
 
@@ -484,7 +471,6 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... doc_doxygen"
 	@echo "... trussopt"
 	@echo "... trussopt_test"
 	@echo "... src/IO/InputParser.o"

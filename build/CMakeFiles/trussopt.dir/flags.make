@@ -6,7 +6,7 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I"/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src" -I"/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/geometry" -I"/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/model" -I"/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/optimization" -I"/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/solvers" -I"/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/utils" -I/opt/homebrew/include -I/opt/homebrew/Cellar/eigen/3.4.0_1/include/eigen3 -isystem /opt/homebrew/include/eigen3
 
-CXX_FLAGSarm64 = -Wall -Wextra -pedantic -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk
+CXX_FLAGSarm64 = -Wall -Wextra -pedantic -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk -mmacosx-version-min=15.3
 
-CXX_FLAGS = -Wall -Wextra -pedantic -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk
+CXX_FLAGS = -Wall -Wextra -pedantic -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk -mmacosx-version-min=15.3
 

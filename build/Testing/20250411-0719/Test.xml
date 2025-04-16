@@ -6,7 +6,7 @@
 	CompilerName=""
 	CompilerVersion=""
 	OSName="macOS"
-	Hostname="student-net-cx-4066.intern.ethz.ch"
+	Hostname="student-net-hg-dock-1-d-1331.intern.ethz.ch"
 	OSRelease="15.3.2"
 	OSVersion="24D81"
 	OSPlatform="arm64"
@@ -25,11 +25,11 @@
 	ProcessorClockFrequency="0"
 	>
 	<Testing>
-		<StartDateTime>Apr 11 15:27 CEST</StartDateTime>
-		<StartTestTime>1744378047</StartTestTime>
+		<StartDateTime>Apr 11 20:12 CEST</StartDateTime>
+		<StartTestTime>1744395149</StartTestTime>
 		<TestList/>
-		<EndDateTime>Apr 11 15:27 CEST</EndDateTime>
-		<EndTestTime>1744378047</EndTestTime>
+		<EndDateTime>Apr 11 20:12 CEST</EndDateTime>
+		<EndTestTime>1744395149</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>

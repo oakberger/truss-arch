@@ -185,6 +185,7 @@ Future Work
 ######################
 
 - Actually implement the code
+- Perhaps find a sensible place to implement templated functions
 - Add support for full JSON-driven arch and GSM configuration (e.g. arch span/rise, grid resolution)
 - Implement alternative solvers (e.g., ``MILPOptimizer`` for discrete bar selection)
 - Integrate plotting libraries or output for Python-based visualization

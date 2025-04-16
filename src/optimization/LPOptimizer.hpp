@@ -33,6 +33,8 @@ class LPOptimizer : public BaseOptimizer {
  * 
  * Optimization Problem:
  * ---------------------
+ *Remark: This may be subject to change.  
+ *
  * Variables:
  *   - a[i] : Cross-sectional area of bar i (design variable, >= 0)
  *   - q[i] : Axial force in bar i (can be positive or negative)
