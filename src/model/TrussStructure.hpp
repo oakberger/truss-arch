@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include "../geometry/ArchShape.hpp"
-#include "Node.hpp"
+#include "Model.hpp"
 #include "Bar.hpp"
 
 /**
@@ -16,7 +16,7 @@
  */
 class TrussStructure {
 public:
-    std::vector<Node> nodes;  ///< All nodes in the structure
+    Model model;              ///< Struct-of-arrays storage for node data
     std::vector<Bar> bars;    ///< All bars (candidate members)
 
     void addNode(double x, double y);
@@ -34,8 +34,5 @@ public:
      */
     void generateGroundStructureArch(double max_length, const ArchShape& arch);
 
-
-    // Example accessor e.g used for exporting geometry
-    const Node& getNode(int id) const { return nodes.at(id); }
-
+    // Removed getNode() accessor because Model does not use individual Node objects
 };

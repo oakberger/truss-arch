@@ -30,15 +30,18 @@ file(GLOB_RECURSE TRUSS_SOURCES
   src/*.cpp
 )
 
-# Create executable from all sources
-add_executable(trussopt ${TRUSS_SOURCES})
-add_executable(trussopt_test tests/main_test.cpp ${TRUSS_SOURCES})
+# Build core library
+add_library(truss_core ${TRUSS_SOURCES})
+target_include_directories(truss_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
+# Example executable
+add_executable(trussopt examples/main.cpp)
+target_link_libraries(trussopt PRIVATE truss_core Eigen3::Eigen)
+
+# Test option
 option(TRUSS_TESTS "Build tests" OFF)
 
-# Add tests if the option is enabled
-option(TRUSS_TESTS "Build tests" OFF)
-
+# Test executable (if enabled below)
 if(TRUSS_TESTS)
   enable_testing()
   add_subdirectory(tests)
@@ -46,7 +49,9 @@ endif()
 
 # Find and link Eigen3
 find_package(Eigen3 REQUIRED)
-target_link_libraries(trussopt Eigen3::Eigen)
+
+include_directories(${EIGEN3_INCLUDE_DIR})
+
 
 # Find and link Doxygen
 option(TRUSS_DOC "Build Doxygen documentation" OFF)

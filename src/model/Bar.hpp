@@ -1,4 +1,6 @@
 #pragma once
+#include <utility>   
+#include "Model.hpp"
 
 /**
  * @brief Represents a truss bar (member) connecting two nodes.
@@ -22,4 +24,6 @@ struct Bar {
     bool is_active;     ///< Whether the bar is active (part of the structure)
 
     Bar(int id_, int start, int end, double length_);
+
+    std::pair<double, double> direction(const Model& model) const;
 };

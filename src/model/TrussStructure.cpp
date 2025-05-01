@@ -2,12 +2,12 @@
 #include <cmath>
 
 void TrussStructure::addNode(double x, double y) {
-    nodes.emplace_back(nodes.size(), x, y);
+    model.addNode(x, y);
 }
 
 void TrussStructure::addBar(int start_id, int end_id) {
-    double dx = nodes[end_id].x - nodes[start_id].x;
-    double dy = nodes[end_id].y - nodes[start_id].y;
+    double dx = model.x_coords[end_id] - model.x_coords[start_id];
+    double dy = model.y_coords[end_id] - model.y_coords[start_id];
     double len = std::sqrt(dx*dx + dy*dy);
     bars.emplace_back(bars.size(), start_id, end_id, len);
 }
@@ -21,10 +21,10 @@ void TrussStructure::generateGrid(int rows, int cols, double spacing) {
 }
 
 void TrussStructure::generateGroundStructure(double max_length) {
-    for (std::size_t i = 0; i < nodes.size(); ++i) {
-        for (std::size_t j = i + 1; j < nodes.size(); ++j) {
-            double dx = nodes[j].x - nodes[i].x;
-            double dy = nodes[j].y - nodes[i].y;
+    for (std::size_t i = 0; i < model.x_coords.size(); ++i) {
+        for (std::size_t j = i + 1; j < model.x_coords.size(); ++j) {
+            double dx = model.x_coords[j] - model.x_coords[i];
+            double dy = model.y_coords[j] - model.y_coords[i];
             double dist = std::sqrt(dx*dx + dy*dy);
             if (dist <= max_length) {
                 addBar(i, j);
@@ -34,15 +34,15 @@ void TrussStructure::generateGroundStructure(double max_length) {
 }
 
 void TrussStructure::generateGroundStructureArch(double max_length, const ArchShape& arch) {
-    for (std::size_t i = 0; i < nodes.size(); ++i) {
-        for (std::size_t j = i + 1; j < nodes.size(); ++j) {
-            double dx = nodes[j].x - nodes[i].x;
-            double dy = nodes[j].y - nodes[i].y;
+    for (std::size_t i = 0; i < model.x_coords.size(); ++i) {
+        for (std::size_t j = i + 1; j < model.x_coords.size(); ++j) {
+            double dx = model.x_coords[j] - model.x_coords[i];
+            double dy = model.y_coords[j] - model.y_coords[i];
             double dist = std::sqrt(dx * dx + dy * dy);
 
             if (dist <= max_length &&
-                arch.isInside(nodes[i].x, nodes[i].y) &&
-                arch.isInside(nodes[j].x, nodes[j].y)) {
+                arch.isInside(model.x_coords[i], model.y_coords[i]) &&
+                arch.isInside(model.x_coords[j], model.y_coords[j])) {
                 addBar(i, j);
             }
         }

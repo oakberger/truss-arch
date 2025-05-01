@@ -72,191 +72,32 @@ include CMakeFiles/trussopt.dir/flags.make
 CMakeFiles/trussopt.dir/codegen:
 .PHONY : CMakeFiles/trussopt.dir/codegen
 
-CMakeFiles/trussopt.dir/src/IO/InputParser.cpp.o: CMakeFiles/trussopt.dir/flags.make
-CMakeFiles/trussopt.dir/src/IO/InputParser.cpp.o: /Users/maxeichenberger/Desktop/ETH\ Master/Sem\ 2/Towards\ efficient\ and\ High-Performance\ Computing\ for\ Engineers/truss-arch/src/IO/InputParser.cpp
-CMakeFiles/trussopt.dir/src/IO/InputParser.cpp.o: CMakeFiles/trussopt.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/trussopt.dir/src/IO/InputParser.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/trussopt.dir/src/IO/InputParser.cpp.o -MF CMakeFiles/trussopt.dir/src/IO/InputParser.cpp.o.d -o CMakeFiles/trussopt.dir/src/IO/InputParser.cpp.o -c "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/IO/InputParser.cpp"
+CMakeFiles/trussopt.dir/examples/main.cpp.o: CMakeFiles/trussopt.dir/flags.make
+CMakeFiles/trussopt.dir/examples/main.cpp.o: /Users/maxeichenberger/Desktop/ETH\ Master/Sem\ 2/Towards\ efficient\ and\ High-Performance\ Computing\ for\ Engineers/truss-arch/examples/main.cpp
+CMakeFiles/trussopt.dir/examples/main.cpp.o: CMakeFiles/trussopt.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/trussopt.dir/examples/main.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/trussopt.dir/examples/main.cpp.o -MF CMakeFiles/trussopt.dir/examples/main.cpp.o.d -o CMakeFiles/trussopt.dir/examples/main.cpp.o -c "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/examples/main.cpp"
 
-CMakeFiles/trussopt.dir/src/IO/InputParser.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/trussopt.dir/src/IO/InputParser.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/IO/InputParser.cpp" > CMakeFiles/trussopt.dir/src/IO/InputParser.cpp.i
+CMakeFiles/trussopt.dir/examples/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/trussopt.dir/examples/main.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/examples/main.cpp" > CMakeFiles/trussopt.dir/examples/main.cpp.i
 
-CMakeFiles/trussopt.dir/src/IO/InputParser.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/trussopt.dir/src/IO/InputParser.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/IO/InputParser.cpp" -o CMakeFiles/trussopt.dir/src/IO/InputParser.cpp.s
-
-CMakeFiles/trussopt.dir/src/IO/OutputExporter.cpp.o: CMakeFiles/trussopt.dir/flags.make
-CMakeFiles/trussopt.dir/src/IO/OutputExporter.cpp.o: /Users/maxeichenberger/Desktop/ETH\ Master/Sem\ 2/Towards\ efficient\ and\ High-Performance\ Computing\ for\ Engineers/truss-arch/src/IO/OutputExporter.cpp
-CMakeFiles/trussopt.dir/src/IO/OutputExporter.cpp.o: CMakeFiles/trussopt.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/trussopt.dir/src/IO/OutputExporter.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/trussopt.dir/src/IO/OutputExporter.cpp.o -MF CMakeFiles/trussopt.dir/src/IO/OutputExporter.cpp.o.d -o CMakeFiles/trussopt.dir/src/IO/OutputExporter.cpp.o -c "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/IO/OutputExporter.cpp"
-
-CMakeFiles/trussopt.dir/src/IO/OutputExporter.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/trussopt.dir/src/IO/OutputExporter.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/IO/OutputExporter.cpp" > CMakeFiles/trussopt.dir/src/IO/OutputExporter.cpp.i
-
-CMakeFiles/trussopt.dir/src/IO/OutputExporter.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/trussopt.dir/src/IO/OutputExporter.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/IO/OutputExporter.cpp" -o CMakeFiles/trussopt.dir/src/IO/OutputExporter.cpp.s
-
-CMakeFiles/trussopt.dir/src/geometry/ArchShape.cpp.o: CMakeFiles/trussopt.dir/flags.make
-CMakeFiles/trussopt.dir/src/geometry/ArchShape.cpp.o: /Users/maxeichenberger/Desktop/ETH\ Master/Sem\ 2/Towards\ efficient\ and\ High-Performance\ Computing\ for\ Engineers/truss-arch/src/geometry/ArchShape.cpp
-CMakeFiles/trussopt.dir/src/geometry/ArchShape.cpp.o: CMakeFiles/trussopt.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/trussopt.dir/src/geometry/ArchShape.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/trussopt.dir/src/geometry/ArchShape.cpp.o -MF CMakeFiles/trussopt.dir/src/geometry/ArchShape.cpp.o.d -o CMakeFiles/trussopt.dir/src/geometry/ArchShape.cpp.o -c "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/geometry/ArchShape.cpp"
-
-CMakeFiles/trussopt.dir/src/geometry/ArchShape.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/trussopt.dir/src/geometry/ArchShape.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/geometry/ArchShape.cpp" > CMakeFiles/trussopt.dir/src/geometry/ArchShape.cpp.i
-
-CMakeFiles/trussopt.dir/src/geometry/ArchShape.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/trussopt.dir/src/geometry/ArchShape.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/geometry/ArchShape.cpp" -o CMakeFiles/trussopt.dir/src/geometry/ArchShape.cpp.s
-
-CMakeFiles/trussopt.dir/src/main.cpp.o: CMakeFiles/trussopt.dir/flags.make
-CMakeFiles/trussopt.dir/src/main.cpp.o: /Users/maxeichenberger/Desktop/ETH\ Master/Sem\ 2/Towards\ efficient\ and\ High-Performance\ Computing\ for\ Engineers/truss-arch/src/main.cpp
-CMakeFiles/trussopt.dir/src/main.cpp.o: CMakeFiles/trussopt.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/trussopt.dir/src/main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/trussopt.dir/src/main.cpp.o -MF CMakeFiles/trussopt.dir/src/main.cpp.o.d -o CMakeFiles/trussopt.dir/src/main.cpp.o -c "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/main.cpp"
-
-CMakeFiles/trussopt.dir/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/trussopt.dir/src/main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/main.cpp" > CMakeFiles/trussopt.dir/src/main.cpp.i
-
-CMakeFiles/trussopt.dir/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/trussopt.dir/src/main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/main.cpp" -o CMakeFiles/trussopt.dir/src/main.cpp.s
-
-CMakeFiles/trussopt.dir/src/model/Bar.cpp.o: CMakeFiles/trussopt.dir/flags.make
-CMakeFiles/trussopt.dir/src/model/Bar.cpp.o: /Users/maxeichenberger/Desktop/ETH\ Master/Sem\ 2/Towards\ efficient\ and\ High-Performance\ Computing\ for\ Engineers/truss-arch/src/model/Bar.cpp
-CMakeFiles/trussopt.dir/src/model/Bar.cpp.o: CMakeFiles/trussopt.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/trussopt.dir/src/model/Bar.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/trussopt.dir/src/model/Bar.cpp.o -MF CMakeFiles/trussopt.dir/src/model/Bar.cpp.o.d -o CMakeFiles/trussopt.dir/src/model/Bar.cpp.o -c "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/model/Bar.cpp"
-
-CMakeFiles/trussopt.dir/src/model/Bar.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/trussopt.dir/src/model/Bar.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/model/Bar.cpp" > CMakeFiles/trussopt.dir/src/model/Bar.cpp.i
-
-CMakeFiles/trussopt.dir/src/model/Bar.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/trussopt.dir/src/model/Bar.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/model/Bar.cpp" -o CMakeFiles/trussopt.dir/src/model/Bar.cpp.s
-
-CMakeFiles/trussopt.dir/src/model/Node.cpp.o: CMakeFiles/trussopt.dir/flags.make
-CMakeFiles/trussopt.dir/src/model/Node.cpp.o: /Users/maxeichenberger/Desktop/ETH\ Master/Sem\ 2/Towards\ efficient\ and\ High-Performance\ Computing\ for\ Engineers/truss-arch/src/model/Node.cpp
-CMakeFiles/trussopt.dir/src/model/Node.cpp.o: CMakeFiles/trussopt.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/trussopt.dir/src/model/Node.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/trussopt.dir/src/model/Node.cpp.o -MF CMakeFiles/trussopt.dir/src/model/Node.cpp.o.d -o CMakeFiles/trussopt.dir/src/model/Node.cpp.o -c "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/model/Node.cpp"
-
-CMakeFiles/trussopt.dir/src/model/Node.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/trussopt.dir/src/model/Node.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/model/Node.cpp" > CMakeFiles/trussopt.dir/src/model/Node.cpp.i
-
-CMakeFiles/trussopt.dir/src/model/Node.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/trussopt.dir/src/model/Node.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/model/Node.cpp" -o CMakeFiles/trussopt.dir/src/model/Node.cpp.s
-
-CMakeFiles/trussopt.dir/src/model/OptimizationResults.cpp.o: CMakeFiles/trussopt.dir/flags.make
-CMakeFiles/trussopt.dir/src/model/OptimizationResults.cpp.o: /Users/maxeichenberger/Desktop/ETH\ Master/Sem\ 2/Towards\ efficient\ and\ High-Performance\ Computing\ for\ Engineers/truss-arch/src/model/OptimizationResults.cpp
-CMakeFiles/trussopt.dir/src/model/OptimizationResults.cpp.o: CMakeFiles/trussopt.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/trussopt.dir/src/model/OptimizationResults.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/trussopt.dir/src/model/OptimizationResults.cpp.o -MF CMakeFiles/trussopt.dir/src/model/OptimizationResults.cpp.o.d -o CMakeFiles/trussopt.dir/src/model/OptimizationResults.cpp.o -c "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/model/OptimizationResults.cpp"
-
-CMakeFiles/trussopt.dir/src/model/OptimizationResults.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/trussopt.dir/src/model/OptimizationResults.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/model/OptimizationResults.cpp" > CMakeFiles/trussopt.dir/src/model/OptimizationResults.cpp.i
-
-CMakeFiles/trussopt.dir/src/model/OptimizationResults.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/trussopt.dir/src/model/OptimizationResults.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/model/OptimizationResults.cpp" -o CMakeFiles/trussopt.dir/src/model/OptimizationResults.cpp.s
-
-CMakeFiles/trussopt.dir/src/model/TrussStructure.cpp.o: CMakeFiles/trussopt.dir/flags.make
-CMakeFiles/trussopt.dir/src/model/TrussStructure.cpp.o: /Users/maxeichenberger/Desktop/ETH\ Master/Sem\ 2/Towards\ efficient\ and\ High-Performance\ Computing\ for\ Engineers/truss-arch/src/model/TrussStructure.cpp
-CMakeFiles/trussopt.dir/src/model/TrussStructure.cpp.o: CMakeFiles/trussopt.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/trussopt.dir/src/model/TrussStructure.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/trussopt.dir/src/model/TrussStructure.cpp.o -MF CMakeFiles/trussopt.dir/src/model/TrussStructure.cpp.o.d -o CMakeFiles/trussopt.dir/src/model/TrussStructure.cpp.o -c "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/model/TrussStructure.cpp"
-
-CMakeFiles/trussopt.dir/src/model/TrussStructure.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/trussopt.dir/src/model/TrussStructure.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/model/TrussStructure.cpp" > CMakeFiles/trussopt.dir/src/model/TrussStructure.cpp.i
-
-CMakeFiles/trussopt.dir/src/model/TrussStructure.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/trussopt.dir/src/model/TrussStructure.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/model/TrussStructure.cpp" -o CMakeFiles/trussopt.dir/src/model/TrussStructure.cpp.s
-
-CMakeFiles/trussopt.dir/src/optimization/LPOptimizer.cpp.o: CMakeFiles/trussopt.dir/flags.make
-CMakeFiles/trussopt.dir/src/optimization/LPOptimizer.cpp.o: /Users/maxeichenberger/Desktop/ETH\ Master/Sem\ 2/Towards\ efficient\ and\ High-Performance\ Computing\ for\ Engineers/truss-arch/src/optimization/LPOptimizer.cpp
-CMakeFiles/trussopt.dir/src/optimization/LPOptimizer.cpp.o: CMakeFiles/trussopt.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/trussopt.dir/src/optimization/LPOptimizer.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/trussopt.dir/src/optimization/LPOptimizer.cpp.o -MF CMakeFiles/trussopt.dir/src/optimization/LPOptimizer.cpp.o.d -o CMakeFiles/trussopt.dir/src/optimization/LPOptimizer.cpp.o -c "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/optimization/LPOptimizer.cpp"
-
-CMakeFiles/trussopt.dir/src/optimization/LPOptimizer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/trussopt.dir/src/optimization/LPOptimizer.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/optimization/LPOptimizer.cpp" > CMakeFiles/trussopt.dir/src/optimization/LPOptimizer.cpp.i
-
-CMakeFiles/trussopt.dir/src/optimization/LPOptimizer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/trussopt.dir/src/optimization/LPOptimizer.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/optimization/LPOptimizer.cpp" -o CMakeFiles/trussopt.dir/src/optimization/LPOptimizer.cpp.s
-
-CMakeFiles/trussopt.dir/src/optimization/MILPOptimizer.cpp.o: CMakeFiles/trussopt.dir/flags.make
-CMakeFiles/trussopt.dir/src/optimization/MILPOptimizer.cpp.o: /Users/maxeichenberger/Desktop/ETH\ Master/Sem\ 2/Towards\ efficient\ and\ High-Performance\ Computing\ for\ Engineers/truss-arch/src/optimization/MILPOptimizer.cpp
-CMakeFiles/trussopt.dir/src/optimization/MILPOptimizer.cpp.o: CMakeFiles/trussopt.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/trussopt.dir/src/optimization/MILPOptimizer.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/trussopt.dir/src/optimization/MILPOptimizer.cpp.o -MF CMakeFiles/trussopt.dir/src/optimization/MILPOptimizer.cpp.o.d -o CMakeFiles/trussopt.dir/src/optimization/MILPOptimizer.cpp.o -c "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/optimization/MILPOptimizer.cpp"
-
-CMakeFiles/trussopt.dir/src/optimization/MILPOptimizer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/trussopt.dir/src/optimization/MILPOptimizer.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/optimization/MILPOptimizer.cpp" > CMakeFiles/trussopt.dir/src/optimization/MILPOptimizer.cpp.i
-
-CMakeFiles/trussopt.dir/src/optimization/MILPOptimizer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/trussopt.dir/src/optimization/MILPOptimizer.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/optimization/MILPOptimizer.cpp" -o CMakeFiles/trussopt.dir/src/optimization/MILPOptimizer.cpp.s
-
-CMakeFiles/trussopt.dir/src/utils/MatrixBuilder.cpp.o: CMakeFiles/trussopt.dir/flags.make
-CMakeFiles/trussopt.dir/src/utils/MatrixBuilder.cpp.o: /Users/maxeichenberger/Desktop/ETH\ Master/Sem\ 2/Towards\ efficient\ and\ High-Performance\ Computing\ for\ Engineers/truss-arch/src/utils/MatrixBuilder.cpp
-CMakeFiles/trussopt.dir/src/utils/MatrixBuilder.cpp.o: CMakeFiles/trussopt.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/trussopt.dir/src/utils/MatrixBuilder.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/trussopt.dir/src/utils/MatrixBuilder.cpp.o -MF CMakeFiles/trussopt.dir/src/utils/MatrixBuilder.cpp.o.d -o CMakeFiles/trussopt.dir/src/utils/MatrixBuilder.cpp.o -c "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/utils/MatrixBuilder.cpp"
-
-CMakeFiles/trussopt.dir/src/utils/MatrixBuilder.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/trussopt.dir/src/utils/MatrixBuilder.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/utils/MatrixBuilder.cpp" > CMakeFiles/trussopt.dir/src/utils/MatrixBuilder.cpp.i
-
-CMakeFiles/trussopt.dir/src/utils/MatrixBuilder.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/trussopt.dir/src/utils/MatrixBuilder.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/src/utils/MatrixBuilder.cpp" -o CMakeFiles/trussopt.dir/src/utils/MatrixBuilder.cpp.s
+CMakeFiles/trussopt.dir/examples/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/trussopt.dir/examples/main.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/examples/main.cpp" -o CMakeFiles/trussopt.dir/examples/main.cpp.s
 
 # Object files for target trussopt
 trussopt_OBJECTS = \
-"CMakeFiles/trussopt.dir/src/IO/InputParser.cpp.o" \
-"CMakeFiles/trussopt.dir/src/IO/OutputExporter.cpp.o" \
-"CMakeFiles/trussopt.dir/src/geometry/ArchShape.cpp.o" \
-"CMakeFiles/trussopt.dir/src/main.cpp.o" \
-"CMakeFiles/trussopt.dir/src/model/Bar.cpp.o" \
-"CMakeFiles/trussopt.dir/src/model/Node.cpp.o" \
-"CMakeFiles/trussopt.dir/src/model/OptimizationResults.cpp.o" \
-"CMakeFiles/trussopt.dir/src/model/TrussStructure.cpp.o" \
-"CMakeFiles/trussopt.dir/src/optimization/LPOptimizer.cpp.o" \
-"CMakeFiles/trussopt.dir/src/optimization/MILPOptimizer.cpp.o" \
-"CMakeFiles/trussopt.dir/src/utils/MatrixBuilder.cpp.o"
+"CMakeFiles/trussopt.dir/examples/main.cpp.o"
 
 # External object files for target trussopt
 trussopt_EXTERNAL_OBJECTS =
 
-trussopt: CMakeFiles/trussopt.dir/src/IO/InputParser.cpp.o
-trussopt: CMakeFiles/trussopt.dir/src/IO/OutputExporter.cpp.o
-trussopt: CMakeFiles/trussopt.dir/src/geometry/ArchShape.cpp.o
-trussopt: CMakeFiles/trussopt.dir/src/main.cpp.o
-trussopt: CMakeFiles/trussopt.dir/src/model/Bar.cpp.o
-trussopt: CMakeFiles/trussopt.dir/src/model/Node.cpp.o
-trussopt: CMakeFiles/trussopt.dir/src/model/OptimizationResults.cpp.o
-trussopt: CMakeFiles/trussopt.dir/src/model/TrussStructure.cpp.o
-trussopt: CMakeFiles/trussopt.dir/src/optimization/LPOptimizer.cpp.o
-trussopt: CMakeFiles/trussopt.dir/src/optimization/MILPOptimizer.cpp.o
-trussopt: CMakeFiles/trussopt.dir/src/utils/MatrixBuilder.cpp.o
+trussopt: CMakeFiles/trussopt.dir/examples/main.cpp.o
 trussopt: CMakeFiles/trussopt.dir/build.make
+trussopt: libtruss_core.a
 trussopt: CMakeFiles/trussopt.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable trussopt"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable trussopt"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/trussopt.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

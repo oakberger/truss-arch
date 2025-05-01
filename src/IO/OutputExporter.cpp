@@ -1,6 +1,7 @@
 #include "OutputExporter.hpp"
 #include <fstream>
 #include <nlohmann/json.hpp>
+#include <iostream>
 
 using json = nlohmann::json;
 
@@ -10,11 +11,14 @@ void OutputExporter::exportToSVG(const TrussStructure& truss, const std::string&
     // Very simple SVG header
     file << "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1000\" height=\"1000\">\n";
 
+    const auto& model = truss.model;
     for (const auto& bar : truss.bars) {
-        const auto& n1 = truss.getNode(bar.node_start);
-        const auto& n2 = truss.getNode(bar.node_end);
-        file << "<line x1=\"" << n1.x << "\" y1=\"" << n1.y
-             << "\" x2=\"" << n2.x << "\" y2=\"" << n2.y
+        double x1 = model.x_coords[bar.node_start];
+        double y1 = model.y_coords[bar.node_start];
+        double x2 = model.x_coords[bar.node_end];
+        double y2 = model.y_coords[bar.node_end];
+        file << "<line x1=\"" << x1 << "\" y1=\"" << y1
+             << "\" x2=\"" << x2 << "\" y2=\"" << y2
              << "\" stroke=\"black\" />\n";
     }
 
@@ -24,14 +28,14 @@ void OutputExporter::exportToSVG(const TrussStructure& truss, const std::string&
 void OutputExporter::exportToCSV(const OptimizationResults& results, const std::string& filepath) {
     std::ofstream file(filepath);
     file << "BarID,Force,Length\n";
-    for (const auto& entry : results.bar_forces) {
+    for (const auto& entry : results.entries) {
         file << entry.bar_id << "," << entry.force << "," << entry.length << "\n";
     }
 }
 
 void OutputExporter::exportToJSON(const OptimizationResults& results, const std::string& filepath) {
     json j;
-    for (const auto& entry : results.bar_forces) {
+    for (const auto& entry : results.entries) {
         j["bars"].push_back({
             {"id", entry.bar_id},
             {"force", entry.force},
@@ -41,4 +45,17 @@ void OutputExporter::exportToJSON(const OptimizationResults& results, const std:
 
     std::ofstream file(filepath);
     file << j.dump(2);  // pretty print
+}
+
+void OutputExporter::printToConsole(const OptimizationResults& results) {
+    std::cout << "\n[Results] Active Bars:\n";
+    for (const auto& entry : results.entries) {
+        if (entry.is_active) {
+            std::cout << "Bar ID " << entry.bar_id
+                      << " | Force = " << entry.force
+                      << " | Length = " << entry.length
+                      << "\n";
+        }
+    }
+    std::cout << "Total Volume: " << results.total_volume << "\n";
 }
