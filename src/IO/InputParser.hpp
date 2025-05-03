@@ -24,4 +24,3 @@ public:
     // Optionally: parse from CSV or custom formats
     // TrussStructure parseFromCSV(const std::string& filepath);
 };
-

@@ -19,7 +19,7 @@ public:
     Model model;              ///< Struct-of-arrays storage for node data
     std::vector<Bar> bars;    ///< All bars (candidate members)
 
-    void addNode(double x, double y);
+    size_t addNode(double x, double y);
     void addBar(int start_id, int end_id);
     void generateGrid(int rows, int cols, double spacing);
     /**

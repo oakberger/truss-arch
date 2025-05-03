@@ -1,5 +1,3 @@
-
-
 #pragma once
 #include <vector>
 
@@ -18,7 +16,10 @@ public:
     std::vector<double> load_y;
 
     // Add a node and return its index
-    size_t addNode(double x, double y, bool fixed_x, bool fixed_y, double fx = 0.0, double fy = 0.0);
+    size_t addNode(double x, double y);
+
+    void fixNode(size_t id, bool fix_x, bool fix_y);
+    void setLoad(size_t id, double fx, double fy);
 
     // Number of nodes
     size_t nodeCount() const {

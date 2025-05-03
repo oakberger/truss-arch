@@ -21,5 +21,5 @@ public:
     void exportToSVG(const TrussStructure& truss, const std::string& filepath);
     void exportToCSV(const OptimizationResults& results, const std::string& filepath);
     void exportToJSON(const OptimizationResults& results, const std::string& filepath);
-    void printToConsole(const OptimizationResults& results);
+    static void printToConsole(const OptimizationResults& results);
 };

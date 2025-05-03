@@ -142,6 +142,19 @@ trussopt/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/build
 .PHONY : trussopt/fast
 
+#=============================================================================
+# Target rules for targets named basic_gsm_example
+
+# Build rule for target.
+basic_gsm_example: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 basic_gsm_example
+.PHONY : basic_gsm_example
+
+# fast build rule for target.
+basic_gsm_example/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic_gsm_example.dir/build.make CMakeFiles/basic_gsm_example.dir/build
+.PHONY : basic_gsm_example/fast
+
 examples/main.o: examples/main.cpp.o
 .PHONY : examples/main.o
 
@@ -430,6 +443,30 @@ src/utils/MatrixBuilder.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/truss_core.dir/build.make CMakeFiles/truss_core.dir/src/utils/MatrixBuilder.cpp.s
 .PHONY : src/utils/MatrixBuilder.cpp.s
 
+tests/basic_gsm_example.o: tests/basic_gsm_example.cpp.o
+.PHONY : tests/basic_gsm_example.o
+
+# target to build an object file
+tests/basic_gsm_example.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic_gsm_example.dir/build.make CMakeFiles/basic_gsm_example.dir/tests/basic_gsm_example.cpp.o
+.PHONY : tests/basic_gsm_example.cpp.o
+
+tests/basic_gsm_example.i: tests/basic_gsm_example.cpp.i
+.PHONY : tests/basic_gsm_example.i
+
+# target to preprocess a source file
+tests/basic_gsm_example.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic_gsm_example.dir/build.make CMakeFiles/basic_gsm_example.dir/tests/basic_gsm_example.cpp.i
+.PHONY : tests/basic_gsm_example.cpp.i
+
+tests/basic_gsm_example.s: tests/basic_gsm_example.cpp.s
+.PHONY : tests/basic_gsm_example.s
+
+# target to generate assembly for a file
+tests/basic_gsm_example.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic_gsm_example.dir/build.make CMakeFiles/basic_gsm_example.dir/tests/basic_gsm_example.cpp.s
+.PHONY : tests/basic_gsm_example.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -438,6 +475,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... basic_gsm_example"
 	@echo "... truss_core"
 	@echo "... trussopt"
 	@echo "... examples/main.o"
@@ -476,6 +514,9 @@ help:
 	@echo "... src/utils/MatrixBuilder.o"
 	@echo "... src/utils/MatrixBuilder.i"
 	@echo "... src/utils/MatrixBuilder.s"
+	@echo "... tests/basic_gsm_example.o"
+	@echo "... tests/basic_gsm_example.i"
+	@echo "... tests/basic_gsm_example.s"
 .PHONY : help
 
 

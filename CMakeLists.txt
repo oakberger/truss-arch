@@ -1,61 +1,62 @@
-cmake_minimum_required(VERSION 3.30)
+cmake_minimum_required(VERSION 3.16)  # 3.30 is non-standard; use stable version
 project(truss_arch)
 enable_language(CXX)
 
-# Compiler flags
+# Compiler settings
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_FLAGS "-Wall -Wextra -pedantic" CACHE STRING "" FORCE)
-set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG" CACHE STRING "" FORCE)
+set(CMAKE_CXX_FLAGS "-Wall -Wextra -pedantic")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG")
 
-# Build type
+# Set default build type if not specified
 if(NOT CMAKE_BUILD_TYPE)
-  set(CMAKE_BUILD_TYPE "Release" CACHE STRING
-    "Choose the type of build: None Debug Release RelWithDebInfo MinSizeRel.")
+  set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Choose the type of build." FORCE)
 endif()
 
-# Include directories
+# Find and link Eigen3 first
+find_package(Eigen3 REQUIRED)
+include_directories(${EIGEN3_INCLUDE_DIR})
+
+find_package(nlohmann_json REQUIRED)
+
+# Find and link GLPK
+include_directories(/opt/homebrew/Cellar/glpk/5.0/include)
+link_directories(/opt/homebrew/Cellar/glpk/5.0/lib)
+
+# Project source includes
 include_directories(
-  "${CMAKE_CURRENT_SOURCE_DIR}/src"
-  "${CMAKE_CURRENT_SOURCE_DIR}/src/geometry"
-  "${CMAKE_CURRENT_SOURCE_DIR}/src/model"
-  "${CMAKE_CURRENT_SOURCE_DIR}/src/optimization"
-  "${CMAKE_CURRENT_SOURCE_DIR}/src/solvers"
-  "${CMAKE_CURRENT_SOURCE_DIR}/src/utils"
-  "/opt/homebrew/include"
-  "/opt/homebrew/Cellar/eigen/3.4.0_1/include/eigen3"
+  ${CMAKE_CURRENT_SOURCE_DIR}/src
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/geometry
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/model
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/optimization
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/solvers
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/utils
 )
 
-# Gather all source files recursively
-file(GLOB_RECURSE TRUSS_SOURCES
-  src/*.cpp
-)
+# Source files
+file(GLOB_RECURSE TRUSS_SOURCES src/*.cpp)
 
-# Build core library
+# Core library
 add_library(truss_core ${TRUSS_SOURCES})
-target_include_directories(truss_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
+target_link_libraries(truss_core PRIVATE ${GLPK_LIBRARIES})
+target_link_libraries(truss_core PRIVATE glpk)
+target_link_libraries(truss_core PRIVATE nlohmann_json::nlohmann_json)
 
-# Example executable
+# Main example executable
 add_executable(trussopt examples/main.cpp)
 target_link_libraries(trussopt PRIVATE truss_core Eigen3::Eigen)
 
-# Test option
-option(TRUSS_TESTS "Build tests" OFF)
+add_executable(basic_gsm_example tests/basic_gsm_example.cpp)
+target_link_libraries(basic_gsm_example PRIVATE truss_core Eigen3::Eigen)
 
-# Test executable (if enabled below)
+# Testing support
+option(TRUSS_TESTS "Build tests" OFF)
 if(TRUSS_TESTS)
   enable_testing()
   add_subdirectory(tests)
 endif()
 
-# Find and link Eigen3
-find_package(Eigen3 REQUIRED)
-
-include_directories(${EIGEN3_INCLUDE_DIR})
-
-
-# Find and link Doxygen
+# Optional Doxygen docs
 option(TRUSS_DOC "Build Doxygen documentation" OFF)
-
 if(TRUSS_DOC)
   find_package(Doxygen REQUIRED)
   add_subdirectory(docs)

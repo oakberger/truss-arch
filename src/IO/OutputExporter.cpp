@@ -28,14 +28,14 @@ void OutputExporter::exportToSVG(const TrussStructure& truss, const std::string&
 void OutputExporter::exportToCSV(const OptimizationResults& results, const std::string& filepath) {
     std::ofstream file(filepath);
     file << "BarID,Force,Length\n";
-    for (const auto& entry : results.entries) {
+    for (const auto& entry : results.bar_forces) {
         file << entry.bar_id << "," << entry.force << "," << entry.length << "\n";
     }
 }
 
 void OutputExporter::exportToJSON(const OptimizationResults& results, const std::string& filepath) {
     json j;
-    for (const auto& entry : results.entries) {
+    for (const auto& entry : results.bar_forces) {
         j["bars"].push_back({
             {"id", entry.bar_id},
             {"force", entry.force},
@@ -49,7 +49,7 @@ void OutputExporter::exportToJSON(const OptimizationResults& results, const std:
 
 void OutputExporter::printToConsole(const OptimizationResults& results) {
     std::cout << "\n[Results] Active Bars:\n";
-    for (const auto& entry : results.entries) {
+    for (const auto& entry : results.bar_forces) {
         if (entry.is_active) {
             std::cout << "Bar ID " << entry.bar_id
                       << " | Force = " << entry.force

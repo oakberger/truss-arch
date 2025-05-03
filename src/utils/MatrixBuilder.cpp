@@ -13,8 +13,8 @@ void MatrixBuilder::buildEquilibriumMatrix(const TrussStructure& structure, Eige
     b = Eigen::VectorXd::Zero(2 * num_nodes);
 
     for (size_t j = 0; j < num_bars; ++j) {
-        int i = bars[j].start_node;
-        int k = bars[j].end_node;
+        int i = bars[j].node_start;
+        int k = bars[j].node_end;
 
         double dx = model.x_coords[k] - model.x_coords[i];
         double dy = model.y_coords[k] - model.y_coords[i];

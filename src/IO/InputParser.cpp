@@ -21,10 +21,13 @@ TrussStructure InputParser::parseFromJSON(const std::string& filepath) {
     // Apply supports and loads after node creation
     for (const auto& node : j["nodes"]) {
         int id = node["id"];
-        if (node.contains("is_support_x")) structure.nodes[id].is_support_x = node["is_support_x"];
-        if (node.contains("is_support_y")) structure.nodes[id].is_support_y = node["is_support_y"];
-        if (node.contains("fx")) structure.nodes[id].fx = node["fx"];
-        if (node.contains("fy")) structure.nodes[id].fy = node["fy"];
+        bool fix_x = node.value("is_support_x", false);
+        bool fix_y = node.value("is_support_y", false);
+        structure.model.fixNode(id, fix_x, fix_y);
+
+        double fx = node.value("fx", 0.0);
+        double fy = node.value("fy", 0.0);
+        structure.model.setLoad(id, fx, fy);
     }
 
     // Add bars

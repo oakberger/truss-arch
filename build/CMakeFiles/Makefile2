@@ -65,11 +65,13 @@ CMAKE_BINARY_DIR = "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards effi
 # The main recursive "all" target.
 all: CMakeFiles/truss_core.dir/all
 all: CMakeFiles/trussopt.dir/all
+all: CMakeFiles/basic_gsm_example.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
 codegen: CMakeFiles/truss_core.dir/codegen
 codegen: CMakeFiles/trussopt.dir/codegen
+codegen: CMakeFiles/basic_gsm_example.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -79,6 +81,7 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/truss_core.dir/clean
 clean: CMakeFiles/trussopt.dir/clean
+clean: CMakeFiles/basic_gsm_example.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -88,7 +91,7 @@ clean: CMakeFiles/trussopt.dir/clean
 CMakeFiles/truss_core.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/truss_core.dir/build.make CMakeFiles/truss_core.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/truss_core.dir/build.make CMakeFiles/truss_core.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Built target truss_core"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=3,4,5,6,7,8,9,10,11,12,13,14 "Built target truss_core"
 .PHONY : CMakeFiles/truss_core.dir/all
 
 # Build rule for subdir invocation for target.
@@ -105,7 +108,7 @@ truss_core: CMakeFiles/truss_core.dir/rule
 # codegen rule for target.
 CMakeFiles/truss_core.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/truss_core.dir/build.make CMakeFiles/truss_core.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Finished codegen for target truss_core"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=3,4,5,6,7,8,9,10,11,12,13,14 "Finished codegen for target truss_core"
 .PHONY : CMakeFiles/truss_core.dir/codegen
 
 # clean rule for target.
@@ -120,7 +123,7 @@ CMakeFiles/truss_core.dir/clean:
 CMakeFiles/trussopt.dir/all: CMakeFiles/truss_core.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=13,14 "Built target trussopt"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=15,16 "Built target trussopt"
 .PHONY : CMakeFiles/trussopt.dir/all
 
 # Build rule for subdir invocation for target.
@@ -137,13 +140,45 @@ trussopt: CMakeFiles/trussopt.dir/rule
 # codegen rule for target.
 CMakeFiles/trussopt.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=13,14 "Finished codegen for target trussopt"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=15,16 "Finished codegen for target trussopt"
 .PHONY : CMakeFiles/trussopt.dir/codegen
 
 # clean rule for target.
 CMakeFiles/trussopt.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/clean
 .PHONY : CMakeFiles/trussopt.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/basic_gsm_example.dir
+
+# All Build rule for target.
+CMakeFiles/basic_gsm_example.dir/all: CMakeFiles/truss_core.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic_gsm_example.dir/build.make CMakeFiles/basic_gsm_example.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic_gsm_example.dir/build.make CMakeFiles/basic_gsm_example.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=1,2 "Built target basic_gsm_example"
+.PHONY : CMakeFiles/basic_gsm_example.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/basic_gsm_example.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" 14
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/basic_gsm_example.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" 0
+.PHONY : CMakeFiles/basic_gsm_example.dir/rule
+
+# Convenience name for target.
+basic_gsm_example: CMakeFiles/basic_gsm_example.dir/rule
+.PHONY : basic_gsm_example
+
+# codegen rule for target.
+CMakeFiles/basic_gsm_example.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic_gsm_example.dir/build.make CMakeFiles/basic_gsm_example.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=1,2 "Finished codegen for target basic_gsm_example"
+.PHONY : CMakeFiles/basic_gsm_example.dir/codegen
+
+# clean rule for target.
+CMakeFiles/basic_gsm_example.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic_gsm_example.dir/build.make CMakeFiles/basic_gsm_example.dir/clean
+.PHONY : CMakeFiles/basic_gsm_example.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

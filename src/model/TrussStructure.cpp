@@ -1,8 +1,8 @@
 #include "TrussStructure.hpp"
 #include <cmath>
 
-void TrussStructure::addNode(double x, double y) {
-    model.addNode(x, y);
+size_t TrussStructure::addNode(double x, double y) {
+   return model.addNode(x, y);
 }
 
 void TrussStructure::addBar(int start_id, int end_id) {
