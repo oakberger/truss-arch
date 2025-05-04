@@ -23,6 +23,7 @@ OptimizationResults LPOptimizer::solve(const TrussStructure& structure) {
         if (!model.support_x[i]) free_dofs.push_back(2 * i);
         if (!model.support_y[i]) free_dofs.push_back(2 * i + 1);
     }
+    std::cout << "[DEBUG] Free DOFs: " << free_dofs.size() << "\n";
 
     const int num_eq = free_dofs.size();
     const int num_vars = 2 * num_bars; // F_pos and F_neg for each bar
@@ -50,7 +51,12 @@ OptimizationResults LPOptimizer::solve(const TrussStructure& structure) {
     glp_add_cols(lp, num_vars);
     for (int j = 0; j < num_vars; ++j) {
         glp_set_col_bnds(lp, j + 1, GLP_LO, 0.0, 0.0);
-        glp_set_obj_coef(lp, j + 1, structure.bars[j % num_bars].length);
+        const double L = structure.bars[j % num_bars].length;
+        const double coef = (j < num_bars)
+            ? L / structure.material.sigma_tension   // s⁺
+            : L / structure.material.sigma_compression; // s⁻
+
+        glp_set_obj_coef(lp, j + 1, coef);
     }
 
     // 4. Populate constraint matrix
@@ -89,7 +95,10 @@ OptimizationResults LPOptimizer::solve(const TrussStructure& structure) {
         double Fp = glp_get_col_prim(lp, j + 1);
         double Fn = glp_get_col_prim(lp, j + 1 + num_bars);
         double force = Fp - Fn;
-        double area = std::abs(force) / 1.0;
+        const double sigma = (force >= 0)
+            ? structure.material.sigma_tension
+            : structure.material.sigma_compression;
+        double area = std::abs(force) / sigma;
         results.addEntry(structure.bars[j].id, force, structure.bars[j].length);
     }
 

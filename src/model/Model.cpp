@@ -1,4 +1,5 @@
 #include "Model.hpp"
+#include <iostream>
 
 size_t Model::addNode(double x, double y) {
     x_coords.push_back(x);
@@ -18,4 +19,6 @@ void Model::fixNode(size_t id, bool fix_x, bool fix_y) {
 void Model::setLoad(size_t id, double fx, double fy) {
     load_x[id] = fx;
     load_y[id] = fy;
+    std::cout << "[DEBUG] Load applied to node " << id << ": fx=" << fx << ", fy=" << fy << "\n";
+
 }

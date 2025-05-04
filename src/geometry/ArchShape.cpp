@@ -1,5 +1,6 @@
 #include "ArchShape.hpp"
 #include <cmath>
+#include <iostream>
 
 ArchShape::ArchShape(double span, double rise, double thickness)
     : span_(span), rise_(rise), thickness_(thickness) {}
@@ -19,19 +20,16 @@ bool ArchShape::isInside(double x, double y) const {
     return y >= bottom && y <= top;
 }
 
-std::vector<Node> ArchShape::generateArchNodes(int nx, int ny, double spacing) const {
-    std::vector<Node> nodes;
-    int id = 0;
 
+void ArchShape::generateArchNodes(Model& model, int nx, int ny, double spacing) const {
     for (int i = 0; i < nx; ++i) {
         double x = i * spacing;
         for (int j = 0; j < ny; ++j) {
             double y = j * spacing;
             if (isInside(x, y)) {
-                nodes.emplace_back(id++, x, y);
+                size_t node_id = model.addNode(x, y);
+                std::cout << "[DEBUG] Added node " << node_id << " at (" << x << ", " << y << ")\n";
             }
         }
     }
-
-    return nodes;
 }

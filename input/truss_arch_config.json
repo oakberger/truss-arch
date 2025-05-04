@@ -1,0 +1,32 @@
+{
+    "arch": {
+      "span": 10.0,
+      "rise": 3.0,
+      "thickness": 0.5,
+      "grid_x": 10,
+      "grid_y": 6,
+      "spacing": 0.5
+    },
+    "material": {
+    "sigma_tension": 250.0,
+    "sigma_compression": 250.0
+    },
+    "gsm": {
+      "max_bar_length": 2.0
+    },
+    "boundary_conditions": {
+      "supports": [
+        { "node_id": 0, "x": true, "y": true },
+        { "node_id": 5, "x": false, "y": true }
+      ],
+      "loads": [
+        { "node_id": 5, "fx": 0.0, "fy": -100.0 }
+      ]
+    },
+    "output": {
+      "svg": "output/arch_structure.svg",
+      "csv": "output/results.csv",
+      "json": "output/results.json"
+    }
+  }
+  

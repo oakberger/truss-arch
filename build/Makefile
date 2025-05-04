@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards effi
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/opt/homebrew/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
@@ -154,6 +164,32 @@ basic_gsm_example: cmake_check_build_system
 basic_gsm_example/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic_gsm_example.dir/build.make CMakeFiles/basic_gsm_example.dir/build
 .PHONY : basic_gsm_example/fast
+
+#=============================================================================
+# Target rules for targets named main_test
+
+# Build rule for target.
+main_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main_test
+.PHONY : main_test
+
+# fast build rule for target.
+main_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_test.dir/build.make CMakeFiles/main_test.dir/build
+.PHONY : main_test/fast
+
+#=============================================================================
+# Target rules for targets named doc_doxygen
+
+# Build rule for target.
+doc_doxygen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 doc_doxygen
+.PHONY : doc_doxygen
+
+# fast build rule for target.
+doc_doxygen/fast:
+	$(MAKE) $(MAKESILENT) -f docs/CMakeFiles/doc_doxygen.dir/build.make docs/CMakeFiles/doc_doxygen.dir/build
+.PHONY : doc_doxygen/fast
 
 examples/main.o: examples/main.cpp.o
 .PHONY : examples/main.o
@@ -299,30 +335,6 @@ src/model/Model.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/truss_core.dir/build.make CMakeFiles/truss_core.dir/src/model/Model.cpp.s
 .PHONY : src/model/Model.cpp.s
 
-src/model/Node.o: src/model/Node.cpp.o
-.PHONY : src/model/Node.o
-
-# target to build an object file
-src/model/Node.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/truss_core.dir/build.make CMakeFiles/truss_core.dir/src/model/Node.cpp.o
-.PHONY : src/model/Node.cpp.o
-
-src/model/Node.i: src/model/Node.cpp.i
-.PHONY : src/model/Node.i
-
-# target to preprocess a source file
-src/model/Node.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/truss_core.dir/build.make CMakeFiles/truss_core.dir/src/model/Node.cpp.i
-.PHONY : src/model/Node.cpp.i
-
-src/model/Node.s: src/model/Node.cpp.s
-.PHONY : src/model/Node.s
-
-# target to generate assembly for a file
-src/model/Node.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/truss_core.dir/build.make CMakeFiles/truss_core.dir/src/model/Node.cpp.s
-.PHONY : src/model/Node.cpp.s
-
 src/model/OptimizationResults.o: src/model/OptimizationResults.cpp.o
 .PHONY : src/model/OptimizationResults.o
 
@@ -467,6 +479,30 @@ tests/basic_gsm_example.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic_gsm_example.dir/build.make CMakeFiles/basic_gsm_example.dir/tests/basic_gsm_example.cpp.s
 .PHONY : tests/basic_gsm_example.cpp.s
 
+tests/main_test.o: tests/main_test.cpp.o
+.PHONY : tests/main_test.o
+
+# target to build an object file
+tests/main_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_test.dir/build.make CMakeFiles/main_test.dir/tests/main_test.cpp.o
+.PHONY : tests/main_test.cpp.o
+
+tests/main_test.i: tests/main_test.cpp.i
+.PHONY : tests/main_test.i
+
+# target to preprocess a source file
+tests/main_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_test.dir/build.make CMakeFiles/main_test.dir/tests/main_test.cpp.i
+.PHONY : tests/main_test.cpp.i
+
+tests/main_test.s: tests/main_test.cpp.s
+.PHONY : tests/main_test.s
+
+# target to generate assembly for a file
+tests/main_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_test.dir/build.make CMakeFiles/main_test.dir/tests/main_test.cpp.s
+.PHONY : tests/main_test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -475,7 +511,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test"
+	@echo "... doc_doxygen"
 	@echo "... basic_gsm_example"
+	@echo "... main_test"
 	@echo "... truss_core"
 	@echo "... trussopt"
 	@echo "... examples/main.o"
@@ -496,9 +535,6 @@ help:
 	@echo "... src/model/Model.o"
 	@echo "... src/model/Model.i"
 	@echo "... src/model/Model.s"
-	@echo "... src/model/Node.o"
-	@echo "... src/model/Node.i"
-	@echo "... src/model/Node.s"
 	@echo "... src/model/OptimizationResults.o"
 	@echo "... src/model/OptimizationResults.i"
 	@echo "... src/model/OptimizationResults.s"
@@ -517,6 +553,9 @@ help:
 	@echo "... tests/basic_gsm_example.o"
 	@echo "... tests/basic_gsm_example.i"
 	@echo "... tests/basic_gsm_example.s"
+	@echo "... tests/main_test.o"
+	@echo "... tests/main_test.i"
+	@echo "... tests/main_test.s"
 .PHONY : help
 
 

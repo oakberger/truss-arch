@@ -14,10 +14,15 @@
  * - Generate ground structure (bar connections)
  * - Assign loads and supports
  */
+struct MaterialProperties {
+    double sigma_tension = 1.0;     // Yield stress in tension
+    double sigma_compression = 1.0; // Yield stress in compression
+};
 class TrussStructure {
 public:
     Model model;              ///< Struct-of-arrays storage for node data
     std::vector<Bar> bars;    ///< All bars (candidate members)
+    MaterialProperties material;   ///< Material data for yield stress
 
     size_t addNode(double x, double y);
     void addBar(int start_id, int end_id);

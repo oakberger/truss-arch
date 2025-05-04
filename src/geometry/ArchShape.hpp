@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../model/Node.hpp"
+#include "../model/Model.hpp"
 #include <vector>
 
 /**
@@ -22,6 +22,8 @@ public:
      */
     ArchShape(double span, double rise, double thickness);
 
+    void generateArchNodes(Model& model, int nx, int ny, double spacing) const;
+
     /// Outer arch y-value at x
     double outerY(double x) const;
 
@@ -32,7 +34,6 @@ public:
     bool isInside(double x, double y) const;
 
     /// Generate nodes inside the arch band
-    std::vector<Node> generateArchNodes(int nx, int ny, double spacing) const;
 
 private:
     double span_;

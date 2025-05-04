@@ -16,7 +16,8 @@ endif()
 find_package(Eigen3 REQUIRED)
 include_directories(${EIGEN3_INCLUDE_DIR})
 
-find_package(nlohmann_json REQUIRED)
+find_package(nlohmann_json CONFIG REQUIRED)
+include_directories(/opt/homebrew/include)
 
 # Find and link GLPK
 include_directories(/opt/homebrew/Cellar/glpk/5.0/include)
@@ -45,14 +46,19 @@ target_link_libraries(truss_core PRIVATE nlohmann_json::nlohmann_json)
 add_executable(trussopt examples/main.cpp)
 target_link_libraries(trussopt PRIVATE truss_core Eigen3::Eigen)
 
-add_executable(basic_gsm_example tests/basic_gsm_example.cpp)
-target_link_libraries(basic_gsm_example PRIVATE truss_core Eigen3::Eigen)
+
+
 
 # Testing support
 option(TRUSS_TESTS "Build tests" OFF)
 if(TRUSS_TESTS)
   enable_testing()
-  add_subdirectory(tests)
+  add_executable(basic_gsm_example tests/basic_gsm_example.cpp)
+  target_link_libraries(basic_gsm_example PRIVATE truss_core Eigen3::Eigen)
+
+  add_executable(main_test tests/main_test.cpp)
+  target_link_libraries(main_test PRIVATE truss_core Eigen3::Eigen)
+  
 endif()
 
 # Optional Doxygen docs

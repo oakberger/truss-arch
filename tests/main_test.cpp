@@ -1,39 +1,41 @@
 #include <iostream>
-#include "geometry/ArchShape.hpp"
-#include "model/TrussStructure.hpp"
+#include <fstream>
+#include <nlohmann/json.hpp>
+#include "IO/InputParser.hpp"
 #include "optimization/LPOptimizer.hpp"
-#include "IO/OutputExporter.hpp"
 #include "model/OptimizationResults.hpp"
+#include "IO/OutputExporter.hpp"
+
+using json = nlohmann::json;
 
 int main() {
-    std::cout << "=== Truss Arch Optimizer (TEST MODE) ===" << std::endl;
+    std::string input_path = "input/test_case.json";
 
-    // 1. Generate arch-shaped node layout
-    ArchShape arch(10.0, 3.0, 0.5); // span, rise, thickness
-    std::vector<Node> arch_nodes = arch.generateArchNodes(21, 10, 0.5);
+    try {
+        std::ifstream file(input_path);
+        json j;
+        file >> j;
 
-    TrussStructure structure;
-    structure.nodes = arch_nodes;
+        // 1. Create parser object
+        InputParser parser;
 
-    // 2. Manually apply supports and loads
-    structure.nodes[0].is_support_x = true;
-    structure.nodes[0].is_support_y = true;
-    structure.nodes[20].is_support_y = true;
-    structure.nodes[105].fy = -100.0;
+        // 2. Parse input
+        TrussStructure structure = parser.parseFromJSON(input_path);
 
-    // 3. Generate bars constrained to the arch
-    structure.generateGroundStructureArch(2.0, arch);
+        // 3. Solve optimization
+        LPOptimizer optimizer;
+        OptimizationResults results = optimizer.solve(structure);
 
-    // 4. Solve the problem
-    LPOptimizer optimizer;
-    OptimizationResults results = optimizer.solve(structure);
+        // 4. Export or print results
+        OutputExporter exporter;
+        exporter.printToConsole(results);  // optional
+        exporter.exportToSVG(structure, results, "output/test_result.svg");
 
-    // 5. Export the results
-    OutputExporter exporter;
-    exporter.exportToSVG(structure, "arch_test.svg");
-    exporter.exportToCSV(results, "arch_test.csv");
-    exporter.exportToJSON(results, "arch_test.json");
+        std::cout << "[Test] Optimization complete.\n";
+    } catch (const std::exception& e) {
+        std::cerr << "[Error] " << e.what() << "\n";
+        return 1;
+    }
 
-    std::cout << "✅ Arch test complete. Results exported.\n";
     return 0;
 }

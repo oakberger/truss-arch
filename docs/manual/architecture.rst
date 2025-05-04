@@ -25,17 +25,19 @@ Class Overview
 ######################
 
 -----------------
-Node
+Model (replaced Node)
 -----------------
 
-A ``Node`` represents a point in 2D space. Each node has:
+The Model class replaces the earlier Node class with a centralized data structure that uses parallel vectors to store all node-related attributes. This design improves performance and memory access patterns for large-scale problems.
 
-- A unique ``id``
-- ``x, y`` coordinates
-- Boolean flags for supports in ``x`` and/or ``y``
-- External loads ``fx, fy``, initialized to 0
+Each node is implicitly identified by its index. The Model class manages:
 
-Nodes are created with geometry only (id, x, y), and supports or loads are applied separately. This clean separation improves flexibility and allows different loading scenarios on the same geometry.
+- x_coords, y_coords: node positions
+- support_x, support_y: Boolean flags indicating supports
+- load_x, load_y: external loads applied to each node
+- Nodes are added using addNode(x, y), which returns the index of the new node. Supports and loads are set using fixNode(id, fix_x, fix_y) and setLoad(id, fx, fy), respectively.
+
+This structure avoids the overhead of individual Node objects and simplifies bulk data operations.
 
 -----------------
 Bar
