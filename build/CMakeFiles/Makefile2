@@ -67,6 +67,7 @@ all: CMakeFiles/truss_core.dir/all
 all: CMakeFiles/trussopt.dir/all
 all: CMakeFiles/basic_gsm_example.dir/all
 all: CMakeFiles/main_test.dir/all
+all: CMakeFiles/arch_geometry_test.dir/all
 all: docs/all
 .PHONY : all
 
@@ -75,6 +76,7 @@ codegen: CMakeFiles/truss_core.dir/codegen
 codegen: CMakeFiles/trussopt.dir/codegen
 codegen: CMakeFiles/basic_gsm_example.dir/codegen
 codegen: CMakeFiles/main_test.dir/codegen
+codegen: CMakeFiles/arch_geometry_test.dir/codegen
 codegen: docs/codegen
 .PHONY : codegen
 
@@ -87,6 +89,7 @@ clean: CMakeFiles/truss_core.dir/clean
 clean: CMakeFiles/trussopt.dir/clean
 clean: CMakeFiles/basic_gsm_example.dir/clean
 clean: CMakeFiles/main_test.dir/clean
+clean: CMakeFiles/arch_geometry_test.dir/clean
 clean: docs/clean
 .PHONY : clean
 
@@ -116,7 +119,7 @@ docs/clean: docs/CMakeFiles/doc_doxygen.dir/clean
 CMakeFiles/truss_core.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/truss_core.dir/build.make CMakeFiles/truss_core.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/truss_core.dir/build.make CMakeFiles/truss_core.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=6,7,8,9,10,11,12,13,14,15,16 "Built target truss_core"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=8,9,10,11,12,13,14,15,16,17,18 "Built target truss_core"
 .PHONY : CMakeFiles/truss_core.dir/all
 
 # Build rule for subdir invocation for target.
@@ -133,7 +136,7 @@ truss_core: CMakeFiles/truss_core.dir/rule
 # codegen rule for target.
 CMakeFiles/truss_core.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/truss_core.dir/build.make CMakeFiles/truss_core.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=6,7,8,9,10,11,12,13,14,15,16 "Finished codegen for target truss_core"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=8,9,10,11,12,13,14,15,16,17,18 "Finished codegen for target truss_core"
 .PHONY : CMakeFiles/truss_core.dir/codegen
 
 # clean rule for target.
@@ -148,7 +151,7 @@ CMakeFiles/truss_core.dir/clean:
 CMakeFiles/trussopt.dir/all: CMakeFiles/truss_core.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=17,18 "Built target trussopt"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=19,20 "Built target trussopt"
 .PHONY : CMakeFiles/trussopt.dir/all
 
 # Build rule for subdir invocation for target.
@@ -165,7 +168,7 @@ trussopt: CMakeFiles/trussopt.dir/rule
 # codegen rule for target.
 CMakeFiles/trussopt.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trussopt.dir/build.make CMakeFiles/trussopt.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=17,18 "Finished codegen for target trussopt"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=19,20 "Finished codegen for target trussopt"
 .PHONY : CMakeFiles/trussopt.dir/codegen
 
 # clean rule for target.
@@ -180,7 +183,7 @@ CMakeFiles/trussopt.dir/clean:
 CMakeFiles/basic_gsm_example.dir/all: CMakeFiles/truss_core.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic_gsm_example.dir/build.make CMakeFiles/basic_gsm_example.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic_gsm_example.dir/build.make CMakeFiles/basic_gsm_example.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=1,2 "Built target basic_gsm_example"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=3,4 "Built target basic_gsm_example"
 .PHONY : CMakeFiles/basic_gsm_example.dir/all
 
 # Build rule for subdir invocation for target.
@@ -197,7 +200,7 @@ basic_gsm_example: CMakeFiles/basic_gsm_example.dir/rule
 # codegen rule for target.
 CMakeFiles/basic_gsm_example.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic_gsm_example.dir/build.make CMakeFiles/basic_gsm_example.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=1,2 "Finished codegen for target basic_gsm_example"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=3,4 "Finished codegen for target basic_gsm_example"
 .PHONY : CMakeFiles/basic_gsm_example.dir/codegen
 
 # clean rule for target.
@@ -212,7 +215,7 @@ CMakeFiles/basic_gsm_example.dir/clean:
 CMakeFiles/main_test.dir/all: CMakeFiles/truss_core.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_test.dir/build.make CMakeFiles/main_test.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_test.dir/build.make CMakeFiles/main_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=4,5 "Built target main_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=6,7 "Built target main_test"
 .PHONY : CMakeFiles/main_test.dir/all
 
 # Build rule for subdir invocation for target.
@@ -229,7 +232,7 @@ main_test: CMakeFiles/main_test.dir/rule
 # codegen rule for target.
 CMakeFiles/main_test.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_test.dir/build.make CMakeFiles/main_test.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=4,5 "Finished codegen for target main_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=6,7 "Finished codegen for target main_test"
 .PHONY : CMakeFiles/main_test.dir/codegen
 
 # clean rule for target.
@@ -238,13 +241,45 @@ CMakeFiles/main_test.dir/clean:
 .PHONY : CMakeFiles/main_test.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/arch_geometry_test.dir
+
+# All Build rule for target.
+CMakeFiles/arch_geometry_test.dir/all: CMakeFiles/truss_core.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/arch_geometry_test.dir/build.make CMakeFiles/arch_geometry_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/arch_geometry_test.dir/build.make CMakeFiles/arch_geometry_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=1,2 "Built target arch_geometry_test"
+.PHONY : CMakeFiles/arch_geometry_test.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/arch_geometry_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" 13
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/arch_geometry_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" 0
+.PHONY : CMakeFiles/arch_geometry_test.dir/rule
+
+# Convenience name for target.
+arch_geometry_test: CMakeFiles/arch_geometry_test.dir/rule
+.PHONY : arch_geometry_test
+
+# codegen rule for target.
+CMakeFiles/arch_geometry_test.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/arch_geometry_test.dir/build.make CMakeFiles/arch_geometry_test.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=1,2 "Finished codegen for target arch_geometry_test"
+.PHONY : CMakeFiles/arch_geometry_test.dir/codegen
+
+# clean rule for target.
+CMakeFiles/arch_geometry_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/arch_geometry_test.dir/build.make CMakeFiles/arch_geometry_test.dir/clean
+.PHONY : CMakeFiles/arch_geometry_test.dir/clean
+
+#=============================================================================
 # Target rules for target docs/CMakeFiles/doc_doxygen.dir
 
 # All Build rule for target.
 docs/CMakeFiles/doc_doxygen.dir/all:
 	$(MAKE) $(MAKESILENT) -f docs/CMakeFiles/doc_doxygen.dir/build.make docs/CMakeFiles/doc_doxygen.dir/depend
 	$(MAKE) $(MAKESILENT) -f docs/CMakeFiles/doc_doxygen.dir/build.make docs/CMakeFiles/doc_doxygen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=3 "Built target doc_doxygen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=5 "Built target doc_doxygen"
 .PHONY : docs/CMakeFiles/doc_doxygen.dir/all
 
 # Build rule for subdir invocation for target.
@@ -261,7 +296,7 @@ doc_doxygen: docs/CMakeFiles/doc_doxygen.dir/rule
 # codegen rule for target.
 docs/CMakeFiles/doc_doxygen.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f docs/CMakeFiles/doc_doxygen.dir/build.make docs/CMakeFiles/doc_doxygen.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=3 "Finished codegen for target doc_doxygen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/maxeichenberger/Desktop/ETH Master/Sem 2/Towards efficient and High-Performance Computing for Engineers/truss-arch/build/CMakeFiles" --progress-num=5 "Finished codegen for target doc_doxygen"
 .PHONY : docs/CMakeFiles/doc_doxygen.dir/codegen
 
 # clean rule for target.

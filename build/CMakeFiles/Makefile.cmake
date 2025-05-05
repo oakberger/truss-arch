@@ -73,5 +73,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/trussopt.dir/DependInfo.cmake"
   "CMakeFiles/basic_gsm_example.dir/DependInfo.cmake"
   "CMakeFiles/main_test.dir/DependInfo.cmake"
+  "CMakeFiles/arch_geometry_test.dir/DependInfo.cmake"
   "docs/CMakeFiles/doc_doxygen.dir/DependInfo.cmake"
   )

@@ -24,17 +24,29 @@ TrussStructure InputParser::parseFromJSON(const std::string& filepath) {
     // --- Geometry Dispatch ---
     if (j.contains("arch")) {
         const auto& arch = j["arch"];
+        std::string type = arch.value("type", "parallel");  // default to "parallel"
+    
         double span = arch["span"];
         double rise = arch["rise"];
         double thickness = arch["thickness"];
-        int grid_x = arch["grid_x"];
-        int grid_y = arch["grid_y"];
-        double spacing = arch["spacing"];
+        int num_nodes = arch["num_arch_nodes"];
+        int num_layers = arch["num_vertical_layers"];
         double max_length = arch["max_bar_length"];
-
-        ArchShape archShape(span, rise, thickness);
-        archShape.generateArchNodes(structure.model, grid_x, grid_y, spacing);
-        structure.generateGroundStructureArch(max_length, archShape);
+    
+        // Choose the correct shape subclass
+        if (type == "parallel") {
+            archShape = std::make_unique<ParallelArchShape>(span, rise, thickness);
+        }
+        //else if (type == "catenary") {
+        //    archShape = std::make_unique<CatenaryArchShape>(span, rise, thickness);
+        //}
+        else {
+            throw std::runtime_error("[InputParser] Unknown arch shape type: " + type);
+        }
+    
+        // Generate nodes and structure
+        archShape->generateArchNodes(structure.model, num_nodes, num_layers);
+        structure.generateGroundStructureArch(max_length, *archShape);
     }
     else if (j.contains("rectangle")) {
         const auto& rect = j["rectangle"];

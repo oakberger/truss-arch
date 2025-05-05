@@ -179,6 +179,19 @@ main_test/fast:
 .PHONY : main_test/fast
 
 #=============================================================================
+# Target rules for targets named arch_geometry_test
+
+# Build rule for target.
+arch_geometry_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 arch_geometry_test
+.PHONY : arch_geometry_test
+
+# fast build rule for target.
+arch_geometry_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/arch_geometry_test.dir/build.make CMakeFiles/arch_geometry_test.dir/build
+.PHONY : arch_geometry_test/fast
+
+#=============================================================================
 # Target rules for targets named doc_doxygen
 
 # Build rule for target.
@@ -263,29 +276,29 @@ src/IO/OutputExporter.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/truss_core.dir/build.make CMakeFiles/truss_core.dir/src/IO/OutputExporter.cpp.s
 .PHONY : src/IO/OutputExporter.cpp.s
 
-src/geometry/ArchShape.o: src/geometry/ArchShape.cpp.o
-.PHONY : src/geometry/ArchShape.o
+src/geometry/ParallelArchShape.o: src/geometry/ParallelArchShape.cpp.o
+.PHONY : src/geometry/ParallelArchShape.o
 
 # target to build an object file
-src/geometry/ArchShape.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/truss_core.dir/build.make CMakeFiles/truss_core.dir/src/geometry/ArchShape.cpp.o
-.PHONY : src/geometry/ArchShape.cpp.o
+src/geometry/ParallelArchShape.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/truss_core.dir/build.make CMakeFiles/truss_core.dir/src/geometry/ParallelArchShape.cpp.o
+.PHONY : src/geometry/ParallelArchShape.cpp.o
 
-src/geometry/ArchShape.i: src/geometry/ArchShape.cpp.i
-.PHONY : src/geometry/ArchShape.i
+src/geometry/ParallelArchShape.i: src/geometry/ParallelArchShape.cpp.i
+.PHONY : src/geometry/ParallelArchShape.i
 
 # target to preprocess a source file
-src/geometry/ArchShape.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/truss_core.dir/build.make CMakeFiles/truss_core.dir/src/geometry/ArchShape.cpp.i
-.PHONY : src/geometry/ArchShape.cpp.i
+src/geometry/ParallelArchShape.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/truss_core.dir/build.make CMakeFiles/truss_core.dir/src/geometry/ParallelArchShape.cpp.i
+.PHONY : src/geometry/ParallelArchShape.cpp.i
 
-src/geometry/ArchShape.s: src/geometry/ArchShape.cpp.s
-.PHONY : src/geometry/ArchShape.s
+src/geometry/ParallelArchShape.s: src/geometry/ParallelArchShape.cpp.s
+.PHONY : src/geometry/ParallelArchShape.s
 
 # target to generate assembly for a file
-src/geometry/ArchShape.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/truss_core.dir/build.make CMakeFiles/truss_core.dir/src/geometry/ArchShape.cpp.s
-.PHONY : src/geometry/ArchShape.cpp.s
+src/geometry/ParallelArchShape.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/truss_core.dir/build.make CMakeFiles/truss_core.dir/src/geometry/ParallelArchShape.cpp.s
+.PHONY : src/geometry/ParallelArchShape.cpp.s
 
 src/model/Bar.o: src/model/Bar.cpp.o
 .PHONY : src/model/Bar.o
@@ -455,6 +468,30 @@ src/utils/MatrixBuilder.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/truss_core.dir/build.make CMakeFiles/truss_core.dir/src/utils/MatrixBuilder.cpp.s
 .PHONY : src/utils/MatrixBuilder.cpp.s
 
+tests/arch_geometry_test.o: tests/arch_geometry_test.cpp.o
+.PHONY : tests/arch_geometry_test.o
+
+# target to build an object file
+tests/arch_geometry_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/arch_geometry_test.dir/build.make CMakeFiles/arch_geometry_test.dir/tests/arch_geometry_test.cpp.o
+.PHONY : tests/arch_geometry_test.cpp.o
+
+tests/arch_geometry_test.i: tests/arch_geometry_test.cpp.i
+.PHONY : tests/arch_geometry_test.i
+
+# target to preprocess a source file
+tests/arch_geometry_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/arch_geometry_test.dir/build.make CMakeFiles/arch_geometry_test.dir/tests/arch_geometry_test.cpp.i
+.PHONY : tests/arch_geometry_test.cpp.i
+
+tests/arch_geometry_test.s: tests/arch_geometry_test.cpp.s
+.PHONY : tests/arch_geometry_test.s
+
+# target to generate assembly for a file
+tests/arch_geometry_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/arch_geometry_test.dir/build.make CMakeFiles/arch_geometry_test.dir/tests/arch_geometry_test.cpp.s
+.PHONY : tests/arch_geometry_test.cpp.s
+
 tests/basic_gsm_example.o: tests/basic_gsm_example.cpp.o
 .PHONY : tests/basic_gsm_example.o
 
@@ -513,6 +550,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... doc_doxygen"
+	@echo "... arch_geometry_test"
 	@echo "... basic_gsm_example"
 	@echo "... main_test"
 	@echo "... truss_core"
@@ -526,9 +564,9 @@ help:
 	@echo "... src/IO/OutputExporter.o"
 	@echo "... src/IO/OutputExporter.i"
 	@echo "... src/IO/OutputExporter.s"
-	@echo "... src/geometry/ArchShape.o"
-	@echo "... src/geometry/ArchShape.i"
-	@echo "... src/geometry/ArchShape.s"
+	@echo "... src/geometry/ParallelArchShape.o"
+	@echo "... src/geometry/ParallelArchShape.i"
+	@echo "... src/geometry/ParallelArchShape.s"
 	@echo "... src/model/Bar.o"
 	@echo "... src/model/Bar.i"
 	@echo "... src/model/Bar.s"
@@ -550,6 +588,9 @@ help:
 	@echo "... src/utils/MatrixBuilder.o"
 	@echo "... src/utils/MatrixBuilder.i"
 	@echo "... src/utils/MatrixBuilder.s"
+	@echo "... tests/arch_geometry_test.o"
+	@echo "... tests/arch_geometry_test.i"
+	@echo "... tests/arch_geometry_test.s"
 	@echo "... tests/basic_gsm_example.o"
 	@echo "... tests/basic_gsm_example.i"
 	@echo "... tests/basic_gsm_example.s"
