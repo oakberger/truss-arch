@@ -5,7 +5,7 @@
 ParallelArchShape::ParallelArchShape(double span, double rise, double thickness)
     : span_(span), rise_(rise), thickness_(thickness) {}
 
-double ArchShape::outerY(double x) const {
+double ParallelArchShape::outerY(double x) const {
     double a = -4.0 * rise_ / (span_ * span_);
     return a * std::pow(x - span_ / 2.0, 2.0) + rise_;
 }

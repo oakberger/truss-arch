@@ -22,6 +22,7 @@ TrussStructure InputParser::parseFromJSON(const std::string& filepath) {
     }
 
     // --- Geometry Dispatch ---
+    std::unique_ptr<BaseArchShape> archShape;
     if (j.contains("arch")) {
         const auto& arch = j["arch"];
         std::string type = arch.value("type", "parallel");  // default to "parallel"

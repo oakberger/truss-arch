@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-#include "../geometry/ArchShape.hpp"
+#include "../geometry/BaseArchShape.hpp"
 #include "Model.hpp"
 #include "Bar.hpp"
 
@@ -37,7 +37,7 @@ public:
      * @param max_length Maximum length allowed between nodes
      * @param arch Shape to constrain the bars inside
      */
-    void generateGroundStructureArch(double max_length, const ArchShape& arch);
+    void generateGroundStructureArch(double max_length, const BaseArchShape& arch);
 
     // Removed getNode() accessor because Model does not use individual Node objects
 };

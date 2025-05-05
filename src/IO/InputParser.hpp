@@ -2,6 +2,8 @@
 
 #include <string>
 #include "../model/TrussStructure.hpp"
+#include "../geometry/BaseArchShape.hpp"
+#include "../geometry/ParallelArchShape.hpp"
 
 /**
  * @class InputParser

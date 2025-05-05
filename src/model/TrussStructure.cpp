@@ -33,16 +33,20 @@ void TrussStructure::generateGroundStructure(double max_length) {
     }
 }
 
-void TrussStructure::generateGroundStructureArch(double max_length, const ArchShape& arch) {
+void TrussStructure::generateGroundStructureArch(double max_length, const BaseArchShape& arch) {
     for (std::size_t i = 0; i < model.x_coords.size(); ++i) {
         for (std::size_t j = i + 1; j < model.x_coords.size(); ++j) {
             double dx = model.x_coords[j] - model.x_coords[i];
             double dy = model.y_coords[j] - model.y_coords[i];
             double dist = std::sqrt(dx * dx + dy * dy);
 
+            double mx = 0.5 * (model.x_coords[i] + model.x_coords[j]);
+            double my = 0.5 * (model.y_coords[i] + model.y_coords[j]);
+
             if (dist <= max_length &&
                 arch.isInside(model.x_coords[i], model.y_coords[i]) &&
-                arch.isInside(model.x_coords[j], model.y_coords[j])) {
+                arch.isInside(model.x_coords[j], model.y_coords[j]) &&
+                arch.isInside(mx, my)) {
                 addBar(i, j);
             }
         }
