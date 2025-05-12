@@ -1,11 +1,11 @@
-cmake_minimum_required(VERSION 3.16)  # 3.30 is non-standard; use stable version
+cmake_minimum_required(VERSION 3.16)  
 project(truss_arch)
 enable_language(CXX)
 
 # Compiler settings
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_FLAGS "-Wall -Wextra -pedantic")
-set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG")
+set(CMAKE_CXX_FLAGS "-Wall -Wextra -pedantic -Wshadow -Wconversion -Wnull-dereference")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG -flto")
 
 # Set default build type if not specified
 if(NOT CMAKE_BUILD_TYPE)
@@ -46,11 +46,11 @@ target_link_libraries(truss_core PRIVATE nlohmann_json::nlohmann_json)
 add_executable(trussopt examples/main.cpp)
 target_link_libraries(trussopt PRIVATE truss_core Eigen3::Eigen)
 
-
+target_compile_options(truss_core PRIVATE -Wno-sign-conversion -Wno-unused-but-set-variable)
 
 
 # Testing support
-option(TRUSS_TESTS "Build tests" OFF)
+option(TRUSS_TESTS "Build tests" ON)
 if(TRUSS_TESTS)
   enable_testing()
   add_executable(basic_gsm_example tests/basic_gsm_example.cpp)
@@ -65,7 +65,7 @@ if(TRUSS_TESTS)
 endif()
 
 # Optional Doxygen docs
-option(TRUSS_DOC "Build Doxygen documentation" OFF)
+option(TRUSS_DOC "Build Doxygen documentation" ON)
 if(TRUSS_DOC)
   find_package(Doxygen REQUIRED)
   add_subdirectory(docs)

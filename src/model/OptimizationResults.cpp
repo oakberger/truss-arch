@@ -1,8 +1,8 @@
 #include "OptimizationResults.hpp"
 #include <cmath>
 
-void OptimizationResults::addEntry(int bar_id, double force, double length) {
-    bar_forces.push_back({bar_id, force, length, false});
+void OptimizationResults::addEntry(int bar_id, double force, double length, double area) {
+    bar_forces.push_back({bar_id, force, length, area, false});
 }
 
 void OptimizationResults::computeTotalVolume() {

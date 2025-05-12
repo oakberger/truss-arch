@@ -15,25 +15,24 @@ OptimizationResults LPOptimizer::solve(const TrussStructure& structure) {
     const auto& model = structure.model;
     const size_t num_nodes = model.nodeCount();
     const size_t num_bars = structure.bars.size();
-    const size_t total_dofs = 2 * num_nodes;
 
     // 2. Extract only free DOFs
     std::vector<int> free_dofs;
     for (size_t i = 0; i < num_nodes; ++i) {
-        if (!model.support_x[i]) free_dofs.push_back(2 * i);
-        if (!model.support_y[i]) free_dofs.push_back(2 * i + 1);
+        if (!model.support_x[i]) free_dofs.push_back(static_cast<int>(2 * i));
+        if (!model.support_y[i]) free_dofs.push_back(static_cast<int>(2 * i + 1));
     }
     std::cout << "[DEBUG] Free DOFs: " << free_dofs.size() << "\n";
 
-    const int num_eq = free_dofs.size();
-    const int num_vars = 2 * num_bars; // F_pos and F_neg for each bar
+    const int num_eq = static_cast<int>(free_dofs.size());
+    const int num_vars = static_cast<int>(2 * num_bars); // F_pos and F_neg for each bar
 
     // Create reduced A and b
-    Eigen::MatrixXd A(num_eq, num_bars);
+    Eigen::MatrixXd A(num_eq, static_cast<int>(num_bars));
     Eigen::VectorXd b(num_eq);
     for (size_t i = 0; i < free_dofs.size(); ++i) {
-        A.row(i) = A_full.row(free_dofs[i]);
-        b(i) = b_full(free_dofs[i]);
+        A.row(static_cast<int>(i)) = A_full.row(free_dofs[i]);
+        b(static_cast<int>(i)) = b_full(free_dofs[i]);
     }
 
     std::cout << "Max A(i,j): " << A.maxCoeff() << ", min: " << A.minCoeff() << "\n";
@@ -49,14 +48,18 @@ OptimizationResults LPOptimizer::solve(const TrussStructure& structure) {
     }
 
     glp_add_cols(lp, num_vars);
-    for (int j = 0; j < num_vars; ++j) {
-        glp_set_col_bnds(lp, j + 1, GLP_LO, 0.0, 0.0);
-        const double L = structure.bars[j % num_bars].length;
+    for (std::size_t j = 0; j < static_cast<std::size_t>(num_vars); ++j) {
+        int col_index = static_cast<int>(j + 1);
+        glp_set_col_bnds(lp, col_index, GLP_LO, 0.0, 0.0);
+    
+        std::size_t bar_index = j % num_bars;
+        const double L = structure.bars[bar_index].length;
+    
         const double coef = (j < num_bars)
             ? L / structure.material.sigma_tension   // s⁺
             : L / structure.material.sigma_compression; // s⁻
-
-        glp_set_obj_coef(lp, j + 1, coef);
+    
+        glp_set_obj_coef(lp, col_index, coef);
     }
 
     // 4. Populate constraint matrix
@@ -65,15 +68,19 @@ OptimizationResults LPOptimizer::solve(const TrussStructure& structure) {
     std::vector<double> ar(1);
 
     for (int i = 0; i < num_eq; ++i) {
-        for (int j = 0; j < num_bars; ++j) {
-            double val = A(i, j);
+        for (size_t j = 0; j < num_bars; ++j) {
+            double val = A(i, static_cast<int>(j));
             if (std::abs(val) < 1e-12) continue;
-            ia.push_back(i + 1); ja.push_back(j + 1); ar.push_back(val);
-            ia.push_back(i + 1); ja.push_back(j + 1 + num_bars); ar.push_back(-val);
+            ia.push_back(i + 1); 
+            ja.push_back(static_cast<int>(j + 1)); 
+            ar.push_back(val);
+            ia.push_back(i + 1); 
+            ja.push_back(static_cast<int>(j + 1 + num_bars)); 
+            ar.push_back(-val);
         }
     }
 
-    glp_load_matrix(lp, ia.size() - 1, ia.data(), ja.data(), ar.data());
+    glp_load_matrix(lp, static_cast<int>(ia.size() - 1), ia.data(), ja.data(), ar.data());
 
     glp_write_lp(lp, nullptr, "debug.lp");
 
@@ -91,15 +98,15 @@ OptimizationResults LPOptimizer::solve(const TrussStructure& structure) {
 
     // 6. Extract solution
     OptimizationResults results;
-    for (int j = 0; j < num_bars; ++j) {
-        double Fp = glp_get_col_prim(lp, j + 1);
-        double Fn = glp_get_col_prim(lp, j + 1 + num_bars);
+    for (size_t j = 0; j < num_bars; ++j) {
+        double Fp = glp_get_col_prim(lp, static_cast<int>(j + 1));
+        double Fn = glp_get_col_prim(lp, static_cast<int>(j + 1 + num_bars));
         double force = Fp - Fn;
         const double sigma = (force >= 0)
             ? structure.material.sigma_tension
             : structure.material.sigma_compression;
         double area = std::abs(force) / sigma;
-        results.addEntry(structure.bars[j].id, force, structure.bars[j].length);
+        results.addEntry(structure.bars[j].id, force, structure.bars[j].length, area);
     }
 
     glp_delete_prob(lp);

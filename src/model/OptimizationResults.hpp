@@ -14,6 +14,7 @@ struct BarForceEntry {
     int bar_id;        ///< ID of the bar
     double force;      ///< Internal force in the bar (positive = tension, negative = compression)
     double length;     ///< Length of the bar
+    double area;       ///< Cross-sectional area of the bar
     bool is_active;    ///< Whether this bar is used in the final optimized structure
 };
 
@@ -36,7 +37,7 @@ class OptimizationResults {
         /**
          * @brief Adds a new entry to the results list.
          */
-        void addEntry(int bar_id, double force, double length);
+        void addEntry(int bar_id, double force, double length, double area);
     
         /**
          * @brief Computes total volume based on all bar entries.

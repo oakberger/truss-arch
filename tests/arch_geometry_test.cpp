@@ -9,20 +9,28 @@
 using json = nlohmann::json;
 
 int main() {
-    std::string input_path = "input/test_arch_geometry.json";
+    std::string input_path = "../input/test_arch_geometry.json";
 
     try {
+        // Load JSON once
         std::ifstream file(input_path);
+        if (!file) {
+            throw std::runtime_error("Could not open input file: " + input_path);
+        }
+
         json j;
         file >> j;
 
+        // Parse structure using the loaded JSON
         InputParser parser;
-        TrussStructure structure = parser.parseFromJSON(input_path);
+        TrussStructure structure = parser.parseFromJSON(j);
 
+        // Solve optimization problem
         LPOptimizer optimizer;
         OptimizationResults results = optimizer.solve(structure);
         results.markActiveBars();
 
+        // Export results
         OutputExporter exporter;
         exporter.printToConsole(results);
 

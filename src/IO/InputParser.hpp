@@ -1,5 +1,5 @@
 #pragma once
-
+#include <nlohmann/json.hpp>
 #include <string>
 #include "../model/TrussStructure.hpp"
 #include "../geometry/BaseArchShape.hpp"
@@ -21,7 +21,7 @@ public:
     InputParser() = default;
 
     // Parses a structure from a JSON file
-    TrussStructure parseFromJSON(const std::string& filepath);
+    TrussStructure parseFromJSON(const nlohmann::json& j);
 
     // Optionally: parse from CSV or custom formats
     // TrussStructure parseFromCSV(const std::string& filepath);

@@ -9,10 +9,15 @@
 using json = nlohmann::json;
 
 int main() {
-    std::string input_path = "input/test_case.json";
+    std::string input_path = "../input/test_case.json";
 
     try {
-        std::ifstream file(input_path);
+         // Load JSON once
+         std::ifstream file(input_path);
+         if (!file) {
+             throw std::runtime_error("Could not open input file: " + input_path);
+         }
+
         json j;
         file >> j;
 
@@ -20,7 +25,7 @@ int main() {
         InputParser parser;
 
         // 2. Parse input
-        TrussStructure structure = parser.parseFromJSON(input_path);
+        TrussStructure structure = parser.parseFromJSON(j);
 
         // 3. Solve optimization
         LPOptimizer optimizer;

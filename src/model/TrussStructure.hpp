@@ -25,7 +25,7 @@ public:
     MaterialProperties material;   ///< Material data for yield stress
 
     size_t addNode(double x, double y);
-    void addBar(int start_id, int end_id);
+    void addBar(std::size_t start_id, std::size_t end_id);
     void generateGrid(int rows, int cols, double spacing);
     /**
      * @brief Generates the ground structure, constrained with maximum length
