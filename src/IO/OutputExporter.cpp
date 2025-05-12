@@ -79,7 +79,7 @@ void OutputExporter::exportToSVG(const TrussStructure& truss,
             double x2 = tx(model.x_coords[j]);
             double y2 = ty(model.y_coords[j]);
     
-            double stroke_width = 0.5 + 10.0 * result.area; // scale factor can be tuned
+            double stroke_width = 0.5 + 2.0 * result.area; // scale factor can be tuned
     
             file << "<line x1=\"" << x1 << "\" y1=\"" << y1
                  << "\" x2=\"" << x2 << "\" y2=\"" << y2
