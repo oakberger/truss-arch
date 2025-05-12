@@ -24,7 +24,7 @@ CMAKE_AR:FILEPATH=/Library/Developer/CommandLineTools/usr/bin/ar
 CMAKE_BUILD_TYPE:STRING=Debug
 
 //Enable/Disable color output during build.
-CMAKE_COLOR_MAKEFILE:BOOL=TRUE
+CMAKE_COLOR_MAKEFILE:BOOL=ON
 
 //CXX compiler
 CMAKE_CXX_COMPILER:FILEPATH=/Library/Developer/CommandLineTools/usr/bin/c++
@@ -175,10 +175,10 @@ CMAKE_SHARED_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
 //If set, runtime paths are not added when installing shared libraries,
 // but are added when building.
-CMAKE_SKIP_INSTALL_RPATH:BOOL=FALSE
+CMAKE_SKIP_INSTALL_RPATH:BOOL=NO
 
 //If set, runtime paths are not added when using shared libraries.
-CMAKE_SKIP_RPATH:BOOL=FALSE
+CMAKE_SKIP_RPATH:BOOL=NO
 
 //Flags used by the linker during the creation of static libraries
 // during all build types.
@@ -222,10 +222,10 @@ DOXYGEN_EXECUTABLE:FILEPATH=/opt/homebrew/bin/doxygen
 Eigen3_DIR:PATH=/opt/homebrew/share/eigen3/cmake
 
 //Build Doxygen documentation
-TRUSS_DOC:BOOL=TRUE
+TRUSS_DOC:BOOL=ON
 
 //Build tests
-TRUSS_TESTS:BOOL=TRUE
+TRUSS_TESTS:BOOL=ON
 
 //The directory containing a CMake configuration file for nlohmann_json.
 nlohmann_json_DIR:PATH=/opt/homebrew/share/cmake/nlohmann_json
