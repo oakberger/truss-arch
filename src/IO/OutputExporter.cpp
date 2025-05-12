@@ -7,7 +7,8 @@ using json = nlohmann::json;
 
 void OutputExporter::exportToSVG(const TrussStructure<2>& truss,
     const OptimizationResults& results,
-    const std::string& filepath)
+    const std::string& filepath,
+    bool scale_by_area)
 {
     std::ofstream file(filepath);
     const auto& model = truss.model;
@@ -70,23 +71,31 @@ void OutputExporter::exportToSVG(const TrussStructure<2>& truss,
         if (result.is_active) {
             std::size_t bar_id = static_cast<std::size_t>(result.bar_id);
             const auto& bar = truss.bars[bar_id];
-    
+
             std::size_t i = static_cast<std::size_t>(bar.node_start);
             std::size_t j = static_cast<std::size_t>(bar.node_end);
-    
+
             double x1 = tx(model.coords[0][i]);
             double y1 = ty(model.coords[1][i]);
             double x2 = tx(model.coords[0][j]);
             double y2 = ty(model.coords[1][j]);
-    
-            double stroke_width = 0.5 + 2.0 * result.area; // scale factor can be tuned
-    
+
+            double stroke_width;
+            if (scale_by_area) {
+                stroke_width = 0.5 + 10.0 * result.area;
+            } else {
+                double abs_force = std::abs(result.force);
+                stroke_width = 1.0 + 3.0 * std::min(abs_force / 100.0, 1.0);
+            }
+
             file << "<line x1=\"" << x1 << "\" y1=\"" << y1
                  << "\" x2=\"" << x2 << "\" y2=\"" << y2
                  << "\" stroke=\"red\" stroke-width=\"" << stroke_width
                  << "\" stroke-linecap=\"round\" />\n";
         }
     }
+
+
     
     // === 3. Draw support nodes (as small green triangles or circles) ===
     for (size_t i = 0; i < model.nodeCount(); ++i) {
@@ -122,10 +131,10 @@ void OutputExporter::exportToSVG(const TrussStructure<2>& truss,
                 << "\" x2=\"" << x << "\" y2=\"" << y
                 << "\" stroke=\"blue\" stroke-width=\"2\" marker-end=\"url(#arrow)\" />\n";
         }
+
     }
-
-
     file << "</svg>\n";
+   
 }
 
 

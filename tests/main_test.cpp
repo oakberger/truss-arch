@@ -34,7 +34,7 @@ int main() {
         // 4. Export or print results
         OutputExporter exporter;
         exporter.printToConsole(results);  // optional
-        exporter.exportToSVG(structure, results, "output/test_result.svg");
+        exporter.exportToSVG(structure, results, "output/test_result.svg", false);
 
         std::cout << "[Test] Optimization complete.\n";
     } catch (const std::exception& e) {
