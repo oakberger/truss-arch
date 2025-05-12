@@ -18,7 +18,7 @@ class OutputExporter {
 public:
     OutputExporter() = default;
 
-    void exportToSVG(const TrussStructure& truss, const OptimizationResults& results, const std::string& filepath);
+    void exportToSVG(const TrussStructure<2>& truss, const OptimizationResults& results, const std::string& filepath);
     void exportToCSV(const OptimizationResults& results, const std::string& filepath);
     void exportToJSON(const OptimizationResults& results, const std::string& filepath);
     static void printToConsole(const OptimizationResults& results);

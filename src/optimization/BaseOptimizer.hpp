@@ -24,6 +24,6 @@ class BaseOptimizer {
          * @param structure The truss structure to optimize.
          * @return The results of the optimization.
          */
-        virtual OptimizationResults solve(const TrussStructure& structure) = 0;
+        virtual OptimizationResults solve(const TrussStructure<2>& structure) = 0;
     
     };

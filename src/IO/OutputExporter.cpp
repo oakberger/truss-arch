@@ -5,7 +5,7 @@
 
 using json = nlohmann::json;
 
-void OutputExporter::exportToSVG(const TrussStructure& truss,
+void OutputExporter::exportToSVG(const TrussStructure<2>& truss,
     const OptimizationResults& results,
     const std::string& filepath)
 {
@@ -19,10 +19,10 @@ void OutputExporter::exportToSVG(const TrussStructure& truss,
     double max_y = std::numeric_limits<double>::lowest();
 
     for (size_t i = 0; i < model.nodeCount(); ++i) {
-        min_x = std::min(min_x, model.x_coords[i]);
-        max_x = std::max(max_x, model.x_coords[i]);
-        min_y = std::min(min_y, model.y_coords[i]);
-        max_y = std::max(max_y, model.y_coords[i]);
+        min_x = std::min(min_x, model.coords[0][i]);
+        max_x = std::max(max_x, model.coords[0][i]);
+        min_y = std::min(min_y, model.coords[1][i]);
+        max_y = std::max(max_y, model.coords[1][i]);
     }
 
     double svg_width = 800.0;
@@ -55,10 +55,10 @@ void OutputExporter::exportToSVG(const TrussStructure& truss,
             std::size_t i = static_cast<std::size_t>(bar.node_start);
             std::size_t j = static_cast<std::size_t>(bar.node_end);
     
-            double x1 = tx(model.x_coords[i]);
-            double y1 = ty(model.y_coords[i]);
-            double x2 = tx(model.x_coords[j]);
-            double y2 = ty(model.y_coords[j]);
+            double x1 = tx(model.coords[0][i]);
+            double y1 = ty(model.coords[1][i]);
+            double x2 = tx(model.coords[0][j]);
+            double y2 = ty(model.coords[1][j]);
     
             file << "<line x1=\"" << x1 << "\" y1=\"" << y1
                  << "\" x2=\"" << x2 << "\" y2=\"" << y2
@@ -74,10 +74,10 @@ void OutputExporter::exportToSVG(const TrussStructure& truss,
             std::size_t i = static_cast<std::size_t>(bar.node_start);
             std::size_t j = static_cast<std::size_t>(bar.node_end);
     
-            double x1 = tx(model.x_coords[i]);
-            double y1 = ty(model.y_coords[i]);
-            double x2 = tx(model.x_coords[j]);
-            double y2 = ty(model.y_coords[j]);
+            double x1 = tx(model.coords[0][i]);
+            double y1 = ty(model.coords[1][i]);
+            double x2 = tx(model.coords[0][j]);
+            double y2 = ty(model.coords[1][j]);
     
             double stroke_width = 0.5 + 10.0 * result.area; // scale factor can be tuned
     
@@ -90,12 +90,12 @@ void OutputExporter::exportToSVG(const TrussStructure& truss,
     
     // === 3. Draw support nodes (as small green triangles or circles) ===
     for (size_t i = 0; i < model.nodeCount(); ++i) {
-        bool fix_x = model.support_x[i];
-        bool fix_y = model.support_y[i];
+        bool fix_x = model.support[0][i];
+        bool fix_y = model.support[1][i];
 
         if (fix_x || fix_y) {
-            double cx = tx(model.x_coords[i]);
-            double cy = ty(model.y_coords[i]);
+            double cx = tx(model.coords[0][i]);
+            double cy = ty(model.coords[1][i]);
 
             std::string symbol = "<circle cx=\"" + std::to_string(cx) +
                                 "\" cy=\"" + std::to_string(cy) +
@@ -106,12 +106,12 @@ void OutputExporter::exportToSVG(const TrussStructure& truss,
     }
     // === 4. Draw load arrows (blue lines pointing in force direction) ===
     for (size_t i = 0; i < model.nodeCount(); ++i) {
-        double fx = model.load_x[i];
-        double fy = model.load_y[i];
+        double fx = model.load[0][i];
+        double fy = model.load[1][i];
 
         if (std::abs(fx) > 1e-6 || std::abs(fy) > 1e-6) {
-            double x = tx(model.x_coords[i]);
-            double y = ty(model.y_coords[i]);
+            double x = tx(model.coords[0][i]);
+            double y = ty(model.coords[1][i]);
 
             // Simple arrow of fixed length scaled for visual clarity
             double arrow_scale = 1.0;

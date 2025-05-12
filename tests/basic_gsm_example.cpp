@@ -9,19 +9,19 @@
 #include <Eigen/Dense>
 
 int main() {
-    TrussStructure structure;
+    TrussStructure<2> structure;
 
     // Define a simple 2x1 node grid
-    size_t n0 = structure.addNode(0.0, 0.0); // Node 0
-    size_t n1 = structure.addNode(0.0, 6.0); // Node 1
-    size_t n2 = structure.addNode(-1.0, 3.0); // Node 2
-    size_t n3 = structure.addNode(1.0, 3.0); // Node 3
+    size_t n0 = structure.addNode({0.0, 0.0}); // Node 0
+    size_t n1 = structure.addNode({0.0, 6.0}); // Node 1
+    size_t n2 = structure.addNode({-1.0, 3.0}); // Node 2
+    size_t n3 = structure.addNode({1.0, 3.0}); // Node 3
 
     // Supports
-    structure.model.fixNode(n0, true, true); // Fixed in x and y
-    structure.model.fixNode(n1, true, false); // Fixed only in x
+    structure.model.fixNode(n0, {true, true}); // Fixed in x and y
+    structure.model.fixNode(n1, {true, false}); // Fixed only in x
     // Loads
-    structure.model.setLoad(n1, 0.0, -100.0); // Vertical load
+    structure.model.setLoad(n1, {0.0, -100.0}); // Vertical load
 
     // Bars (triangle)
     structure.addBar(n0, n1);

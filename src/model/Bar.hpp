@@ -25,5 +25,5 @@ struct Bar {
 
     Bar(int id_, int start, int end, double length_);
 
-    std::pair<double, double> direction(const Model& model) const;
+    std::pair<double, double> direction(const Model<2>& model) const;
 };

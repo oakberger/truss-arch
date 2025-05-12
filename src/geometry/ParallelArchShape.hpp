@@ -23,7 +23,7 @@ public:
     double innerY(double x) const override;
     bool isInside(double x, double y) const override;
 
-    void generateArchNodes(Model& model,
+    void generateArchNodes(Model<2>& model,
                            int num_arch_nodes,
                            int num_vertical_layers) const override;
 

@@ -9,7 +9,7 @@
 using json = nlohmann::json;
 
 int main() {
-    std::string input_path = "../input/test_arch_geometry.json";
+    std::string input_path = "input/test_arch_geometry.json";
 
     try {
         // Load JSON once
@@ -23,7 +23,7 @@ int main() {
 
         // Parse structure using the loaded JSON
         InputParser parser;
-        TrussStructure structure = parser.parseFromJSON(j);
+        TrussStructure<2> structure = parser.parseFromJSON(j);
 
         // Solve optimization problem
         LPOptimizer optimizer;

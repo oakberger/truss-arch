@@ -9,7 +9,7 @@ public:
     virtual double innerY(double x) const = 0;
     virtual bool isInside(double x, double y) const = 0;
 
-    virtual void generateArchNodes(Model& model,
+    virtual void generateArchNodes(Model<2>& model,
                                     int num_arch_nodes,
-                                    int num_vertical_layers) const = 0;
+                                    int nuvertical_layers) const = 0;
 };

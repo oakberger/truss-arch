@@ -2,7 +2,7 @@
 #include <Eigen/Sparse>
 #include <cmath>
 
-void MatrixBuilder::buildEquilibriumMatrix(const TrussStructure& structure, Eigen::MatrixXd& A, Eigen::VectorXd& b) {
+void MatrixBuilder::buildEquilibriumMatrix(const TrussStructure<2>& structure, Eigen::MatrixXd& A, Eigen::VectorXd& b) {
     const auto& model = structure.model;
     const auto& bars = structure.bars;
     const std::size_t num_nodes = model.nodeCount();
@@ -16,8 +16,8 @@ void MatrixBuilder::buildEquilibriumMatrix(const TrussStructure& structure, Eige
         std::size_t i = static_cast<std::size_t>(bars[j].node_start);
         std::size_t k = static_cast<std::size_t>(bars[j].node_end);
 
-        double dx = model.x_coords[k] - model.x_coords[i];
-        double dy = model.y_coords[k] - model.y_coords[i];
+        double dx = model.coords[0][k] - model.coords[0][i];
+        double dy = model.coords[1][k] - model.coords[1][i];
         double L = std::sqrt(dx * dx + dy * dy);
 
         if (L == 0.0) continue;  // avoid divide-by-zero
@@ -36,7 +36,7 @@ void MatrixBuilder::buildEquilibriumMatrix(const TrussStructure& structure, Eige
 
     // RHS vector from external loads
     for (std::size_t i = 0; i < num_nodes; ++i) {
-        b(static_cast<int>(2 * i + 0)) = model.load_x[i];
-        b(static_cast<int>(2 * i + 1)) = model.load_y[i];
+        b(static_cast<int>(2 * i + 0)) = model.load[0][i];
+        b(static_cast<int>(2 * i + 1)) = model.load[1][i];
     }
 }
