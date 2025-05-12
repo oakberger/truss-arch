@@ -9,7 +9,7 @@
 using json = nlohmann::json;
 
 int main() {
-    std::string input_path = "../input/test_arch_geometry.json";
+    std::string input_path = "input/test_arch_geometry.json";
 
     try {
         // Load JSON once
