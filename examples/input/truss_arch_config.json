@@ -24,9 +24,9 @@
       ]
     },
     "output": {
-      "svg": "output/arch_structure.svg",
-      "csv": "output/results.csv",
-      "json": "output/results.json"
+      "svg": "examples/output/arch_structure.svg",
+      "csv": "examples/output/results.csv",
+      "json": "examples/output/results.json"
     }
   }
   

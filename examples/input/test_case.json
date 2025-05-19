@@ -19,8 +19,8 @@
     ]
   },
   "output": {
-    "svg": "output/rectangle_structure.svg",
-    "csv": "output/rectangle_results.csv",
-    "json": "output/rectangle_results.json"
+    "svg": "examples/output/rectangle_structure.svg",
+    "csv": "examples/output/rectangle_results.csv",
+    "json": "examples/output/rectangle_results.json"
   }
 }

@@ -61,20 +61,3 @@ void MatrixBuilder::buildEquilibriumMatrix(const TrussStructure<2>& structure,
     }
 }
 
-void MatrixBuilder::addStrengthConstraints(const TrussStructure<2>& structure,
-                                           SolverInterface& solver) const
-{
-    const auto& bars = structure.bars;
-    const double σ_t = structure.material.sigma_tension;
-    const double σ_c = structure.material.sigma_compression;
-
-    for (int j = 0; j < static_cast<int>(bars.size()); ++j) {
-        const auto& bar = bars[j];
-
-        std::vector<int> indices = {j, j + static_cast<int>(bars.size())}; // F⁺ and F⁻
-        std::vector<double> coeffs = {1.0 / σ_t, 1.0 / σ_c};               // stress bounds
-
-        solver.addConstraint(indices, coeffs, '=', bar.area);  // placeholder: area is not known here
-        // In reality, this constraint may be handled implicitly via objective or MILP logic
-    }
-}

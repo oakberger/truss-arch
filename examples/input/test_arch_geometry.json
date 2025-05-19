@@ -22,9 +22,9 @@
     ]
   },
   "output": {
-    "svg_force": "output/arch_results_force.svg",
-    "svg_area": "output/arch_results_area.svg",
-    "csv": "output/arch_results.csv",
-    "json": "output/arch_results.json"
+    "svg_force": "examples/output/arch_results_force.svg",
+    "svg_area": "examples/output/arch_results_area.svg",
+    "csv": "examples/output/arch_results.csv",
+    "json": "examples/output/arch_results.json"
   }
 }

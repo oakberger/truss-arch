@@ -9,6 +9,5 @@ public:
                                  const std::vector<int>& free_dofs,
                                  SolverInterface& solver) const;
 
-    void addStrengthConstraints(const TrussStructure<2>& structure,
-                                 SolverInterface& solver) const;
+
 };

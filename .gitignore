@@ -1,5 +1,6 @@
 # CMake build artifacts
 build/
+examples/output/
 CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake

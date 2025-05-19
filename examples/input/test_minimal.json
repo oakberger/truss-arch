@@ -19,8 +19,8 @@
     ]
   },
   "output": {
-    "svg": "output/minimal.svg",
-    "csv": "output/minimal.csv",
-    "json": "output/minimal.json"
+    "svg": "examples/output/minimal.svg",
+    "csv": "examples/output/minimal.csv",
+    "json": "examples/output/minimal.json"
   }
 }

@@ -1,7 +1,6 @@
 #include "LPOptimizer.hpp"
 #include "Constraint.hpp"
 #include "EquilibriumConstraint.hpp"
-#include "StrengthConstraint.hpp"
 
 #include "../utils/MatrixBuilder.hpp"
 #include "../solvers/GLPKSolver.hpp"
@@ -11,7 +10,6 @@
 
 LPOptimizer::LPOptimizer() {
     constraints.push_back(std::make_unique<EquilibriumConstraint>());
-    constraints.push_back(std::make_unique<StrengthConstraint>());
 }
 
 OptimizationResults LPOptimizer::solve(const TrussStructure<2>& structure) {
