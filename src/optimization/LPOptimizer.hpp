@@ -1,4 +1,5 @@
 #pragma once
+#include "Constraint.hpp"
 #include "BaseOptimizer.hpp"
 
 /**
@@ -14,8 +15,12 @@
  * 
  * Can (maybe?) be extended to MILP later.
  */
+
 class LPOptimizer : public BaseOptimizer {
+    private:
+        std::vector<std::unique_ptr<Constraint>> constraints;
     public:
+        LPOptimizer();
         /**
          * @brief Solves the optimization problem using LP.
          * @param structure The truss structure to optimize.

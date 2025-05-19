@@ -53,14 +53,16 @@ target_compile_options(truss_core PRIVATE -Wno-sign-conversion -Wno-unused-but-s
 option(TRUSS_TESTS "Build tests" ON)
 if(TRUSS_TESTS)
   enable_testing()
-  add_executable(basic_gsm_example tests/basic_gsm_example.cpp)
-  target_link_libraries(basic_gsm_example PRIVATE truss_core Eigen3::Eigen)
 
   add_executable(main_test tests/main_test.cpp)
   target_link_libraries(main_test PRIVATE truss_core Eigen3::Eigen)
 
   add_executable(arch_geometry_test examples/arch_geometry_test.cpp)
   target_link_libraries(arch_geometry_test PRIVATE truss_core Eigen3::Eigen)
+
+  add_executable(minimal_test examples/minimal_test.cpp)
+  target_link_libraries(minimal_test PRIVATE truss_core Eigen3::Eigen)
+
   
 endif()
 

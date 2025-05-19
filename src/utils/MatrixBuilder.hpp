@@ -1,18 +1,14 @@
 #pragma once
-#include "../model/TrussStructure.hpp"
-#include <Eigen/Dense>
 
-/**
- * @brief Builds the global equilibrium matrix and load vector.
- * 
- * Forms the core of the Ground Structure Method. Responsible for:
- * - Calculating bar direction cosines
- * - Assembling matrix A (equilibrium)
- * - Assembling vector b (external loads)
- * 
- * System: A * f = b
- */
+#include "solvers/SolverInterface.hpp"
+#include "model/TrussStructure.hpp"
+
 class MatrixBuilder {
 public:
-    static void buildEquilibriumMatrix(const TrussStructure<2>& structure, Eigen::MatrixXd& A, Eigen::VectorXd& b);
+    void buildEquilibriumMatrix(const TrussStructure<2>& structure,
+                                 const std::vector<int>& free_dofs,
+                                 SolverInterface& solver) const;
+
+    void addStrengthConstraints(const TrussStructure<2>& structure,
+                                 SolverInterface& solver) const;
 };

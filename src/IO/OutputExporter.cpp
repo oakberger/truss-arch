@@ -74,16 +74,6 @@ void OutputExporter::exportToSVG(const TrussStructure<2>& truss,
 
             std::size_t i = static_cast<std::size_t>(bar.node_start);
             std::size_t j = static_cast<std::size_t>(bar.node_end);
-<<<<<<< HEAD
-    
-            double x1 = tx(model.x_coords[i]);
-            double y1 = ty(model.y_coords[i]);
-            double x2 = tx(model.x_coords[j]);
-            double y2 = ty(model.y_coords[j]);
-    
-            double stroke_width = 0.5 + 2.0 * result.area; // scale factor can be tuned
-    
-=======
 
             double x1 = tx(model.coords[0][i]);
             double y1 = ty(model.coords[1][i]);
@@ -98,7 +88,6 @@ void OutputExporter::exportToSVG(const TrussStructure<2>& truss,
                 stroke_width = 1.0 + 3.0 * std::min(abs_force / 100.0, 1.0);
             }
 
->>>>>>> template
             file << "<line x1=\"" << x1 << "\" y1=\"" << y1
                  << "\" x2=\"" << x2 << "\" y2=\"" << y2
                  << "\" stroke=\"red\" stroke-width=\"" << stroke_width
