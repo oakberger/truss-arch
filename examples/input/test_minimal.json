@@ -1,0 +1,26 @@
+{
+  "rectangle": {
+    "grid_x": 3,
+    "grid_y": 2,
+    "spacing": 1.0,
+    "max_bar_length": 3.0
+  },
+  "material": {
+    "sigma_tension": 10.0,
+    "sigma_compression": 10.0
+  },
+  "boundary_conditions": {
+    "supports": [
+      { "node_id": 0, "x": true, "y": true },
+      { "node_id": 2, "x": true, "y": true }
+    ],
+    "loads": [
+      { "node_id": 3, "fx": 0.0, "fy": -10.0 }
+    ]
+  },
+  "output": {
+    "svg": "output/minimal.svg",
+    "csv": "output/minimal.csv",
+    "json": "output/minimal.json"
+  }
+}
