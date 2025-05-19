@@ -204,6 +204,30 @@ doc_doxygen/fast:
 	$(MAKE) $(MAKESILENT) -f docs/CMakeFiles/doc_doxygen.dir/build.make docs/CMakeFiles/doc_doxygen.dir/build
 .PHONY : doc_doxygen/fast
 
+examples/arch_geometry_test.o: examples/arch_geometry_test.cpp.o
+.PHONY : examples/arch_geometry_test.o
+
+# target to build an object file
+examples/arch_geometry_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/arch_geometry_test.dir/build.make CMakeFiles/arch_geometry_test.dir/examples/arch_geometry_test.cpp.o
+.PHONY : examples/arch_geometry_test.cpp.o
+
+examples/arch_geometry_test.i: examples/arch_geometry_test.cpp.i
+.PHONY : examples/arch_geometry_test.i
+
+# target to preprocess a source file
+examples/arch_geometry_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/arch_geometry_test.dir/build.make CMakeFiles/arch_geometry_test.dir/examples/arch_geometry_test.cpp.i
+.PHONY : examples/arch_geometry_test.cpp.i
+
+examples/arch_geometry_test.s: examples/arch_geometry_test.cpp.s
+.PHONY : examples/arch_geometry_test.s
+
+# target to generate assembly for a file
+examples/arch_geometry_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/arch_geometry_test.dir/build.make CMakeFiles/arch_geometry_test.dir/examples/arch_geometry_test.cpp.s
+.PHONY : examples/arch_geometry_test.cpp.s
+
 examples/main.o: examples/main.cpp.o
 .PHONY : examples/main.o
 
@@ -468,30 +492,6 @@ src/utils/MatrixBuilder.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/truss_core.dir/build.make CMakeFiles/truss_core.dir/src/utils/MatrixBuilder.cpp.s
 .PHONY : src/utils/MatrixBuilder.cpp.s
 
-tests/arch_geometry_test.o: tests/arch_geometry_test.cpp.o
-.PHONY : tests/arch_geometry_test.o
-
-# target to build an object file
-tests/arch_geometry_test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/arch_geometry_test.dir/build.make CMakeFiles/arch_geometry_test.dir/tests/arch_geometry_test.cpp.o
-.PHONY : tests/arch_geometry_test.cpp.o
-
-tests/arch_geometry_test.i: tests/arch_geometry_test.cpp.i
-.PHONY : tests/arch_geometry_test.i
-
-# target to preprocess a source file
-tests/arch_geometry_test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/arch_geometry_test.dir/build.make CMakeFiles/arch_geometry_test.dir/tests/arch_geometry_test.cpp.i
-.PHONY : tests/arch_geometry_test.cpp.i
-
-tests/arch_geometry_test.s: tests/arch_geometry_test.cpp.s
-.PHONY : tests/arch_geometry_test.s
-
-# target to generate assembly for a file
-tests/arch_geometry_test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/arch_geometry_test.dir/build.make CMakeFiles/arch_geometry_test.dir/tests/arch_geometry_test.cpp.s
-.PHONY : tests/arch_geometry_test.cpp.s
-
 tests/basic_gsm_example.o: tests/basic_gsm_example.cpp.o
 .PHONY : tests/basic_gsm_example.o
 
@@ -555,6 +555,9 @@ help:
 	@echo "... main_test"
 	@echo "... truss_core"
 	@echo "... trussopt"
+	@echo "... examples/arch_geometry_test.o"
+	@echo "... examples/arch_geometry_test.i"
+	@echo "... examples/arch_geometry_test.s"
 	@echo "... examples/main.o"
 	@echo "... examples/main.i"
 	@echo "... examples/main.s"
@@ -588,9 +591,6 @@ help:
 	@echo "... src/utils/MatrixBuilder.o"
 	@echo "... src/utils/MatrixBuilder.i"
 	@echo "... src/utils/MatrixBuilder.s"
-	@echo "... tests/arch_geometry_test.o"
-	@echo "... tests/arch_geometry_test.i"
-	@echo "... tests/arch_geometry_test.s"
 	@echo "... tests/basic_gsm_example.o"
 	@echo "... tests/basic_gsm_example.i"
 	@echo "... tests/basic_gsm_example.s"

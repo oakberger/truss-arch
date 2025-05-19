@@ -14,5 +14,5 @@
  */
 class MatrixBuilder {
 public:
-    static void buildEquilibriumMatrix(const TrussStructure& structure, Eigen::MatrixXd& A, Eigen::VectorXd& b);
+    static void buildEquilibriumMatrix(const TrussStructure<2>& structure, Eigen::MatrixXd& A, Eigen::VectorXd& b);
 };

@@ -21,7 +21,7 @@ class LPOptimizer : public BaseOptimizer {
          * @param structure The truss structure to optimize.
          * @return Results with forces and volume.
          */
-        OptimizationResults solve(const TrussStructure& structure) override;
+        OptimizationResults solve(const TrussStructure<2>& structure) override;
     
         /**
          * @brief Exports results (e.g. to a file).

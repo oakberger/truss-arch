@@ -5,10 +5,8 @@
 
 using json = nlohmann::json;
 
-// Currently reads Nodes and Bars as input which is helpful for early testing but bypasses GSM logic
-// Later input should be just Nodes (Grid size) and boundary conditions such as max. length
-TrussStructure InputParser::parseFromJSON(const json& j) {
-    TrussStructure structure;
+TrussStructure<2> InputParser::parseFromJSON(const json& j) {
+    TrussStructure<2> structure;
 
     // --- Material Properties ---
     if (j.contains("material")) {
@@ -69,7 +67,7 @@ TrussStructure InputParser::parseFromJSON(const json& j) {
             std::size_t id = support["node_id"];
             bool fix_x = support.value("x", false);
             bool fix_y = support.value("y", false);
-            structure.model.fixNode(id, fix_x, fix_y);
+            structure.model.fixNode(id, {fix_x, fix_y});
         }
 
         for (const auto& load : bc["loads"]) {
@@ -79,7 +77,7 @@ TrussStructure InputParser::parseFromJSON(const json& j) {
             }
             double fx = load.value("fx", 0.0);
             double fy = load.value("fy", 0.0);
-            structure.model.setLoad(id, fx, fy);
+            structure.model.setLoad(id, {fx, fy});
         }
     }
 

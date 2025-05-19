@@ -9,7 +9,11 @@
 using json = nlohmann::json;
 
 int main() {
+<<<<<<< HEAD:tests/arch_geometry_test.cpp
     std::string input_path = "input/test_arch_geometry.json";
+=======
+    std::string input_path = "examples/input/test_arch_geometry.json";
+>>>>>>> template:examples/arch_geometry_test.cpp
 
     try {
         // Load JSON once
@@ -23,7 +27,7 @@ int main() {
 
         // Parse structure using the loaded JSON
         InputParser parser;
-        TrussStructure structure = parser.parseFromJSON(j);
+        TrussStructure<2> structure = parser.parseFromJSON(j);
 
         // Solve optimization problem
         LPOptimizer optimizer;
@@ -35,7 +39,8 @@ int main() {
         exporter.printToConsole(results);
 
         const auto& output = j["output"];
-        exporter.exportToSVG(structure, results, output.value("svg", "output/result.svg"));
+        exporter.exportToSVG(structure, results, output.value("svg_force", "output/result_force.svg"), false);
+        exporter.exportToSVG(structure, results, output.value("svg_area", "output/result_area.svg"), true);
         exporter.exportToCSV(results, output.value("csv", "output/result.csv"));
         exporter.exportToJSON(results, output.value("json", "output/result.json"));
 

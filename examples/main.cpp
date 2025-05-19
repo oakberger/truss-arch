@@ -31,7 +31,7 @@ int main() {
 
         // Step 4: Export results
         OutputExporter exporter;
-        exporter.exportToSVG(structure, results, svg_path);
+        exporter.exportToSVG(structure, results, svg_path, false);
         exporter.exportToCSV(results, csv_path);
         exporter.exportToJSON(results, json_path);
         exporter.printToConsole(results);

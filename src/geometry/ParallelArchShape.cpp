@@ -21,7 +21,7 @@ bool ParallelArchShape::isInside(double x, double y) const {
 }
 
 
-void ParallelArchShape::generateArchNodes(Model& model, int num_arch_nodes, int num_vertical_layers) const {
+void ParallelArchShape::generateArchNodes(Model<2>& model, int num_arch_nodes, int num_vertical_layers) const {
     for (int i = 0; i < num_arch_nodes; ++i) {
         double x = span_ * i / (num_arch_nodes - 1);  // evenly along the span
 
@@ -32,7 +32,7 @@ void ParallelArchShape::generateArchNodes(Model& model, int num_arch_nodes, int 
             double t = (num_vertical_layers == 1) ? 0.0 : static_cast<double>(j) / (num_vertical_layers - 1);
             double y = y_inner + t * (y_outer - y_inner);  // linear interpolation
 
-            size_t node_id = model.addNode(x, y);
+            size_t node_id = model.addNode({x, y});
             std::cout << "[DEBUG] Added node " << node_id << " at (" << x << ", " << y << ")\n";
         }
     }

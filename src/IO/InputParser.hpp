@@ -21,7 +21,7 @@ public:
     InputParser() = default;
 
     // Parses a structure from a JSON file
-    TrussStructure parseFromJSON(const nlohmann::json& j);
+    TrussStructure<2> parseFromJSON(const nlohmann::json& j);
 
     // Optionally: parse from CSV or custom formats
     // TrussStructure parseFromCSV(const std::string& filepath);

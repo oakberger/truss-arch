@@ -2,61 +2,79 @@
 #include <cmath>
 #include <cassert>
 
-size_t TrussStructure::addNode(double x, double y) {
-   return model.addNode(x, y);
+template <int Dim>
+size_t TrussStructure<Dim>::addNode(const std::array<double, Dim>& pos) {
+    return model.addNode(pos);
 }
 
-void TrussStructure::addBar(std::size_t start_id, std::size_t end_id) {
+template <int Dim>
+void TrussStructure<Dim>::addBar(std::size_t start_id, std::size_t end_id) {
     assert(start_id >= 0 && end_id >= 0);
 
-    std::size_t i = static_cast<std::size_t>(start_id);
-    std::size_t j = static_cast<std::size_t>(end_id);
+    double len_sq = 0.0;
+    for (int d = 0; d < Dim; ++d) {
+        double diff = model.coords[d][end_id] - model.coords[d][start_id];
+        len_sq += diff * diff;
+    }
+    double len = std::sqrt(len_sq);
 
-    double dx = model.x_coords[j] - model.x_coords[i];
-    double dy = model.y_coords[j] - model.y_coords[i];
-    double len = std::sqrt(dx * dx + dy * dy);
-
-    bars.emplace_back(bars.size(), static_cast<int>(start_id), static_cast<int>(end_id), len);  // keep original IDs
+    bars.emplace_back(bars.size(), static_cast<int>(start_id), static_cast<int>(end_id), len);
 }
 
-void TrussStructure::generateGrid(int rows, int cols, double spacing) {
+template <int Dim>
+void TrussStructure<Dim>::generateGrid(int rows, int cols, double spacing) {
+    static_assert(Dim == 2, "generateGrid only implemented for 2D.");
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < cols; ++j) {
-            addNode(j * spacing, i * spacing);
+            addNode({j * spacing, i * spacing});
         }
     }
 }
 
-void TrussStructure::generateGroundStructure(double max_length) {
-    for (std::size_t i = 0; i < model.x_coords.size(); ++i) {
-        for (std::size_t j = i + 1; j < model.x_coords.size(); ++j) {
-            double dx = model.x_coords[j] - model.x_coords[i];
-            double dy = model.y_coords[j] - model.y_coords[i];
-            double dist = std::sqrt(dx*dx + dy*dy);
-            if (dist <= max_length) {
-                addBar(static_cast<int>(i), static_cast<int>(j));
+template <int Dim>
+void TrussStructure<Dim>::generateGroundStructure(double max_length) {
+    size_t N = model.nodeCount();
+    for (size_t i = 0; i < N; ++i) {
+        for (size_t j = i + 1; j < N; ++j) {
+            double dist2 = 0.0;
+            for (int d = 0; d < Dim; ++d) {
+                double diff = model.coords[d][j] - model.coords[d][i];
+                dist2 += diff * diff;
+            }
+            if (std::sqrt(dist2) <= max_length) {
+                addBar(i, j);
             }
         }
     }
 }
 
+template <int Dim>
+void TrussStructure<Dim>::generateGroundStructureArch(double max_length, const BaseArchShape& arch) {
+    static_assert(Dim == 2, "generateGroundStructureArch only implemented for 2D.");
+    size_t N = model.nodeCount();
+    for (size_t i = 0; i < N; ++i) {
+        for (size_t j = i + 1; j < N; ++j) {
+            double xi = model.coords[0][i];
+            double yi = model.coords[1][i];
+            double xj = model.coords[0][j];
+            double yj = model.coords[1][j];
 
-void TrussStructure::generateGroundStructureArch(double max_length, const BaseArchShape& arch) {
-    for (std::size_t i = 0; i < model.x_coords.size(); ++i) {
-        for (std::size_t j = i + 1; j < model.x_coords.size(); ++j) {
-            double dx = model.x_coords[j] - model.x_coords[i];
-            double dy = model.y_coords[j] - model.y_coords[i];
+            double mx = 0.5 * (xi + xj);
+            double my = 0.5 * (yi + yj);
+
+            double dx = xj - xi;
+            double dy = yj - yi;
             double dist = std::sqrt(dx * dx + dy * dy);
 
-            double mx = 0.5 * (model.x_coords[i] + model.x_coords[j]);
-            double my = 0.5 * (model.y_coords[i] + model.y_coords[j]);
-
             if (dist <= max_length &&
-                arch.isInside(model.x_coords[i], model.y_coords[i]) &&
-                arch.isInside(model.x_coords[j], model.y_coords[j]) &&
+                arch.isInside(xi, yi) &&
+                arch.isInside(xj, yj) &&
                 arch.isInside(mx, my)) {
-                addBar(static_cast<int>(i), static_cast<int>(j));
+                addBar(i, j);
             }
         }
     }
 }
+
+// Explicit instantiation
+template class TrussStructure<2>;

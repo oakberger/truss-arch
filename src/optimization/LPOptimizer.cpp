@@ -4,7 +4,7 @@
 #include <cmath>
 #include <iostream>
 
-OptimizationResults LPOptimizer::solve(const TrussStructure& structure) {
+OptimizationResults LPOptimizer::solve(const TrussStructure<2>& structure) {
     std::cout << "[LPOptimizer] Solving optimization problem using GLPK...\n";
 
     // 1. Build full equilibrium matrix A and load vector b
@@ -19,8 +19,8 @@ OptimizationResults LPOptimizer::solve(const TrussStructure& structure) {
     // 2. Extract only free DOFs
     std::vector<int> free_dofs;
     for (size_t i = 0; i < num_nodes; ++i) {
-        if (!model.support_x[i]) free_dofs.push_back(static_cast<int>(2 * i));
-        if (!model.support_y[i]) free_dofs.push_back(static_cast<int>(2 * i + 1));
+        if (!model.support[0][i]) free_dofs.push_back(static_cast<int>(2 * i));
+        if (!model.support[1][i]) free_dofs.push_back(static_cast<int>(2 * i + 1));
     }
     std::cout << "[DEBUG] Free DOFs: " << free_dofs.size() << "\n";
 
