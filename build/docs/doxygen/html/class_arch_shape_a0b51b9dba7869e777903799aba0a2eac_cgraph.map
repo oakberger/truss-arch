@@ -1,5 +1,0 @@
-<map id="ArchShape::innerY" name="ArchShape::innerY">
-<area shape="rect" id="Node000001" title="Inner arch y&#45;value at x." alt="" coords="5,5,136,31"/>
-<area shape="rect" id="Node000002" href="$class_arch_shape.html#aebeb18937926b677f68c1625d98b599d" title="Outer arch y&#45;value at x." alt="" coords="184,5,315,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,16,168,16,168,21,136,21"/>
-</map>

@@ -1,8 +1,0 @@
-<map id="ArchShape::isInside" name="ArchShape::isInside">
-<area shape="rect" id="Node000001" title="Whether a point is inside the arch band." alt="" coords="5,31,144,56"/>
-<area shape="rect" id="Node000002" href="$class_arch_shape.html#a0b51b9dba7869e777903799aba0a2eac" title="Inner arch y&#45;value at x." alt="" coords="192,5,322,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,31,176,27,177,32,145,36"/>
-<area shape="rect" id="Node000003" href="$class_arch_shape.html#aebeb18937926b677f68c1625d98b599d" title="Outer arch y&#45;value at x." alt="" coords="370,31,501,56"/>
-<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="144,41,355,41,355,46,144,46"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="323,25,355,29,354,35,322,30"/>
-</map>

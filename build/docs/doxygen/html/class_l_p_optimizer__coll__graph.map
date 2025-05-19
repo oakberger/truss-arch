@@ -1,5 +1,0 @@
-<map id="LPOptimizer" name="LPOptimizer">
-<area shape="rect" id="Node000001" title="Optimizer based on Linear Programming." alt="" coords="27,140,110,206"/>
-<area shape="rect" id="Node000002" href="$class_base_optimizer.html" title="Abstract base class for all optimization strategies." alt="" coords="5,5,131,92"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="71,107,71,140,66,140,66,107"/>
-</map>

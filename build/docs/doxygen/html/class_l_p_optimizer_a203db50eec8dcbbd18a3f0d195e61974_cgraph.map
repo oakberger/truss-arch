@@ -1,9 +1,0 @@
-<map id="LPOptimizer::solve" name="LPOptimizer::solve">
-<area shape="rect" id="Node000001" title="Solves the optimization problem using LP." alt="" coords="5,78,138,104"/>
-<area shape="rect" id="Node000002" href="$class_optimization_results.html#ae4864b6cc754d3867e5f5dfcf7a56449" title="Adds a new entry to the results list." alt="" coords="192,5,331,46"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,75,185,49,187,54,112,80"/>
-<area shape="rect" id="Node000003" href="$class_optimization_results.html#ab64355324982c9ab5ac6377f0839a5c3" title="Computes total volume based on all bar entries." alt="" coords="186,71,337,111"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="138,88,170,88,170,94,138,94"/>
-<area shape="rect" id="Node000004" href="$class_optimization_results.html#ac3d3477711d3cabd0af022425f614a81" title="Marks bars as active if their force exceeds a given threshold." alt="" coords="192,136,331,177"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="112,102,187,128,185,133,110,107"/>
-</map>

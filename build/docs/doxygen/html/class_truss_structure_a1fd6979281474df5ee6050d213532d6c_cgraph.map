@@ -1,5 +1,0 @@
-<map id="TrussStructure::generateGroundStructure" name="TrussStructure::generateGroundStructure">
-<area shape="rect" id="Node000001" title="Generates the ground structure, constrained with maximum length." alt="" coords="5,5,171,46"/>
-<area shape="rect" id="Node000002" href="$class_truss_structure.html#a7173fdbd447c8307d9906f6b30d35728" title=" " alt="" coords="219,13,375,38"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,23,203,23,203,28,171,28"/>
-</map>

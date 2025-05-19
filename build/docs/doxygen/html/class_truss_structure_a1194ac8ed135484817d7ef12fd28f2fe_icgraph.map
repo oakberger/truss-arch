@@ -1,9 +1,0 @@
-<map id="TrussStructure::addNode" name="TrussStructure::addNode">
-<area shape="rect" id="Node000001" title=" " alt="" coords="345,31,512,56"/>
-<area shape="rect" id="Node000002" href="$class_truss_structure.html#ad42897e3ced491baf878a30bacb2d753" title=" " alt="" coords="105,5,294,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="329,35,294,31,295,26,330,30"/>
-<area shape="rect" id="Node000003" href="$class_input_parser.html#a5f6df1915e8db10980bf31c71d780d74" title=" " alt="" coords="103,55,297,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="329,57,298,60,297,55,329,51"/>
-<area shape="rect" id="Node000004" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,55,55,80"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="87,70,55,70,55,65,87,65"/>
-</map>

@@ -1,7 +1,0 @@
-<map id="InputParser::parseFromJSON" name="InputParser::parseFromJSON">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,200,56"/>
-<area shape="rect" id="Node000002" href="$class_truss_structure.html#a7173fdbd447c8307d9906f6b30d35728" title=" " alt="" coords="253,5,410,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="199,30,237,26,238,31,200,35"/>
-<area shape="rect" id="Node000003" href="$class_truss_structure.html#a839d77610378209e81b52cf871a8de03" title=" " alt="" coords="248,55,415,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="200,51,232,54,232,60,199,56"/>
-</map>
