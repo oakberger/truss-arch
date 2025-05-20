@@ -3,76 +3,33 @@
 #include "BaseOptimizer.hpp"
 
 /**
- * @brief Optimizer based on Linear Programming.
- * 
- * Implements the Ground Structure Method using LP to determine the optimal subset
- * of truss bars. The first working version for MVP.
- * 
- * Optimization Criteria:
- * - Objective: Minimize total material volume (sum of length × area)
- * - Constraints: Equilibrium equations
- * - Bounds: Area ≥ 0
- * 
- * Can (maybe?) be extended to MILP later.
- */
-
-class LPOptimizer : public BaseOptimizer {
-    private:
-        std::vector<std::unique_ptr<Constraint>> constraints;
-    public:
-        LPOptimizer();
-        /**
-         * @brief Solves the optimization problem using LP.
-         * @param structure The truss structure to optimize.
-         * @return Results with forces and volume.
-         */
-        OptimizationResults solve(const TrussStructure<2>& structure) override;
-    
-        /**
-         * @brief Exports results (e.g. to a file).
-         * @param filename Where to save the output.
-         */
-    };
-
-/**
- * 
- * Optimization Problem:
- * ---------------------
- *Remark: This may be subject to change.  
+ * @class LPOptimizer
+ * @brief Truss optimizer using Linear Programming (LP).
  *
- * Variables:
- *   - a[i] : Cross-sectional area of bar i (design variable, >= 0)
- *   - q[i] : Axial force in bar i (can be positive or negative)
+ * Solves the layout problem using the Ground Structure Method by minimizing
+ * material volume under equilibrium and strength constraints.
  * 
- * Given:
- *   - L[i] : Length of bar i
- *   - B    : Equilibrium matrix (A = B)
- *   - f    : External load vector (b = f)
- *   - σ_t  : Max allowable tensile stress
- *   - σ_c  : Max allowable compressive stress
- * 
- * Objective:
- *   Minimize total volume: sum(L[i] * a[i])
- * 
- * Constraints:
- *   1. Equilibrium: B * q = f
- *   2. Stress bounds: -σ_c * a[i] ≤ q[i] ≤ σ_t * a[i]
- *   3. Non-negativity: a[i] ≥ 0
- * 
- * Implementation Plan:
- * ---------------------
- * 1. Build the equilibrium matrix A and load vector b using MatrixBuilder.
- * 2. Choose and initialize an LP solver (GLPK or Gurobi).
- * 3. Add continuous variables:
- *    - a[i] with lower bound 0
- *    - q[i] with free bounds (later constrained via stress bounds)
- * 4. Define the objective function: Minimize sum(L[i] * a[i])
- * 5. Add constraints:
- *    - One row per equilibrium equation (A * q = b)
- *    - Two constraints per bar for q[i] limits based on a[i]
- * 6. Solve the LP problem using the solver.
- * 7. Extract and store the solution into the corresponding bars:
- *    - area → Bar::area
- *    - force → Bar::force
- *    - is_active = (area > ε)
+ * - Objective: Minimize total volume (∑ |Fᵢ|·Lᵢ / σ)
+ * - Constraints: Modular (e.g. equilibrium, more can be added)
+ * - Extensible: Add custom constraints via Constraint subclasses.
  */
+class LPOptimizer : public BaseOptimizer {
+private:
+    /// List of modular constraints to apply (e.g. equilibrium, strength)
+    std::vector<std::unique_ptr<Constraint>> constraints;
+
+public:
+    /// Constructs the optimizer and adds default constraints
+    LPOptimizer();
+
+    /**
+     * @brief Solves the truss optimization problem using GLPK.
+     * 
+     * Applies all registered constraints, solves the LP problem, 
+     * and returns force and area results per bar.
+     * 
+     * @param structure The truss structure to optimize.
+     * @return OptimizationResults containing bar forces and volume.
+     */
+    OptimizationResults solve(const TrussStructure<2>& structure) override;
+};

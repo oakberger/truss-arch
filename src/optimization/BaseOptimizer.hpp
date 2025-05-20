@@ -3,27 +3,30 @@
 #include "../model/OptimizationResults.hpp"
 
 /**
- * @brief Abstract base class for all optimization strategies.
+ * @class BaseOptimizer
+ * @brief Abstract base class for truss optimization strategies.
  * 
- * Provides a polymorphic interface for truss layout optimizers.
- * Makes the system extendable and enforces clean separation of logic.
+ * Provides a polymorphic interface for implementing optimization algorithms 
+ * such as linear programming or other methods.
+ * 
+ * Responsibilities:
+ * - Enforce a uniform interface for all optimizers
+ * - Enable flexible extension and integration of multiple strategies
  * 
  * Derived classes must implement:
- * - solve(): solve the optimization problem
- * - exportResults(): output the final design (e.g., to file)
- */
-/**
- * @brief Base class for optimization solvers.
+ * - solve(): Runs the optimization on a given truss structure
  */
 class BaseOptimizer {
-    public:
-        virtual ~BaseOptimizer() = default;
-    
-        /**
-         * @brief Solves the optimization problem.
-         * @param structure The truss structure to optimize.
-         * @return The results of the optimization.
-         */
-        virtual OptimizationResults solve(const TrussStructure<2>& structure) = 0;
-    
-    };
+public:
+    virtual ~BaseOptimizer() = default;
+
+    /**
+     * @brief Solves the optimization problem for a given truss structure.
+     * 
+     * Implemented by concrete optimizer classes (e.g., LPOptimizer).
+     * 
+     * @param structure The truss structure to optimize.
+     * @return OptimizationResults containing forces, areas, and volumes.
+     */
+    virtual OptimizationResults solve(const TrussStructure<2>& structure) = 0;
+};

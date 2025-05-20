@@ -40,20 +40,15 @@ class OptimizationResults {
         void addEntry(int bar_id, double force, double length, double area);
     
         /**
-         * @brief Computes total volume based on all bar entries.
+         * @brief Computes total physical volume assuming bar stress limit is used.
          *
-         * The volume is estimated using the simplified formula:
-         * \f[
-         *     V_i \propto |F_i| \cdot L_i
-         * \f]
-         * where \f$F_i\f$ is the internal force and \f$L_i\f$ is the length of each bar.
-         *
-         * This follows the assumption used in the Ground Structure Method that all bars
-         * share the same allowable stress. Cross-sectional areas are inferred from the
-         * force, and the constant \f$1/\sigma_{allow}\f$ is omitted from the objective
-         * because it is the same for all bars.
+         * Each bar is assumed to operate exactly at the stress limit (σ_t or σ_c),
+         * such that area = |F| / σ. Then volume = A * L = |F| * L / σ.
+         * 
+         * @param sigma_tension Maximum allowable tensile stress.
+         * @param sigma_compression Maximum allowable compressive stress.
          */
-        void computeTotalVolume();
+        void computeTotalVolume(double sigma_tension, double sigma_compression);
     
         /**
          * @brief Marks bars as active if their force exceeds a given threshold.

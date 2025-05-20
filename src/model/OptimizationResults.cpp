@@ -5,10 +5,11 @@ void OptimizationResults::addEntry(int bar_id, double force, double length, doub
     bar_forces.push_back({bar_id, force, length, area, false});
 }
 
-void OptimizationResults::computeTotalVolume() {
+void OptimizationResults::computeTotalVolume(double sigma_tension, double sigma_compression) {
     total_volume = 0.0;
     for (const auto& entry : bar_forces) {
-        total_volume += std::abs(entry.force) * entry.length; //Volume (Optimization criteria) can be changed
+        double sigma = (entry.force >= 0) ? sigma_tension : sigma_compression;
+        total_volume += std::abs(entry.force) * entry.length / sigma; 
     }
 }
 

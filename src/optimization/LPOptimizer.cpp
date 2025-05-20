@@ -56,7 +56,8 @@ OptimizationResults LPOptimizer::solve(const TrussStructure<2>& structure) {
         results.addEntry(structure.bars[j].id, force, structure.bars[j].length, area);
     }
 
-    results.computeTotalVolume();
+    results.computeTotalVolume(structure.material.sigma_tension,
+                                structure.material.sigma_compression);
     results.markActiveBars();
     return results;
 }
