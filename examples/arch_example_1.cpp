@@ -9,7 +9,7 @@
 using json = nlohmann::json;
 
 int main() {
-    std::string input_path = "examples/input/test_arch_geometry.json";
+    std::string input_path = "examples/input/arch_example_1.json";
 
     try {
         // Load JSON once
@@ -35,10 +35,10 @@ int main() {
         exporter.printToConsole(results);
 
         const auto& output = j["output"];
-        exporter.exportToSVG(structure, results, output.value("svg_force", "output/result_force.svg"), false);
-        exporter.exportToSVG(structure, results, output.value("svg_area", "output/result_area.svg"), true);
-        exporter.exportToCSV(results, output.value("csv", "output/result.csv"));
-        exporter.exportToJSON(results, output.value("json", "output/result.json"));
+        exporter.exportToSVG(structure, results, output.value("svg_force", "examples/output/result_force.svg"), false);
+        exporter.exportToSVG(structure, results, output.value("svg_area", "examples/output/result_area.svg"), true);
+        exporter.exportToCSV(results, output.value("csv", "examples/output/result.csv"));
+        exporter.exportToJSON(results, output.value("json", "examples/output/result.json"));
 
         std::cout << "[Main] Optimization complete.\n";
     } catch (const std::exception& e) {

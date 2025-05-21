@@ -59,6 +59,12 @@ target_link_libraries(trussopt PRIVATE truss_core Eigen3::Eigen)
 add_executable(arch_example_1 examples/arch_example_1.cpp)
 target_link_libraries(arch_example_1 PRIVATE truss_core Eigen3::Eigen)
 
+add_executable(arch_example_2 examples/arch_example_2.cpp)
+target_link_libraries(arch_example_2 PRIVATE truss_core Eigen3::Eigen)
+
+add_executable(arch_example_3 examples/arch_example_3.cpp)
+target_link_libraries(arch_example_3 PRIVATE truss_core Eigen3::Eigen)
+
 add_executable(minimal_test examples/minimal_test.cpp)
 target_link_libraries(minimal_test PRIVATE truss_core Eigen3::Eigen)
 

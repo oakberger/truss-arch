@@ -15,7 +15,7 @@
       { "node_id": 2, "x": true, "y": true }
     ],
     "loads": [
-      { "node_id": 3, "fx": 0.0, "fy": -10.0 }
+      { "node_id": 4, "fx": 0.0, "fy": -10.0 }
     ]
   },
   "output": {

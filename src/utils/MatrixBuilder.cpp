@@ -53,10 +53,6 @@ void MatrixBuilder::buildEquilibriumMatrix(const TrussStructure<2>& structure,
         double rhs = is_x ? model.load[0][node] : model.load[1][node];
 
         solver.addConstraint(indices, coeffs, '=', rhs);
-        std::cout << "[Row " << row << "] ";
-        for (size_t k = 0; k < indices.size(); ++k)
-            std::cout << coeffs[k] << "*x" << indices[k] << " ";
-        std::cout << "= " << rhs << "\n";
 
     }
 }

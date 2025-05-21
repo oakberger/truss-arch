@@ -82,7 +82,10 @@ void OutputExporter::exportToSVG(const TrussStructure<2>& truss,
 
             double stroke_width;
             if (scale_by_area) {
-                stroke_width = 0.5 + 10.0 * result.area;
+                double length_to_px = (scale_x + scale_y) / 2.0;  // averaged for uniform scaling
+                double bar_width_meters = std::sqrt(result.area);
+                stroke_width = bar_width_meters * length_to_px;
+
             } else {
                 double abs_force = std::abs(result.force);
                 stroke_width = 1.0 + 3.0 * std::min(abs_force / 100.0, 1.0);
