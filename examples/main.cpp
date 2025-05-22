@@ -1,6 +1,7 @@
 #include "../src/IO/InputParser.hpp"
 #include "../src/optimization/LPOptimizer.hpp"
 #include "../src/IO/OutputExporter.hpp"
+#include "solvers/GLPKSolver.hpp"
 #include <iostream>
 #include <fstream>
 #include <nlohmann/json.hpp>
@@ -22,7 +23,8 @@ int main() {
 
         // Step 2: Solve optimization
         LPOptimizer optimizer;
-        OptimizationResults results = optimizer.solve(structure);
+        GLPKSolver solver;
+        OptimizationResults results = optimizer.solve(structure, solver);
 
         // Step 3: Get output paths from JSON
         std::string svg_path = j["output"].value("svg", "output/result.svg");

@@ -26,7 +26,8 @@ public:
      * Implemented by concrete optimizer classes (e.g., LPOptimizer).
      * 
      * @param structure The truss structure to optimize.
+     * @param solver The linear solver to use (e.g., GLPKSolver, GurobiSolver).
      * @return OptimizationResults containing forces, areas, and volumes.
      */
-    virtual OptimizationResults solve(const TrussStructure<2>& structure) = 0;
+    virtual OptimizationResults solve(const TrussStructure<2>& structure, SolverInterface& solver) = 0;
 };

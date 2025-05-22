@@ -32,7 +32,7 @@ public:
     void initialize(int num_bars,
                     int num_eqs,
                     const std::vector<int>& free_dofs,
-                    const TrussStructure<2>& structure);
+                    const TrussStructure<2>& structure) override;
 
     /**
      * @brief Adds a new variable with bounds.
@@ -74,7 +74,7 @@ public:
     /**
      * @brief Returns the GLPK status code after solving.
      */
-    int getStatus() const;
+    int getStatus() const override;
 
 private:
     glp_prob* lp;                         ///< Pointer to the GLPK problem instance

@@ -5,6 +5,7 @@
 #include "IO/InputParser.hpp"
 #include "optimization/LPOptimizer.hpp"
 #include "IO/OutputExporter.hpp"
+#include "solvers/GLPKSolver.hpp"
 
 using json = nlohmann::json;
 
@@ -22,7 +23,8 @@ int main() {
         TrussStructure<2> structure = parser.parseFromJSON(j);
 
         LPOptimizer optimizer;
-        OptimizationResults results = optimizer.solve(structure);
+        GLPKSolver solver;
+        OptimizationResults results = optimizer.solve(structure, solver);
         results.markActiveBars();
 
         OutputExporter exporter;

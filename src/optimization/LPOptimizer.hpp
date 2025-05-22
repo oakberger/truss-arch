@@ -29,7 +29,8 @@ public:
      * and returns force and area results per bar.
      * 
      * @param structure The truss structure to optimize.
+     * @param solver The linear solver to use (e.g., GLPKSolver, GurobiSolver).
      * @return OptimizationResults containing bar forces and volume.
      */
-    OptimizationResults solve(const TrussStructure<2>& structure) override;
+    OptimizationResults solve(const TrussStructure<2>& structure, SolverInterface& solver) override;
 };

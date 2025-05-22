@@ -29,6 +29,18 @@ include_directories(/opt/homebrew/include)  # Optional fallback
 include_directories(/opt/homebrew/Cellar/glpk/5.0/include)
 link_directories(/opt/homebrew/Cellar/glpk/5.0/lib)
 
+# Gurobi
+# Gurobi (Manual configuration)
+set(GUROBI_VERSION 120)  # Matches libgurobi120.dylib
+set(GUROBI_ROOT /Library/gurobi1202/macos_universal2)
+
+include_directories(${GUROBI_ROOT}/include)
+link_directories(${GUROBI_ROOT}/lib)
+
+# Use full paths to the actual libraries
+set(GUROBI_LIB ${GUROBI_ROOT}/lib/libgurobi${GUROBI_VERSION}.dylib)
+set(GUROBI_CXX_LIB ${GUROBI_ROOT}/lib/libgurobi_c++.a)
+
 # ================================
 # Include project source folders
 # ================================
@@ -47,7 +59,7 @@ include_directories(
 file(GLOB_RECURSE TRUSS_SOURCES src/*.cpp)
 
 add_library(truss_core ${TRUSS_SOURCES})
-target_link_libraries(truss_core PRIVATE glpk nlohmann_json::nlohmann_json)
+target_link_libraries(truss_core PRIVATE glpk nlohmann_json::nlohmann_json ${GUROBI_CXX_LIB} ${GUROBI_LIB})
 target_compile_options(truss_core PRIVATE -Wno-sign-conversion -Wno-unused-but-set-variable)
 
 # ================================
@@ -64,6 +76,9 @@ target_link_libraries(arch_example_2 PRIVATE truss_core Eigen3::Eigen)
 
 add_executable(arch_example_3 examples/arch_example_3.cpp)
 target_link_libraries(arch_example_3 PRIVATE truss_core Eigen3::Eigen)
+
+add_executable(arch_gurobi examples/Arch_Gurobi_example.cpp)
+target_link_libraries(arch_gurobi PRIVATE truss_core Eigen3::Eigen)
 
 add_executable(minimal_test examples/minimal_test.cpp)
 target_link_libraries(minimal_test PRIVATE truss_core Eigen3::Eigen)

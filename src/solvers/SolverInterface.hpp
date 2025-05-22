@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <string>
+#include "../model/TrussStructure.hpp"
 
 /**
  * @class SolverInterface
@@ -11,6 +12,21 @@
  */
 class SolverInterface {
 public:
+    /**
+     * @brief Initializes the LP solver with problem-specific structure.
+     * 
+     * Typically called before adding constraints or solving.
+     * Sets up internal data structures and prepares variable layout.
+     * 
+     * @param num_bars Number of bars
+     * @param num_eqs Number of equilibrium equations
+     * @param free_dofs List of degrees of freedom
+     * @param structure Reference to the truss structure
+     */
+    virtual void initialize(int num_bars, int num_eqs,
+                            const std::vector<int>& free_dofs,
+                            const TrussStructure<2>& structure) = 0;
+
     /**
      * @brief Adds a new decision variable to the LP problem.
      * @param name Variable name (for debugging)
@@ -33,6 +49,13 @@ public:
                                const std::vector<double>& coeffs,
                                char sense,
                                double rhs) = 0;
+
+    /**
+     * @brief Retrieves the solver-specific status code after solving.
+     * 
+     * @return Integer status code returned by the solver backend
+     */
+    virtual int getStatus() const = 0;
 
     /**
      * @brief Sets the objective function.

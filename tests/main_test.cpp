@@ -5,6 +5,7 @@
 #include "optimization/LPOptimizer.hpp"
 #include "model/OptimizationResults.hpp"
 #include "IO/OutputExporter.hpp"
+#include "solvers/GLPKSolver.hpp"
 
 using json = nlohmann::json;
 
@@ -29,7 +30,8 @@ int main() {
 
         // 3. Solve optimization
         LPOptimizer optimizer;
-        OptimizationResults results = optimizer.solve(structure);
+        GLPKSolver solver;
+        OptimizationResults results = optimizer.solve(structure, solver);
 
         // 4. Export or print results
         OutputExporter exporter;

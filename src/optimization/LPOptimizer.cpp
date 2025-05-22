@@ -12,7 +12,7 @@ LPOptimizer::LPOptimizer() {
     constraints.push_back(std::make_unique<EquilibriumConstraint>());
 }
 
-OptimizationResults LPOptimizer::solve(const TrussStructure<2>& structure) {
+OptimizationResults LPOptimizer::solve(const TrussStructure<2>& structure, SolverInterface& solver) {
     std::cout << "[LPOptimizer] Solving optimization problem using GLPK via SolverInterface...\n";
 
     const auto& model = structure.model;
@@ -31,7 +31,6 @@ OptimizationResults LPOptimizer::solve(const TrussStructure<2>& structure) {
 
     // 2. Initialize builder and solver interface
     MatrixBuilder builder;
-    GLPKSolver solver;
     solver.initialize(static_cast<int>(num_bars), num_eq, free_dofs, structure);
 
     // 3. Apply modular constraints
