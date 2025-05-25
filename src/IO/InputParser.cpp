@@ -22,19 +22,24 @@ TrussStructure<2> InputParser::parseFromJSON(const json& j) {
         std::string type = arch.value("type", "parallel");  // default to "parallel"
     
         double span = arch["span"];
-        double rise = arch["rise"];
-        double thickness = arch["thickness"];
         int num_nodes = arch["num_arch_nodes"];
         int num_layers = arch["num_vertical_layers"];
         double max_length = arch["max_bar_length"];
     
         // Choose the correct shape subclass
         if (type == "parallel") {
+            double rise = arch["rise"];
+            double thickness = arch["thickness"];
             archShape = std::make_unique<ParallelArchShape>(span, rise, thickness);
         }
         //else if (type == "catenary") {
         //    archShape = std::make_unique<CatenaryArchShape>(span, rise, thickness);
         //}
+        else if (type == "elliptical") {
+            double outer_rise = arch.value("outer_rise", 50.0);
+            double inner_rise = arch.value("inner_rise", 40.0);
+            archShape = std::make_unique<EllipticalArchShape>(span, outer_rise, inner_rise);
+        }
         else {
             throw std::runtime_error("[InputParser] Unknown arch shape type: " + type);
         }
@@ -65,6 +70,9 @@ TrussStructure<2> InputParser::parseFromJSON(const json& j) {
         const auto& bc = j["boundary_conditions"];
         for (const auto& support : bc["supports"]) {
             std::size_t id = support["node_id"];
+            if (id >= structure.model.nodeCount()) {
+                throw std::runtime_error("[Error] Support refers to invalid node ID: " + std::to_string(id));
+            }
             bool fix_x = support.value("x", false);
             bool fix_y = support.value("y", false);
             structure.model.fixNode(id, {fix_x, fix_y});

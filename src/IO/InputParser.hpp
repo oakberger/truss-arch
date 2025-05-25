@@ -4,6 +4,8 @@
 #include "../model/TrussStructure.hpp"
 #include "../geometry/BaseArchShape.hpp"
 #include "../geometry/ParallelArchShape.hpp"
+#include "../geometry/EllipticalArchShape.hpp"
+
 /**
  * @file InputParser.hpp
  * @brief Parses structural input data from JSON.

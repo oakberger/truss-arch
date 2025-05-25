@@ -22,9 +22,9 @@
     ]
   },
   "output": {
-    "svg_force": "examples/output/arch_gurobi_force.svg",
-    "svg_area": "examples/output/arch_gurobi_area.svg",
-    "csv": "examples/output/arch_gurobi.csv",
-    "json": "examples/output/arch_gurobi.json"
+    "svg_force": "examples/output/arch_gurobi_1_force.svg",
+    "svg_area": "examples/output/arch_gurobi_1_area.svg",
+    "csv": "examples/output/arch_gurobi_1.csv",
+    "json": "examples/output/arch_gurobi_1.json"
   }
 }

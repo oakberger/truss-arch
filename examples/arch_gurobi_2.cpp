@@ -10,7 +10,7 @@
 using json = nlohmann::json;
 
 int main() {
-    std::string input_path = "examples/input/arch_gurobi.json";
+    std::string input_path = "examples/input/arch_gurobi_2.json";
 
     try {
         // Load JSON once
