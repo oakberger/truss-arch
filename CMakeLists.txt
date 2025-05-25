@@ -65,9 +65,6 @@ target_compile_options(truss_core PRIVATE -Wno-sign-conversion -Wno-unused-but-s
 # ================================
 # Example executables
 # ================================
-add_executable(trussopt examples/main.cpp)
-target_link_libraries(trussopt PRIVATE truss_core Eigen3::Eigen)
-
 add_executable(arch_example_1 examples/arch_example_1.cpp)
 target_link_libraries(arch_example_1 PRIVATE truss_core Eigen3::Eigen)
 
@@ -88,6 +85,12 @@ target_link_libraries(elliptical_arch_1 PRIVATE truss_core Eigen3::Eigen)
 
 add_executable(minimal_test examples/minimal_test.cpp)
 target_link_libraries(minimal_test PRIVATE truss_core Eigen3::Eigen)
+
+add_executable(rectangle_1 examples/rectangle_example_1.cpp)
+target_link_libraries(rectangle_1 PRIVATE truss_core Eigen3::Eigen)
+
+add_executable(rectangle_2 examples/rectangle_example_2.cpp)
+target_link_libraries(rectangle_2 PRIVATE truss_core Eigen3::Eigen)
 
 # ================================
 # Unit testing
