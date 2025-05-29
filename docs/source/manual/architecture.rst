@@ -78,6 +78,15 @@ Matrix Builder
 **MatrixBuilder**  
 Constructs the equilibrium equations (``A · f = b``) from the current structure and passes them to the solver interface.
 
+Solvers
+-------
+
+The optimization framework is solver-agnostic and built around an abstract base class: ``SolverInterface``. This interface defines the minimal set of functions required to set up and solve a linear program, such as adding variables and constraints, setting the objective, and retrieving the result.
+
+Concrete solvers such as ``GLPKSolver`` and ``GurobiSolver`` implement this interface and interact with their respective solver backends (GLPK and Gurobi). While the interface is shared, each solver makes use of its own solver-specific backend calls to configure the problem and perform the optimization.
+
+Thanks to this modular design, additional solvers can be integrated with minimal changes to the surrounding code, simply by subclassing ``SolverInterface`` and implementing the required methods.
+
 
 Input & Output
 --------------

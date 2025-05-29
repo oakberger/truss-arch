@@ -6,15 +6,18 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Truss-Arch'
+project = 'Truss-Arch-Optimizer'
 copyright = '2025, Maximilian Eichenberger'
 author = 'Maximilian Eichenberger'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = []
+extensions = [
+   
+]
 
+bibtex_bibfiles = ['joss.bib']
 templates_path = ['_templates']
 exclude_patterns = []
 

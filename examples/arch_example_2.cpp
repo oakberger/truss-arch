@@ -43,7 +43,7 @@ int main() {
         exporter.exportToJSON(results, output.value("json", "examples/output/result.json"));
 
         std::cout << "[Main] Optimization complete.\n";
-    } catch (const std::exception& e) {
+    } catch (const std::exception& e) { // catch all standard exceptions
         std::cerr << "[Error] " << e.what() << "\n";
         return 1;
     }

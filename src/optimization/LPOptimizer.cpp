@@ -13,7 +13,7 @@ LPOptimizer::LPOptimizer() {
 }
 
 OptimizationResults LPOptimizer::solve(const TrussStructure<2>& structure, SolverInterface& solver) {
-    std::cout << "[LPOptimizer] Solving optimization problem using GLPK via SolverInterface...\n";
+    std::cout << "[LPOptimizer] Solving optimization problem...\n";
 
     const auto& model = structure.model;
     const size_t num_nodes = model.nodeCount();

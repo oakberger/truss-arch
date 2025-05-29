@@ -8,6 +8,17 @@
 #include "Bar.hpp"
 
 /**
+ * @struct MaterialProperties
+ * @brief Holds material properties for the truss structure.
+ * 
+ * This structure contains yield stress values for both tension and compression
+ */
+struct MaterialProperties {
+    double sigma_tension = 1.0;     // Yield stress in tension
+    double sigma_compression = 1.0; // Yield stress in compression
+};
+
+/**
  * @brief Central data model of the truss arch optimizer.
  * 
  * Templated by spatial dimension (e.g., Dim = 2 or 3).
@@ -17,11 +28,6 @@
  * - Generate ground structure (bar connections)
  * - Assign loads and supports
  */
-struct MaterialProperties {
-    double sigma_tension = 1.0;     // Yield stress in tension
-    double sigma_compression = 1.0; // Yield stress in compression
-};
-
 template <int Dim>
 class TrussStructure {
 public:

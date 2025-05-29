@@ -27,9 +27,7 @@ Development Plan
 
 - Define an **arch-shaped geometry** and generate a **grid of nodes** inside it.
 - Connect nodes using distance-based criteria to form the **ground structure**.
-- Solve a **Linear Programming (LP)** problem to minimize total material (volume), subject to:
-  - Equilibrium constraints at all nodes
-  - Non-negativity constraints on cross-sectional areas
+- Solve a **Linear Programming (LP)** problem to minimize total material (volume), subject to equilibrium constraints at all nodes.
 - Return and export **forces**, **bar lengths**, and **used members**.
 
 2. **Visualization and Result Output**
@@ -52,7 +50,7 @@ Theoretical Foundation
 
 This project is based on **structural layout optimization**, with a focus on the **Ground Structure Method** (GSM). GSM starts with a dense network of potential truss members (bars), and uses mathematical programming (here: **Linear Programming**) to identify the most efficient layout under a given set of loads and supports.
 
-The optimization objective is to minimize the **total material volume**, modeled as:
+The optimization is formulated as a linear programming (LP) problem based on the plastic lower-bound theorem. The objective is to minimize the **total material volume**, modeled as:
 
 ::
 
@@ -64,4 +62,18 @@ subject to:
 - Bar forces within valid limits
 - Only non-negative cross-sectional areas
 
-The result is a **material-efficient** and **statically sound** truss layout within the geometric constraints of an arch.
+In a truss structure, static equilibrium requires that the sum of forces at each free degree of freedom (DOF) equals the externally applied load. This condition is written as:
+
+.. math::
+
+   A f = b
+
+Where:
+
+- :math:`A` is the **equilibrium matrix**, encoding how each bar's axial force contributes to each free DOF based on geometry.
+- :math:`f` is the vector of **internal bar forces**, split into tensile (:math:`f^+`) and compressive (:math:`f^-`) parts.
+- :math:`b` is the vector of **external loads** applied at the free DOFs.
+
+Each row of :math:`A` corresponds to a force balance equation for a free DOF. The entries reflect the directional cosines of connected bars, with sign determined by tension or compression direction. This formulation ensures that internal forces satisfy global equilibrium, forming the foundation of the structural optimization problem.
+
+The result is a **material-efficient** truss layout that fits within the geometric constraints of the arch. While all solutions satisfy static equilibrium, they lack stiffness or displacement constraints. As a consequence, most solutions are mechanisms — structurally unstable configurations that would collapse under load without additional bracing or constraints.

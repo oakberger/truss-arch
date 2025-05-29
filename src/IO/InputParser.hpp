@@ -18,7 +18,7 @@
  *
  * The root JSON object must contain one of the following sections:
  * - `"rectangle"`: Defines a rectangular node grid.
- * - `"arch"`: Defines a parabolic or parallel arch domain.
+ * - `"arch"`: Defines a elliptical or parallel arch domain.
  *
  * Additionally, the following sections are required:
  * - `"material"`: Contains the allowable stress values.
@@ -55,7 +55,7 @@
  * }
  * @endcode
  *
- * ### Arch Example
+ * ### Parallel Arch Example
  * @code{.json}
  * {
  *   "arch": {
@@ -89,15 +89,48 @@
  * }
  * @endcode
  *
+ *  ### Elliptical Arch Example
+ * @code{.json}
+ *{
+ *"arch": {
+ * "type": "elliptical",
+ *"span": 200,
+ * "outer_rise": 80.0,
+ * "inner_rise": 30.0,
+ * "num_arch_nodes": 51,
+ * "num_vertical_layers": 6,
+ * "max_bar_length": 15.0
+ *},
+ * "material": {
+ *   "sigma_tension": 250.0,
+ *   "sigma_compression": 250.0
+ * },
+ * "boundary_conditions": {
+ *   "supports": [
+ *     { "node_id": 0, "x": true, "y": true },
+ *     { "node_id": 300, "x": true, "y": true }
+ *   ],
+ *   "loads": [
+ *     { "node_id": 155, "fx": 0.0, "fy": -1000.0 }
+ *   ]
+ * },
+ * "output": {
+ *   "svg_force": "examples/output/elliptical_arch_1_force.svg",
+ *   "svg_area": "examples/output/elliptical_arch_1_area.svg",
+ *   "csv": "examples/output/elliptical_arch_1.csv",
+ *   "json": "examples/output/elliptical_arch_1.json"
+ * }
+ *}
+ * @endcode
+ * 
  * @note Node IDs in boundary conditions (loads and supports) must match those generated during node grid creation.
  */
 
 /**
  * @class InputParser
  * @brief Responsible for parsing input data into a TrussStructure.
- *
- * This class is responsible for constructing a TrussStructure
- * from external files such as JSON. It encapsulates all input-related logic.
+ * 
+ * Check file documentation for more info on how the input works.
  */
 
 class InputParser {

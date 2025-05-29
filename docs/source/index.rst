@@ -18,5 +18,6 @@ documentation for details.
    manual/getting_started
    manual/description
    manual/architecture
+   manual/paper.md
    manual/joss
 

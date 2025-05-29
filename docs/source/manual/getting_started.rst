@@ -14,6 +14,7 @@ Make sure the following are installed:
 - A C++17 compatible compiler (e.g., ``g++``, ``clang++``)
 - Eigen3 (header-only)
 - GLPK (library and headers)
+- Gurobi (optional, faster solver)
 - nlohmann/json (installed with CMake support)
 - Python ≥ 3.8 (only required for building Sphinx documentation)
 - Sphinx (optional, for documentation)
