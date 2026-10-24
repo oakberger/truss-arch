@@ -3,7 +3,7 @@
 **Layout optimization of truss arches using the Ground Structure Method, written in modern C++.**
 
 <p align="center">
-  <img src="images/Truss-Arch-Bridge-Porto.jpeg" alt="Truss arch bridge" width="500">
+  <img src="docs/source/images/Truss-Arch-Bridge-Porto.jpeg" alt="Truss arch bridge" width="500">
 </p>
 
 Truss Arch Optimizer generates a dense network of candidate bars inside an arch-shaped design domain and solves a linear program to find the layout that carries the given loads with the **minimum material volume**. It was developed as part of the ETH Zürich course *Towards Efficient and High-Performance Computing for Engineers*, with a focus on clean, modular C++ design.
