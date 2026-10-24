@@ -1,93 +1,172 @@
-# Truss Arch
+# Truss Arch Optimizer
 
+**Layout optimization of truss arches using the Ground Structure Method, written in modern C++.**
 
+<p align="center">
+  <img src="images/Truss-Arch-Bridge-Porto.jpeg" alt="Truss arch bridge" width="500">
+</p>
+
+Truss Arch Optimizer generates a dense network of candidate bars inside an arch-shaped design domain and solves a linear program to find the layout that carries the given loads with the **minimum material volume**. It was developed as part of the ETH Zürich course *Towards Efficient and High-Performance Computing for Engineers*, with a focus on clean, modular C++ design.
+
+---
+
+## Features
+
+- **Ground Structure Method (GSM)**: builds a grid of candidate nodes and connects them with all feasible bars up to a maximum length
+- **Arch-shaped design domains**: nodes and bars are kept within a parabolic band with configurable span, rise and thickness
+- **Linear programming** formulation based on the plastic lower-bound theorem
+- **Solver-agnostic**: works with **GLPK** out of the box, with optional support for **Gurobi**
+- **JSON input** for geometry, material properties, boundary conditions and output paths
+- **SVG, CSV and JSON output** for visualization and post-processing
+- **Extensible constraint system**: new constraints can be added by subclassing a single base class
+- **Documentation** generated with Doxygen and Sphinx
+
+---
+
+## How it works
+
+1. **Define the domain:** an arch region is described by an outer and inner curve, `outerY(x)` and `innerY(x)`.
+2. **Generate the ground structure:** a grid of nodes is placed inside the arch, and every pair of nodes within a maximum distance is connected by a candidate bar, provided the bar stays inside the domain.
+3. **Optimize:** a linear program selects the bar forces that minimize total volume while satisfying equilibrium.
+4. **Export:** active bars, forces, areas and the total volume are written to SVG, CSV and JSON.
+
+### Formulation
+
+The objective is to minimize the total material volume:
+
+$$
+V = \sum_i \frac{|F_i| \, L_i}{\sigma}
+$$
+
+subject to static equilibrium at every free degree of freedom:
+
+$$
+A \, f = b
+$$
+
+where
+
+- $A$ is the **equilibrium matrix**, whose entries are the direction cosines of the bars connected to each free DOF,
+- $f$ is the vector of **bar forces**, split into tensile ($f^+$) and compressive ($f^-$) parts so the problem stays linear,
+- $b$ is the vector of **external loads** at the free DOFs.
+
+Cross-sectional areas follow from the forces and the allowable stress $\sigma$, and are non-negative by construction.
+
+> **Note:** The current formulation enforces equilibrium only, without stiffness, displacement or buckling constraints. The resulting layouts show efficient force paths, but many of them are **mechanisms**, i.e. statically valid but unstable without additional bracing.
+
+---
 
 ## Getting started
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+### Prerequisites
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+| Dependency | Notes |
+|---|---|
+| CMake ≥ 3.16 | |
+| C++17 compiler | e.g. `g++` or `clang++` |
+| Eigen3 | header-only |
+| GLPK | library and headers |
+| nlohmann/json | installed with CMake support |
+| Gurobi | *optional*, faster solver |
+| Python ≥ 3.8 + Sphinx | *optional*, only for building the documentation |
 
-## Add your files
+### Build
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
+```bash
+git clone https://github.com/<your-username>/truss-arch.git
+cd truss-arch
+cmake -S . -B build
+cmake --build build
 ```
-cd existing_repo
-git remote add origin https://gitlab.ethz.ch/emaximili/truss-arch.git
-git branch -M main
-git push -uf origin main
+
+### Run an example
+
+Example programs live in the `examples/` folder and are built alongside the library:
+
+```bash
+./build/<example_name>
 ```
 
-## Integrate with your tools
+- **Input:** JSON files in `examples/input/`
+- **Output:** `.svg`, `.csv` and `.json` files in `examples/output/`
 
-- [ ] [Set up project integrations](https://gitlab.ethz.ch/emaximili/truss-arch/-/settings/integrations)
+In the SVG output, the thickness of each bar represents either the force in the bar or its scaled cross-sectional area.
 
-## Collaborate with your team
+---
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+## Architecture
 
-## Test and Deploy
+The project is built around a central `TrussStructure` class, with separate modules for geometry, optimization, constraints and I/O.
 
-Use the built-in continuous integration in GitLab.
+| Component | Responsibility |
+|---|---|
+| `Model` | Stores node data (`coords`, `support`, `load`), indexed by node |
+| `Bar` | A candidate connection between two nodes: length, force, area, active flag |
+| `TrussStructure` | Owns the structure; adds nodes and bars, generates grids and ground structures |
+| `BaseArchShape`, `ParallelArchShape` | Define the arch domain via `outerY(x)` and `innerY(x)` |
+| `BaseOptimizer`, `LPOptimizer` | Optimizer interface (`solve()`) and the LP implementation |
+| `Constraint`, `EquilibriumConstraint` | Pluggable constraints that add their rows to the problem |
+| `MatrixBuilder` | Assembles the equilibrium system $A f = b$ |
+| `SolverInterface` | Abstract LP solver API, implemented by `GLPKSolver` and `GurobiSolver` |
+| `OptimizationResults` | Bar forces, areas, total volume and active-bar flags |
+| `InputParser` | Reads rectangular or arch-based problem definitions from JSON |
+| `OutputExporter` | Writes SVG visualizations and CSV/JSON data |
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+Thanks to the abstract `SolverInterface`, a new solver backend can be added by subclassing it and implementing the required methods, without touching the rest of the code.
 
-***
+---
 
-# Editing this README
+## Tests
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+Unit tests for individual features are located in the `tests/` folder.
 
-## Suggestions for a good README
+---
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+## Documentation
 
-## Name
-Choose a self-explaining name for your project.
+To generate the Doxygen and Sphinx documentation, set `TRUSS_DOC` and `TRUSS_SPHINX_DOC` to `ON` in the CMake cache. In VS Code: `Ctrl+Shift+P` → **CMake: Edit CMake Cache (UI)**.
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+Building the project then generates the documentation automatically. To build it manually:
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+```bash
+cmake --build build --target doc_doxygen
+cmake --build build --target sphinx_docs
+```
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+Then open:
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+- `build/docs/doxygen/html/index.html`
+- `build/docs/sphinx/index.html`
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+If the Sphinx build fails, check that Python and Sphinx are installed (on macOS: `brew install sphinx-doc`).
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+---
 
 ## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+- **Stiffness and displacement constraints** to avoid mechanism-like solutions
+- **Buckling** constraints for compression members
+- **Constructability**: nodal costs and modular/repetition constraints (e.g. via MILP)
+- **More arch geometries**, e.g. catenary shapes computed from the applied loads
+- **3D trusses**: generalizing ground structure generation and visualization
+- **Improved visualization**, e.g. tension and compression in different colors
+- **Python interface** for input configuration and post-processing
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+---
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+## References
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+- Bendsøe, M. P., & Sigmund, O. (2003). *Topology Optimization: Theory, Methods, and Applications*. Springer. [doi:10.1007/978-3-662-05086-6](https://doi.org/10.1007/978-3-662-05086-6)
+- Gallagher, R. H., & Zienkiewicz, O. C. (Eds.). (1973). *Optimum Structural Design*. John Wiley & Sons.
+- Gilbert, M., & Tyas, A. (2003). Layout optimization of large-scale pin-jointed frames. *Engineering Computations*, 20(8), 1044–1064. [doi:10.1108/02644400310503017](https://doi.org/10.1108/02644400310503017)
+- Liu, Y., Wang, Z., Lu, H., Ye, J., Zhao, Y., & Xie, Y. M. (2023). Layout optimization of truss structures with modular constraints. *Structures*, 55, 1460–1469. [doi:10.1016/j.istruc.2023.06.071](https://doi.org/10.1016/j.istruc.2023.06.071)
+- Sigmund, O. (2001). A 99 line topology optimization code written in Matlab. *Structural and Multidisciplinary Optimization*, 21(2), 120–127. [doi:10.1007/s001580050176](https://doi.org/10.1007/s001580050176)
+- Zhao, X. (2014). *Topology Optimization of Truss Structures Using the Ground Structure Method*. Master's thesis, University of Illinois at Urbana-Champaign. [hdl:2142/50452](https://hdl.handle.net/2142/50452)
 
-## License
-For open source projects, say how it is licensed.
+---
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+## Author
+
+**Maximilian Eichenberger**, ETH Zürich, Institute for Building Materials
+
+Developed for the course *Towards Efficient and High-Performance Computing for Engineers* at ETH Zürich (2025).
